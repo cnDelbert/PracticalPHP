@@ -10,7 +10,7 @@ Practical PHP Programming 主页地址是[www.tuxradar.com/practicalphp][pro_hom
 
 GitBook 的教程参见[Gitbook使用入门][gitbook]。
 
-如果有什么问题，欢迎到我的[博客][blog]留言，也可以直接到对应的repo提交issue。
+如果有什么问题，欢迎到我的[博客][blog]留言，也可以直接到对应的[repo](https://github.com/cnDelbert/PracticalPHP)提交issue。
 
 —— @[Delbert](http://delbert.me)
 

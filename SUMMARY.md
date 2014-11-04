@@ -5,8 +5,8 @@
   - [学完这本书你将得到什么](Preface/what_you_will_get_out_of_this_book.md)
   - [如何使用这本书](Preface/how_to_use_this_book.md)
   - [给Perl程序员的建议](Preface/a_note_for_programmers_comming_from_Perl.md)
-  - [给C/C++/Java程序员的建议]
-  - [跨平台的PHP]
+  - [给C/C++/Java程序员的建议](Preface/a_note_for_programmers_coming_from_c_cpp_or_java.md)
+  - [跨平台的PHP](Preface/cross-platform_php.md)
   - [成功的提示]
   - [关于出版商]
   - [版权和使用权]
