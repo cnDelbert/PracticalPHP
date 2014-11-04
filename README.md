@@ -1,4 +1,4 @@
-# 关于 Practical PHP Programming
+# Practical PHP Programming
 
 欢迎来到 Practical PHP 的主页，本文已经更新到 PHP 5.2 版本。本书是基于[Gitbook][gitbook]项目生成，托管在[Github][github]上。
 
@@ -12,7 +12,7 @@ GitBook 的教程参见[Gitbook使用入门][gitbook]。
 
 如果有什么问题，欢迎到我的[博客][blog]留言，也可以直接到对应的repo提交issue。
 
-—— @Delbert
+—— @[Delbert](http://delbert.me)
 
 
 [pro_home]: http://www.tuxradar.com/practicalphp
