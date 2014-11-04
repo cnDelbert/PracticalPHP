@@ -4,7 +4,7 @@
   - [这本书不是为这些人所准备的](Preface/who_this_book_is_not_for.md)
   - [学完这本书你将得到什么](Preface/what_you_will_get_out_of_this_book.md)
   - [如何使用这本书](Preface/how_to_use_this_book.md)
-  - [给Perl程序员的建议]
+  - [给Perl程序员的建议](Preface/a_note_for_programmers_comming_from_Perl.md)
   - [给C/C++/Java程序员的建议]
   - [跨平台的PHP]
   - [成功的提示]
@@ -18,3 +18,28 @@
     - [背景]
     - [早期版本的PHP]
   - [PHP的优势]
+  - ...
+- [简单的变量和操作符]
+- [函数](Functions/index.md)
+- [数组]
+- [对象]
+- [HTML表单]
+- [文件]
+- [数据库]
+- [Cookies和Sessions]
+- [多媒体]
+- [XML和XSLT]
+- [输出缓存]
+- [Java和COM]
+- [网络]
+- [杂项]
+- [安全问题]
+- [性能]
+- [编写PHP]
+- [编写扩展]
+- [Alternative PHP uses]
+- [PHP实践]
+- [close?闭包？] TBD
+- [习题答案]
+- [PHP的未来]
+- [词汇表]
