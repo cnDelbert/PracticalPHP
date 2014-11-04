@@ -12,6 +12,8 @@ GitBook 的教程参见[Gitbook使用入门][gitbook]。
 
 如果有什么问题，欢迎到我的[博客][blog]留言，也可以直接到对应的repo提交issue。
 
+—— @Delbert
+
 
 [pro_home]: http://www.tuxradar.com/practicalphp
 [gitbook]: http://www.wanqingwong.com/gitbook-zh
