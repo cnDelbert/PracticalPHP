@@ -11,7 +11,7 @@
   - [关于出版商]
   - [版权和使用权]
   - [给点反应]
-  - [关于我]
+  - [关于我](Preface/about_me.md)
   - [致谢]
 - [PHP简介](Introducing PHP/index.md)
   - [历史](Introducing PHP/History/index.md)
