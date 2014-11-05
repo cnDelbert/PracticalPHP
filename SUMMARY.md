@@ -1,5 +1,5 @@
 
-- [前言](Preface/README.md)
+- [前言](Preface/index.md)
   - [这本书是为你准备的吗？](Preface/is_this_book_for_you.md)
   - [这本书不是为这些人所准备的](Preface/who_this_book_is_not_for.md)
   - [学完这本书你将得到什么](Preface/what_you_will_get_out_of_this_book.md)
@@ -9,18 +9,18 @@
   - [跨平台的PHP](Preface/cross-platform_php.md)
   - [成功的提示](Preface/tips_for_success.md)
   - [关于出版商](Preface/about_the_publisher.md)
-  - [版权和使用权]
-  - [给点反应]
+  - [版权和使用权](Preface/copyright_and_usage_rights.md)
+  - [给点反馈](Preface/give_something_back.md)
   - [关于我](Preface/about_me.md)
-  - [致谢]
-- [PHP简介](Introducing PHP/README.md)
-  - [历史](Introducing PHP/History/README.md)
+  - [致谢](Preface/acknowledgements.md)
+- [PHP简介](Introducing PHP/index.md)
+  - [历史](Introducing PHP/History/index.md)
     - [背景]
     - [早期版本的PHP]
-  - [PHP的优势]
+  - [PHP的优势](Introducing PHP/Advantages of PHP/index.md)
   - ...
 - [简单的变量和操作符]
-- [函数](Functions/README.md)
+- [函数](Functions/index.md)
 - [数组]
 - [对象]
 - [HTML表单]
