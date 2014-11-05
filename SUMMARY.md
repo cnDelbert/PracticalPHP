@@ -15,11 +15,11 @@
   - [致谢](Preface/acknowledgements.md)
 - [PHP简介](Introducing PHP/index.md)
   - [历史](Introducing PHP/History/index.md)
-    - [背景]
+    - [背景](Introducing PHP/History/background.md)
     - [早期版本的PHP]
   - [PHP的优势](Introducing PHP/Advantages of PHP/index.md)
   - ...
-- [简单的变量和操作符]
+- [简单的变量和操作符](Simple variables and operators/index.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
