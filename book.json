@@ -1,46 +1,39 @@
 {
 
-    "generator": "site",
-
     "title": "Practical PHP Programming",
-    "description": "PHP 教程",
-
-    "plugins": [],
+    "description": "A Chinese Translation for Practical PHP Programming By @Delbert, Delbert翻译的中文版本的《PHP编程实践》",
 
     "pluginsConfig": {
         "fontSettings": {
-            "theme": "night",
-            "family": "Sans" ,
-            "size": 2 
+            "theme": "white",
+            "family": "sans",
+            "size": 2
         }
     },
-
-
-    "variables": {},
 
     "links": {
 
         "sidebar": {
-			"Homepage": "http://php.code.kekou.de",
-            "Delbert's Blog": "http://delbert.me"
+            "主页 | Homepage": "http://php.code.kekou.de",
+            "博客 | Delbert's Blog": "http://delbert.me",
+            "源码 | Github Repo": "https://github.com/cnDelbert/PracticalPHP"
         },
 
         "sharing": {
-            "google": null,
-            "facebook": null,
-            "twitter": null,
-            "weibo": "http://weibo.com/delbert",
+            "google": true,
+            "facebook": true,
+            "twitter": true,
+            "weibo": true,
+            "github": true,
             "all": true
         }
     },
 
 
     "pdf": {
-
-        "pageNumbers": true,
+        "pageNumbers": false,
 
         "fontSize": 12,
-
         "paperSize": "a4",
 
         "margin": {
