@@ -13,14 +13,14 @@
   - [给点反馈](Preface/give_something_back.md)
   - [关于我](Preface/about_me.md)
   - [致谢](Preface/acknowledgements.md)
-- [PHP简介](Introducing PHP/index.md)
-  - [历史](Introducing PHP/History/index.md)
-    - [背景](Introducing PHP/History/background.md)
-    - [早期版本的PHP](Introducing PHP/History/early_versions_of_php.md)
-  - [PHP的优势](Introducing PHP/Advantages of PHP/index.md)
+- [PHP简介](Introducing_PHP/index.md)
+  - [历史](Introducing_PHP/History/index.md)
+    - [背景](Introducing_PHP/History/background.md)
+    - [早期版本的PHP](Introducing_PHP/History/early_versions_of_php.md)
+  - [PHP的优势](Introducing_PHP/Advantages_of_PHP/index.md)
   - ...
-- [简单的变量和操作符](Simple variables and operators/index.md)
-  - [数据类型](Simple variables and operators/types_of_data.md)
+- [简单的变量和操作符](Simple_variables_and_operators/index.md)
+  - [数据类型](Simple_variables_and_operators/types_of_data.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
