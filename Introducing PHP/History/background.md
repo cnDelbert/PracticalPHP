@@ -6,10 +6,8 @@
 
 Perl，一种更简单的语言，的出现某种程度上解决了这个问题。Perl可以根据你讲话对象不同解释成“实际取出与报告语言”(Practical Extraction and Report Language)或是“有毛病的选择性垃圾列表器”(Pathologically Eclectic Rubbish Lister)。Perl原本就是作为一种通用的文字处理语言被开发出来的，它可以处理HTML的表单，甚至一些编程新手也可以做出很炫的效果。
 
-> To
->
-> Be
->
-> Continued
+后来有了Perl模块CGI.pm，无需手动分析变量字符串，可以自动将表单传入的值转换为变量。原先用来分析姓/名的Perl脚本现在可以缩减到20行以内，同时也更加便于阅读了。
+
+虽然Perl是web开发中的一个巨大进步，但是距离完美仍然有很长的一段距离。它的“适用于任何情况的一种语言”(One language fits all)的思想同web开发并不完全契合，同时，很多Perl程序员热衷的“一行代码”(用一行语义复杂的代码来完成一项特定的任务)同结构化编程相悖，同时也不方便阅读。
 
 或许Perl最大的缺点就是它太以Perl为中心了。为了能够输出HTML内容，你不得不把HTML嵌入到Perl当中。

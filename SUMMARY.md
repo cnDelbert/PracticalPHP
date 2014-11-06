@@ -16,10 +16,11 @@
 - [PHP简介](Introducing PHP/index.md)
   - [历史](Introducing PHP/History/index.md)
     - [背景](Introducing PHP/History/background.md)
-    - [早期版本的PHP]
+    - [早期版本的PHP](Introducing PHP/History/early_versions_of_php.md)
   - [PHP的优势](Introducing PHP/Advantages of PHP/index.md)
   - ...
 - [简单的变量和操作符](Simple variables and operators/index.md)
+  - [数据类型](Simple variables and operators/types_of_data.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
