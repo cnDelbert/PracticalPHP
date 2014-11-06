@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>背景 | Practical PHP Programming</title>
+        <title>PHP的优势 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,8 @@
         
     
     
-    <link rel="next" href="../../Introducing PHP/History/early_versions_of_php.html" />
     
-    
-    <link rel="prev" href="../../Introducing PHP/History/index.html" />
+    <link rel="prev" href="../../Introducing_PHP/History/early_versions_of_php.html" />
     
 
         
@@ -32,7 +30,7 @@
 
 
         
-    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="1415261568662">
+    <div class="book" data-level="2.2" data-basepath="../.." data-revision="1415265624852">
     
 
 <div class="book-summary">
@@ -311,10 +309,10 @@
         </li>
     
         
-        <li class="chapter " data-level="2" data-path="Introducing PHP/index.html">
+        <li class="chapter " data-level="2" data-path="Introducing_PHP/index.html">
             
                 
-                    <a href="../../Introducing PHP/index.html">
+                    <a href="../../Introducing_PHP/index.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
@@ -328,10 +326,10 @@
                 
     
         
-        <li class="chapter " data-level="2.1" data-path="Introducing PHP/History/index.html">
+        <li class="chapter " data-level="2.1" data-path="Introducing_PHP/History/index.html">
             
                 
-                    <a href="../../Introducing PHP/History/index.html">
+                    <a href="../../Introducing_PHP/History/index.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.</b>
@@ -345,10 +343,10 @@
                 
     
         
-        <li class="chapter active" data-level="2.1.1" data-path="Introducing PHP/History/background.html">
+        <li class="chapter " data-level="2.1.1" data-path="Introducing_PHP/History/background.html">
             
                 
-                    <a href="../../Introducing PHP/History/background.html">
+                    <a href="../../Introducing_PHP/History/background.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.1.</b>
@@ -361,10 +359,10 @@
         </li>
     
         
-        <li class="chapter " data-level="2.1.2" data-path="Introducing PHP/History/early_versions_of_php.html">
+        <li class="chapter " data-level="2.1.2" data-path="Introducing_PHP/History/early_versions_of_php.html">
             
                 
-                    <a href="../../Introducing PHP/History/early_versions_of_php.html">
+                    <a href="../../Introducing_PHP/History/early_versions_of_php.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.2.</b>
@@ -382,10 +380,10 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="Introducing PHP/Advantages of PHP/index.html">
+        <li class="chapter active" data-level="2.2" data-path="Introducing_PHP/Advantages_of_PHP/index.html">
             
                 
-                    <a href="../../Introducing PHP/Advantages of PHP/index.html">
+                    <a href="../../Introducing_PHP/Advantages_of_PHP/index.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
@@ -411,10 +409,10 @@
         </li>
     
         
-        <li class="chapter " data-level="3" data-path="Simple variables and operators/index.html">
+        <li class="chapter " data-level="3" data-path="Simple_variables_and_operators/index.html">
             
                 
-                    <a href="../../Simple variables and operators/index.html">
+                    <a href="../../Simple_variables_and_operators/index.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
@@ -428,10 +426,10 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="Simple variables and operators/types_of_data.html">
+        <li class="chapter " data-level="3.1" data-path="Simple variables_and_operators/types_of_data.html">
             
                 
-                    <a href="../../Simple variables and operators/types_of_data.html">
+                    <a href="../../Simple variables_and_operators/types_of_data.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
@@ -731,29 +729,14 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_4">
-                    
-                        <h1 id="">背景</h1>
-<p>很久之前，用来分析格式化输出的代码通常都是用C语言编写的。尽管执行地很快，但编程的时候却很棘手：一个简单的分析脚本往往要写50行甚至更多。C语言代码长的原因是由于C语言本身并不是为网络而设计的，也就没有预制一些处理网络中常用的任务的代码，因此只能自己编写。</p>
-<p>例如，一个HTML表单中有“First”(姓)和“LastName”(名)两个输入框，用户输入了<code>Joe</code>和<code>Blow</code>，C程序可能收到<code>FirstName=Joe&amp;LastName=Blow</code>这样的字符串。程序只能依次读取，找出变量名和我们输入的值。尽管如此，情况也比之前好得多了——HTTP本身是一个无状态的系统，也就意味着在整个页面中并不保存任何数据，因此，能够利用C通过页面发送数据已经是一个很大的进步了。</p>
-<p>Perl，一种更简单的语言，的出现某种程度上解决了这个问题。Perl可以根据你讲话对象不同解释成“实际取出与报告语言”(Practical Extraction and Report Language)或是“有毛病的选择性垃圾列表器”(Pathologically Eclectic Rubbish Lister)。Perl原本就是作为一种通用的文字处理语言被开发出来的，它可以处理HTML的表单，甚至一些编程新手也可以做出很炫的效果。</p>
-<p>后来有了Perl模块CGI.pm，无需手动分析变量字符串，可以自动将表单传入的值转换为变量。原先用来分析姓/名的Perl脚本现在可以缩减到20行以内，同时也更加便于阅读了。</p>
-<p>虽然Perl是web开发中的一个巨大进步，但是距离完美仍然有很长的一段距离。它的“适用于任何情况的一种语言”(One language fits all)的思想同web开发并不完全契合，同时，很多Perl程序员热衷的“一行代码”(用一行语义复杂的代码来完成一项特定的任务)同结构化编程相悖，同时也不方便阅读。</p>
-<p>或许Perl最大的缺点就是它太以Perl为中心了。为了能够输出HTML内容，你不得不把HTML嵌入到Perl当中。</p>
-
-                    
-                    </section>
-                
                 
                 </div>
             </div>
         </div>
 
         
-        <a href="../../Introducing PHP/History/index.html" class="navigation navigation-prev " aria-label="Previous page: 历史"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Introducing_PHP/History/early_versions_of_php.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 早期版本的PHP"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../Introducing PHP/History/early_versions_of_php.html" class="navigation navigation-next " aria-label="Next page: 早期版本的PHP"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
