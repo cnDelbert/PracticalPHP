@@ -1,4 +1,4 @@
-
+- [关于本书](README.md)
 - [前言](Preface/index.md)
   - [这本书是为你准备的吗？](Preface/is_this_book_for_you.md)
   - [这本书不是为这些人所准备的](Preface/who_this_book_is_not_for.md)
@@ -17,6 +17,7 @@
   - [历史](Introducing_PHP/History/index.md)
     - [背景](Introducing_PHP/History/background.md)
     - [早期版本的PHP](Introducing_PHP/History/early_versions_of_php.md)
+    - [当前版本](Introducing_PHP/History/current_release.md)
   - [PHP的优势](Introducing_PHP/Advantages_of_PHP/index.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
