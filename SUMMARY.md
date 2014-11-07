@@ -18,6 +18,9 @@
     - [背景](Introducing_PHP/History/background.md)
     - [早期版本的PHP](Introducing_PHP/History/early_versions_of_php.md)
     - [当前版本](Introducing_PHP/History/current_release.md)
+    - [从PHP 3升级](Introducing_PHP/History/upgrading_from_php_3.md)
+    - [从PHP 4升级](Introducing_PHP/History/upgrading_from_php_4.md)
+    - [PHP的创造者们](Introducing_PHP/History/the_creators_of_php.md)
   - [PHP的优势](Introducing_PHP/Advantages_of_PHP/index.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
