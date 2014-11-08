@@ -21,6 +21,7 @@
     - [从PHP 3升级](Introducing_PHP/History/upgrading_from_php_3.md)
     - [从PHP 4升级](Introducing_PHP/History/upgrading_from_php_4.md)
     - [PHP的创造者们](Introducing_PHP/History/the_creators_of_php.md)
+    - [同Zend的关系](Introducing_PHP/History/the_zend_relationship.md)
   - [PHP的优势](Introducing_PHP/Advantages_of_PHP/index.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
