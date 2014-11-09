@@ -24,6 +24,7 @@
     - [同Zend的关系](Introducing_PHP/History/the_zend_relationship.md)
   - [PHP的优势](Introducing_PHP/Advantages_of_PHP/index.md)
     - [同HTML的关系](Introducing_PHP/Advantages_of_PHP/the_html_relationship.md)
+    - [解释VS编译](Introducing_PHP/Advantages_of_PHP/interpreting_vs_compiling.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
