@@ -28,6 +28,7 @@
     - [输出控制](Introducing_PHP/Advantages_of_PHP/output_control.md)
     - [性能](Introducing_PHP/Advantages_of_PHP/performance.md)
     - [同其他语言的对比](Introducing_PHP/Advantages_of_PHP/competing_languages.md)
+    - [什么时候使用PHP](Introducing_PHP/Advantages_of_PHP/when_to_use_php.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
