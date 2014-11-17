@@ -29,6 +29,8 @@
     - [性能](Introducing_PHP/Advantages_of_PHP/performance.md)
     - [同其他语言的对比](Introducing_PHP/Advantages_of_PHP/competing_languages.md)
     - [什么时候使用PHP](Introducing_PHP/Advantages_of_PHP/when_to_use_php.md)
+    - [什么时候不用PHP](Introducing_PHP/Advantages_of_PHP/when_not_to_use_php.md)
+    - [向你的老板推销PHP](Introducing_PHP/Advantages_of_PHP/selling_php_to_your_boss.md)
   - ...
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
