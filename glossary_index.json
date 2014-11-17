@@ -1,1 +1,1 @@
-[{"name":"Parser","id":"parser","description":"语法分析器，将你的脚本转换为机器语言。"},{"name":"Byte Code","id":"byte code","description":"“二进制码”是由你的脚本转化而来的PHP能够读懂的语言——通常来说，二进制码由于要被分解成很多简单的代码片段，所以往往要比你本身的脚本要长很多。"}]
+[{"name":"Parser","id":"parser","description":"语法分析器，将你的脚本转换为机器语言。"},{"name":"Byte Code","id":"byte code","description":"“二进制码”是由你的脚本转化而来的PHP能够读懂的语言——通常来说，二进制码由于要被分解成很多简单的代码片段，所以往往要比你本身的脚本要长很多。"},{"name":"Operand","id":"operand","description":"操作数(Operand)就像很多你在学校学过，一转身就又忘了的很多东西一样。举个例子，在`$mystring + $myinteger`这个加法运算中，`+`是操作符，`$mystring`和`$myinteger`就是操作数。"}]

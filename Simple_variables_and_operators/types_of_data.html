@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="3.1" data-basepath=".." data-revision="1416122003068">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1416192682202">
     
 
 <div class="book-summary">
@@ -918,6 +918,14 @@
                     <section class="normal" id="section-gitbook_34">
                     
                         <h1 id="">数据类型</h1>
+<p>PHP有7种类型的变量，每一种都表示一类特定的信息。七种类型是：字符串型、整型、浮点型、布尔型、数组、对象和资源。在阅读本书过程中你会用到它们，所以，脊柱他们是用来做什么的是很有必要的。</p>
+<p>字符串型(字面意思：由字符组成的字符串)包含类似“a”“abc”或“Jack and Jill went up the hill to fetch a pail of water”这样的字符。字符串可长可短，看你的需求。字符串对大小没有限制。</p>
+<p>整型里面包含数字，如1, -20, 55028932等，不管正负，都可以。整型有上下限，任何小于-2147483647或大于2147483647的数都会被转化为浮点型。</p>
+<p>浮点型的范围比整型要大，可以包含有小数的数字，如4.2, 1.000000001, 2147483647000等。</p>
+<p>布尔型只是用来简单的表示<code>真</code>或<code>假</code>。布尔型实际是整型的变种——PHP将数字0作为假，其余不为零的数都为真。</p>
+<p>数组是一种特殊的变量类型，里面可以包含多个值。数组相当复杂，将会在单独的一章中进行说明。</p>
+<p>对象是多个变量值的复合变量，甚至可以有自己的函数。由于对象也很复杂，像数组一样，也会在单独的章节中进行说明。</p>
+<p>资源可以是不是PHP数据的任何东西：可以是从文件加载的图片数据，也可以是SQL查询的结果。只要记住一点，在使用完资源后记得释放它们，资源就可以像其它变量一样使用。</p>
 <p>大多数数据类型可以同其他类型进行自由转换，因此PHP是<em>弱类型</em>的。下面这段代码应该能够很好地阐释这一点：</p>
 <pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
   <span class="hljs-variable">$mystring</span> = <span class="hljs-string">"12"</span>;
@@ -925,6 +933,22 @@
   <span class="hljs-keyword">print</span> <span class="hljs-variable">$mystring</span> + <span class="hljs-variable">$myinteger</span>;
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
+<p>尽管第一个变量<code>$mystring</code>是一个字符串，第二个变量<code>$muinteger</code>是个整型，上面这段代码还是输出结果<code>32</code>。PHP会尝试将非整型的操作数<code>$mystring</code>转换为整型，当里面是数字的时候会成功转换。如果你试图将“wombat”转换为整型，PHP会返回结果0。</p>
+<blockquote>
+<p>作者说明：操作数(Operand)就像很多你在学校学过，一转身就又忘了的很多东西一样。举个例子，在<code>$mystring + $myinteger</code>这个加法运算中，<code>+</code>是操作符，<code>$mystring</code>和<code>$myinteger</code>就是操作数。</p>
+</blockquote>
+<p>字符串型有一个特殊用法可以将其与其他数据类型区别开来，就是<code>{x}</code>标记。由于字符串是一系列字符的集合，有时候你可能仅仅想读或写单个字符。看一眼下面的例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+  <span class="hljs-variable">$mystr</span> = <span class="hljs-string">"Jello, world?"</span>;
+  <span class="hljs-variable">$mystr</span>{<span class="hljs-number">0</span>} = <span class="hljs-string">"H"</span>;
+  <span class="hljs-variable">$mystr</span>{<span class="hljs-number">12</span>} = <span class="hljs-string">"!"</span>;
+  <span class="hljs-keyword">print</span> <span class="hljs-variable">$mystr</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>通过将字符串打散，我们把第一个字符改成了“H”，第12个字符改成了叹号，输出“Hello, world!”。接下来我们看一下<code>strlen()</code>这个函数，它返回了字符串的大小，因此你可以这样用而不必指明12：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$mystr</span>{strlen(<span class="hljs-variable">$mystr</span>) - <span class="hljs-number">1</span>} = <span class="hljs-string">"!"</span>;
+</code></pre>
+<p>上面的<code>- 1</code>是必须的，因为`strlen()``返回的是字符串的长度，由于PHP第一个位置为0，所以返回的值比下标的最大值多1。因此，字符串长度为13，最后一个字符的位置是12。之后我们回来探讨这个问题。</p>
 
                     
                     </section>
