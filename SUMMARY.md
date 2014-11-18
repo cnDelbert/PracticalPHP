@@ -32,9 +32,12 @@
     - [什么时候不用PHP](Introducing_PHP/Advantages_of_PHP/when_not_to_use_php.md)
     - [向你的老板推销PHP](Introducing_PHP/Advantages_of_PHP/selling_php_to_your_boss.md)
   - [扩展PHP](Introducing_PHP/extending_php.md)
-  - [PHP扩展和应用库]((Introducing_PHP/pear.md))
+  - [PHP扩展和应用库](Introducing_PHP/pear.md)
+  - [运行PHP脚本](Introducing_PHP/running_php_scripts.md)
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
+  - [检查变量是否被赋值](Simple_variables_and_operators/checking_a_variable_is_set.md)
+  - [自动类型转换](Simple_variables_and_operators/automatic_type_conversion.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
