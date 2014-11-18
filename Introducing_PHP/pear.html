@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>如何使用这本书 | Practical PHP Programming</title>
+        <title>PHP扩展和应用库 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../Preface/a_note_for_programmers_comming_from_Perl.html" />
+    <link rel="next" href="../Introducing_PHP/running_php_scripts.html" />
     
     
-    <link rel="prev" href="../Preface/what_you_will_get_out_of_this_book.html" />
+    <link rel="prev" href="../Introducing_PHP/extending_php.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1.4" data-basepath=".." data-revision="1416287758067">
+    <div class="book" data-level="2.4" data-basepath=".." data-revision="1416287758067">
     
 
 <div class="book-summary">
@@ -146,7 +146,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1.4" data-path="Preface/how_to_use_this_book.html">
+        <li class="chapter " data-level="1.4" data-path="Preface/how_to_use_this_book.html">
             
                 
                     <a href="../Preface/how_to_use_this_book.html">
@@ -628,7 +628,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="Introducing_PHP/pear.html">
+        <li class="chapter active" data-level="2.4" data-path="Introducing_PHP/pear.html">
             
                 
                     <a href="../Introducing_PHP/pear.html">
@@ -1019,21 +1019,17 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_31">
+                    <section class="normal" id="section-gitbook_21">
                     
-                        <h1 id="">如何使用这本书</h1>
-<p>如果你刚接触web开发，我建议你听从我的计划，从头到尾将本节通读，再开始你的学习计划。这本书的主题就是按照新手逐渐进阶而准备的，不必在书的白边上记笔记，也无需拷贝上千行的代码即可快速开始学习。</p>
-<p>本书中所有代码都是用等宽字体显示的。有时我会用<code>...[snip]...</code>来表示这只是整篇代码中的其中一部分。</p>
-<p>不同的读者可能偏爱不同的章节，但是我强烈建议你至少读到“数据库”部分，因为我认为几乎每个PHP程序猿都能从中学到一些东西。当然，还有“性能”一章，可以学到在不同的级别如何优化你的PHP站点。</p>
+                        <h1 id="php">PHP扩展和应用库</h1>
+<p>PEAR，PHP扩展和应用库，包含了程序员们为了达到不同目标而写的代码。总而言之，通常在某个领域精通的程序员，将一些复杂的代码用一种易用的形式呈现出来，使你能够通过几行简单的命令实现功能强大的脚本。</p>
+<p>PEAR包含两种预先写好的代码：PECL代码和PHP代码。PECL代码是用C编写的同外部库进行交互的扩展。PECL里面的扩展通常被认为是很有用的，但是不够流行，使用频率不够高。大部分PEAR是由PHP代码写的，帮你完成各项工作，它的优势是你可以在任何PHP服务器上使用而无需启用任何扩展或重新编译PHP。</p>
+<p>PEAR中最有名的一个包叫做<strong>PEAR::DB</strong>，为读写数据库提供面向对象的、数据库独立的框架。后面将进行深入说明。</p>
+<p>PHP内包含一个配置PEAR的工具“go-pear”。可以在命令行中运行<code>go-pear</code>，按照提示进行下一步就可以了。Windows用户需要将路径更改到PHP的安装路径下，如<code>c:\php</code>。</p>
+<p><img src="../img/go-pear_cmd.png" alt="go-pear command"></p>
+<p>一旦在系统上安装了PEAR，你就可以看到<code>pear</code>命令，也就可以从PHP里下载安装新的PEAR模块了。</p>
 <blockquote>
-<p>作者说明：在这本书中，你会经常看到标题为“作者说明”的文字块。这些技巧是我在PHP编程时的个人经验总结，建议你在看书的时候考虑一下其中的建议——有时候无视这些建议，将会导致你浪费你声明中数小时乃至几天的时间。</p>
-</blockquote>
-<p>为了少说些术语，我在本书最后编写了一个术语表。常有人说，读者因为跳过了一个他们完全不懂的词，导致了对整个话题的误解——不要陷入这个坑！</p>
-<p>最后，在本书的一些关键位置，我会要求你们自己做一些尝试。现在，如果我读的书上有“现在，把下面几百行代码复制到你的编辑器中”这样的话，我会毫不犹豫地跳到下一章。为了尽可能减少你学习的痛苦，我仅会在你保证已经读懂上面说的情况下才会让你去做一些尝试。下面是你应该记住的简单的几句话：</p>
-<blockquote>
-<p>Little programming, little power;</p>
-<p>Some programming, some power;</p>
-<p>Much programming, much power!</p>
+<p>作者说明：曾经有人写邮件问我，问什么我的代码示例中很少使用PEAR。有两个原因：其一，如果我告诉你怎么使用PEAR，你就不会自己学着去写了。这有时候是件不好的事情。当然，我不想去重新操作C++标准库，但如果自己动手的话，我想你会学到很多东西。其二，同时也是最重要的，PEAR在很多web服务器上都没有安装，即便安装了，有时候也不一定更新。所以，即使我在实例中用了PEAR，如果你的服务器提供商不支持的话，你也没法使用。者也是我很少使用PEAR的原因了——对不起。</p>
 </blockquote>
 
                     
@@ -1045,10 +1041,10 @@
         </div>
 
         
-        <a href="../Preface/what_you_will_get_out_of_this_book.html" class="navigation navigation-prev " aria-label="Previous page: 学完这本书你将得到什么"><i class="fa fa-angle-left"></i></a>
+        <a href="../Introducing_PHP/extending_php.html" class="navigation navigation-prev " aria-label="Previous page: 扩展PHP"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Preface/a_note_for_programmers_comming_from_Perl.html" class="navigation navigation-next " aria-label="Next page: 给Perl程序员的建议"><i class="fa fa-angle-right"></i></a>
+        <a href="../Introducing_PHP/running_php_scripts.html" class="navigation navigation-next " aria-label="Next page: 运行PHP脚本"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
