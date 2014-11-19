@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.6" data-basepath="../.." data-revision="1416401077563">
+    <div class="book" data-level="2.6" data-basepath="../.." data-revision="1416407114785">
     
 
 <div class="book-summary">
@@ -1083,8 +1083,8 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">&nbsp;</th>
-<th style="text-align:center">&nbsp;</th>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">是否正确</th>
 </tr>
 </thead>
 <tbody>
@@ -1126,6 +1126,51 @@
 </tr>
 </tbody>
 </table>
+<p>变量是大小写敏感的，也就是说<code>$FOO</code>，<code>$foo</code>，<code>$Foo``$fOO</code>都不同。</p>
+<p>给变量赋值就是用等号将你要赋值的变量和变量的值连接起来。下面这段简单的代码掩饰了怎样给变量赋值和怎样输出变量，注意一下行末的分号：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$name</span> = <span class="hljs-string">"Paul"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is $name\n"</span>;
+    <span class="hljs-variable">$name2</span> = <span class="hljs-variable">$name</span>;
+    <span class="hljs-variable">$age</span> = <span class="hljs-number">20</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is $name2, and your age is $age\n"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">'Goodbye, $name!\n'</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>正如你所看到的，我们将<code>$name</code>的值设置为<code>Paul</code>，PHP在<code>Your name is</code>后输出变量的值，也就是将变量替换为变量的值，因此，第一次打印输出的结果是<code>Your name is Paul</code>。</p>
+<blockquote>
+<p>作者说明：技术上来说，“变量替换”应该叫做“变量插值”。</p>
+</blockquote>
+<p>我们将<code>$name2</code>的值设置为<code>$name</code>，相当于将<code>$name</code>的信息全部给了<code>$name2</code>，因此<code>$name2</code>本身也被设置为<code>Paul</code>。我们又把<code>$age</code>设置为整型的<code>20</code>，我们第二次打印语句输出了PHP进行变量替换后的结果。</p>
+<p>最后一次打印没有按照我们的期望输出，它输出的是：</p>
+<pre><code class="lang-text">Goodbye, $name!\n
+</code></pre>
+<p>这是因为PHP不会将单引号内的变量进行替换，也不会对转义符进行替换。只有当我们使用双引号的时候，PHP才会进行变量的替换。使用单引号的时候，PHP会鸳鸯输出<code>$name</code>。</p>
+<p>在继续进行之前，我们还要注意一点。有时候你想给你变量的值加上一个字符什么的，但是你会发现你要加上的字符成了变量的一部分，就像下面这样：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$food</span> = <span class="hljs-string">"grapefruit"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"These $foods aren't ripe yet."</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>你想要输出<code>These grapefruits aren&#39;t ripe yet.</code>，但是PHP却试图获取<code>$foods</code>而不是<code>$food</code>的值。当然，<code>$foods</code>是不存在的，PHP将这个地方留空了。怎么解决呢？我们需要使PHP知道什么地方是变量，有两种方式：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$food</span> = <span class="hljs-string">"grapefruit"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"These ${food}s aren't ripe yet."</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"These {$food}s aren't ripe yet."</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>两种方式都能达到目的。花括号告诉PHP变量的位置。当然，如果是下面这样的情况，不需要对代码进行更改：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$food</span> = <span class="hljs-string">"grapefruit"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"This $food's flavour is bad."</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>因为变量名中不允许使用撇号<code>&#39;</code>，所以PHP能正确识别。如果你想在PHP中避免这种形式的变量替换，你可以像下面这样：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$food</span> = <span class="hljs-string">"grapefruit"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"These "</span> . <span class="hljs-variable">$food</span> . <span class="hljs-string">"s aren't ripe yet."</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
 
                     
                     </section>
