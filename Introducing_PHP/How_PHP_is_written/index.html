@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.6" data-basepath="../.." data-revision="1416316648911">
+    <div class="book" data-level="2.6" data-basepath="../.." data-revision="1416401077563">
     
 
 <div class="book-summary">
@@ -1076,6 +1076,56 @@
                     <section class="normal" id="section-gitbook_20">
                     
                         <h1 id="php">怎样写PHP</h1>
+<p>如前所述，PHP是嵌入在HTML代码当中的。默认情况下，PHP模式是未启用的。除非启用PHP没事，否则所有脚本当中的文字都被认为是HTML。</p>
+<p>这种PHP代码元素被称为“代码孤岛”，一块一块的PHP代码在HTML的海洋当中。当然，并不是说PHP代码无法影响HTML，后面我们将会降到。</p>
+<p>PHP脚本通常保存在扩展名为<code>.php</code>的文件当中。当web服务器收到请求，要求发送一个<code>.php</code>结尾的文件时，服务器首先将其传递给PHP解释器，在将结果返回给用户之前执行PHP代码。每行PHP代码都叫做一个语句，结尾的分号表明这是一个完整的语句。</p>
+<p>PHP当中的变量，也就是储存数据的对象，都是以<code>$</code>开头，后面紧接着是字母或下划线，之后是数字、字母和下划线的组合。也就是说，<strong><code>$</code>后不能跟数字</strong>，这个要注意一下。下面是合法和非法变量的示例：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&nbsp;</th>
+<th style="text-align:center">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$myvar</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$Name</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$_Age</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$__AGE__</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$91</code></td>
+<td style="text-align:center">错误，数字开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$1Name</code></td>
+<td style="text-align:center">错误，数字开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$Name91</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$_Name91</code></td>
+<td style="text-align:center">正确</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$Name&#39;s</code></td>
+<td style="text-align:center">错误，只有数字、字母、下划线可以在变量名中出现</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
