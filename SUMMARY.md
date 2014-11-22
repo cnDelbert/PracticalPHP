@@ -40,6 +40,8 @@
     - [定界符](Introducing_PHP/How_PHP_is_written/heredoc.md)
     - [变量类型简介](Introducing_PHP/How_PHP_is_written/brief_introduction_to_variable_types.md)
     - [代码块](Introducing_PHP/How_PHP_is_written/code_blocks.md)
+    - [开合代码岛](Introducing_PHP/How_PHP_is_written/opening_and_closing_code_islands.md)
+    - [注释](Introducing_PHP/How_PHP_is_written/comments.md)
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
   - [检查变量是否被赋值](Simple_variables_and_operators/checking_a_variable_is_set.md)
