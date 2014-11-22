@@ -17,7 +17,7 @@
         
     
     
-    <link rel="next" href="../../Simple_variables_and_operators/index.html" />
+    <link rel="next" href="../../Introducing_PHP/How_PHP_is_written/conditional_statements.html" />
     
     
     <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/opening_and_closing_code_islands.html" />
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.6.7" data-basepath="../.." data-revision="1416662560559">
+    <div class="book" data-level="2.6.7" data-basepath="../.." data-revision="1416666552694">
     
 
 <div class="book-summary">
@@ -788,6 +788,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.6.8" data-path="Introducing_PHP/How_PHP_is_written/conditional_statements.html">
+            
+                
+                    <a href="../../Introducing_PHP/How_PHP_is_written/conditional_statements.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.8.</b>
+                        
+                         条件语句
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1153,6 +1169,25 @@
                 <div class="page-inner">
                 
                 
+                    <section class="normal" id="section-gitbook_21">
+                    
+                        <h1 id="">注释</h1>
+<p>在PHP模式当中，你可以将不需要执行的代码注释起来。PHP有三种注释模式：<code>//</code>、<code>/* */</code>和<code>#</code>。其中，<code>//</code>和<code>/* */</code>表示注释掉本行，<code>/* */</code>表示注释掉二者之间的部分。使用<code>/* */</code>会有一些副作用，因此使用相对较少。</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"This is printed\n"</span>;
+    <span class="hljs-comment">// print "This is not printed\n";</span>
+    <span class="hljs-comment"># print "This is not printed\n";</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"This is printed\n"</span>;
+    <span class="hljs-comment">/* print "This is not printed\n";
+    print "This is not printed\n"; */</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>上面的代码展示了三种注释的使用方式，但是没有说明<code>/* */</code>存在的问题。如果你用<code>/*</code>开始了注释，而<code>*/</code>和另外一个<code>/*</code>连在一起的话，你就会发现代码不工作了。这是因为<code>/* */</code>形式的注释不能连起来用，也不能嵌套，否则代码就会崩溃。</p>
+<p>通常来说，一般用<code>//</code>来注释，简单、容易发现、易于阅读和控制。</p>
+
+                    
+                    </section>
+                
                 
                 </div>
             </div>
@@ -1162,7 +1197,7 @@
         <a href="../../Introducing_PHP/How_PHP_is_written/opening_and_closing_code_islands.html" class="navigation navigation-prev " aria-label="Previous page: 开合代码岛"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Simple_variables_and_operators/index.html" class="navigation navigation-next " aria-label="Next page: 简单的变量和操作符"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Introducing_PHP/How_PHP_is_written/conditional_statements.html" class="navigation navigation-next " aria-label="Next page: 条件语句"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
