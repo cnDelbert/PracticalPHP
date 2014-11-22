@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>输出控制 | Practical PHP Programming</title>
+        <title>代码块 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/Advantages_of_PHP/performance.html" />
+    <link rel="next" href="../../Simple_variables_and_operators/index.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/Advantages_of_PHP/interpreting_vs_compiling.html" />
+    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/brief_introduction_to_variable_types.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="1416646240573">
+    <div class="book" data-level="2.6.5" data-basepath="../.." data-revision="1416646240573">
     
 
 <div class="book-summary">
@@ -511,7 +511,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.2.3" data-path="Introducing_PHP/Advantages_of_PHP/output_control.html">
+        <li class="chapter " data-level="2.2.3" data-path="Introducing_PHP/Advantages_of_PHP/output_control.html">
             
                 
                     <a href="../../Introducing_PHP/Advantages_of_PHP/output_control.html">
@@ -741,7 +741,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.6.5" data-path="Introducing_PHP/How_PHP_is_written/code_blocks.html">
+        <li class="chapter active" data-level="2.6.5" data-path="Introducing_PHP/How_PHP_is_written/code_blocks.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/code_blocks.html">
@@ -1121,30 +1121,10 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_5">
+                    <section class="normal" id="section-gitbook_20">
                     
-                        <h1 id="">输出控制</h1>
-<p>在你输出你的内容时，PHP提供了巨大的灵活性。平时使用的时候，PHP都是通过<code>&lt;?php</code>和<code>?&gt;</code>嵌入在HTML当中的。</p>
-<p>如果需要的话，你可以调转你输入的方式，将整个文件作为PHP代码，在其中输出HTML代码。回到之前说过的那个例子，我们可以像Perl语言一样从PHP中输出HTML代码：</p>
-<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
-  <span class="hljs-keyword">print</span> <span class="hljs-string">"&lt;html&gt;\n"</span>;
-  <span class="hljs-keyword">print</span> <span class="hljs-string">"&lt;body&gt;\n"</span>;
-  <span class="hljs-keyword">print</span> <span class="hljs-string">"&lt;p&gt;Welcome, $Name&lt;/P&gt;\n"</span>;
-  <span class="hljs-keyword">print</span> <span class="hljs-string">"&lt;/body&gt;\n"</span>;
-  <span class="hljs-keyword">print</span> <span class="hljs-string">"&lt;/html&gt;\n"</span>;
-<span class="hljs-preprocessor">?&gt;</span>
-</code></pre>
-<p><code>print</code>是向客户端输出一段应引号围起来的字符的一个简单函数。<code>\n</code>意思是“在源码中开始新的一行”，为的是使源代码更加整洁。在很长一段时间里，留言板和邮件列表中存在着这样一种争论：输出大段HTML大麻的时候，是使用PHP模式块还是不用PHP模式快。而事实是它们二者就像赛马场中的马一样，几乎没有速度上的差别。</p>
-<blockquote>
-<p>PHP纯粹主义者倾向于认为<code>print</code>在技术上并不是一个函数，从技术上来说，他们是正确的。这也就是为什么你在使用<code>print</code>的时候不用在传入数据两遍加上括号的原因。包括<code>echo</code>,<code>include</code>,<code>require</code>,<code>exit</code>在内的一些语言构造被伪装成了函数（在本书中，简单起见，也统称为函数）。</p>
-</blockquote>
-<p>PHP的输出缓冲功能也很强大，可以帮你控制输出流。输出缓冲器可以认为是一个有孔的容器，你可以将你要输出的内容进行排队。一旦开辟了一个缓冲区，你创建的任何输出都会被放到其中，除非你关闭或刷新缓冲区（发送给访客），否则，它们一直是不可见的。</p>
-<p>将输出进行排队的好处有两个。</p>
-<ol>
-<li>如果决定不输出缓冲区中的当前输出队列，缓冲区允许你清空缓冲。一旦缓冲区被清空，缓冲区中的（要被输出的）内容就像从来没有存在过，缓冲区中的内容将从头开始。</li>
-<li>输出缓冲允许你打破传统的网页顺序——就是先是头部，之后是内容的那种。基于所有的输出都是你自己进行排序的事实，你可以先发送部分内容，再发送头部，再把剩下的内容发完，最后清空缓存。PHP内部会重新排列缓存，所以头部会比内容先出现。</li>
-</ol>
-<p>稍后将详述输出缓存。</p>
+                        <h1 id="">代码块</h1>
+<p>你需要注意的是PHP大量使用代码块，大段的PHP代码被分为一块一块的。在本章的剩余章节中，你会注意到PHP使用<code>{</code>和<code>}</code>来开合代码块。以后碰到的时候再细说。</p>
 
                     
                     </section>
@@ -1155,10 +1135,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/Advantages_of_PHP/interpreting_vs_compiling.html" class="navigation navigation-prev " aria-label="Previous page: 解释VS编译"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Introducing_PHP/How_PHP_is_written/brief_introduction_to_variable_types.html" class="navigation navigation-prev " aria-label="Previous page: 变量类型简介"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/Advantages_of_PHP/performance.html" class="navigation navigation-next " aria-label="Next page: 性能"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Simple_variables_and_operators/index.html" class="navigation navigation-next " aria-label="Next page: 简单的变量和操作符"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
