@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>什么时候不用PHP | Practical PHP Programming</title>
+        <title>Switch语句 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/Advantages_of_PHP/selling_php_to_your_boss.html" />
+    <link rel="next" href="../../Introducing_PHP/How_PHP_is_written/loops.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/Advantages_of_PHP/when_to_use_php.html" />
+    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/conditional_statements.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.2.7" data-basepath="../.." data-revision="1416753278994">
+    <div class="book" data-level="2.6.9" data-basepath="../.." data-revision="1416753278994">
     
 
 <div class="book-summary">
@@ -575,7 +575,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.2.7" data-path="Introducing_PHP/Advantages_of_PHP/when_not_to_use_php.html">
+        <li class="chapter " data-level="2.2.7" data-path="Introducing_PHP/Advantages_of_PHP/when_not_to_use_php.html">
             
                 
                     <a href="../../Introducing_PHP/Advantages_of_PHP/when_not_to_use_php.html">
@@ -805,7 +805,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.6.9" data-path="Introducing_PHP/How_PHP_is_written/case_switching.html">
+        <li class="chapter active" data-level="2.6.9" data-path="Introducing_PHP/How_PHP_is_written/case_switching.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/case_switching.html">
@@ -1201,15 +1201,55 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_24">
                     
-                        <h1 id="php">什么时候不用PHP</h1>
-<p>在两种情况下我不推荐使用PHP作为web开发的语言。</p>
-<p>其一，如前所述，如果你想尽可能是性能提升，你可以使用C或C++。这两种语言在web上都过于笨重，但是它们可以提供超高的性能。即使这样，你仍然可以考虑将C作为PHP的扩展使用。</p>
-<p>其二，当你想向一个已经基本用其它语言完成的系统中添加代码的时候，尽量不要用PHP，因为加入的PHP代码会使得你的维护工作变得艰难。从长远来看，你可能发现最好的方法是依旧使用原来的语言。</p>
-<blockquote>
-<p>作者说明：我需要强调的是，虽然PHP本身是线程安全的，但是它的库却未必是。如果你还不知道什么是线程安全，你就无需为它担心。</p>
-</blockquote>
+                        <h1 id="switch">Switch语句</h1>
+<p>先来看一段代码：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$Name</span> = <span class="hljs-string">"Bob"</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$Name</span> == <span class="hljs-string">"Jim"</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Jim\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$Name</span> == <span class="hljs-string">"Linda"</span>) {
+            <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Linda\n"</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$Name</span> == <span class="hljs-string">"Bob"</span>) {
+                <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Bob\n"</span>;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (<span class="hljs-variable">$Name</span> == <span class="hljs-string">"Sally"</span>) {
+                    <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Sally\n"</span>;
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">print</span> <span class="hljs-string">"I do not know your name!\n"</span>;
+                }
+            }
+        }
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>由于上面的代码中，<code>if</code>语句是嵌套的，想要找出执行了什么代码并不容易。PHP为这种情况提出了一个解决方案，叫做<code>switch/case</code>语句。在<code>switch/case</code>中，先列出你要检查的对象，然后给出想要处理的值。使用<code>switch/case</code>语句来重写上面的代码：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$Name</span> = <span class="hljs-string">'Bob'</span>;
+    <span class="hljs-keyword">switch</span>(<span class="hljs-variable">$Name</span>) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Jim"</span>: <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Jim\n"</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Linda"</span>: <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Linda\n"</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Bob"</span>: <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Bob\n"</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Sally"</span>: <span class="hljs-keyword">print</span> <span class="hljs-string">"Your name is Sally\n"</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>: <span class="hljs-keyword">print</span> <span class="hljs-string">"I do not know your name!\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p><code>switch/case</code>可以用来检查各种数据类型，比用<code>if</code>语句大大节省了空间。</p>
+<p>使用<code>switch/case</code>语句需要注意两点：</p>
+<ol>
+<li>在<code>default</code>前没有<code>case</code>。</li>
+<li>每个<code>case</code>语句都是以<code>break;</code>结尾的。如果忘记了<code>break;</code>，PHP将会顺序执行下面的语句。</li>
+</ol>
+<p>关键词<code>break</code>的意思是“跳出<code>switch/case</code>语句”。如果没有<code>break</code>，上面将会输出：</p>
+<pre><code class="lang-text">Your name is Bob
+Your name is Sally
+I do not know your name
+</code></pre>
+<p>一旦PHP匹配了<code>Bob</code>，就会继续向下输出<code>Sally</code>和默认语句。除非你就是想要这么输出，否则最好还是使用<code>break</code>语句。</p>
 
                     
                     </section>
@@ -1220,10 +1260,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/Advantages_of_PHP/when_to_use_php.html" class="navigation navigation-prev " aria-label="Previous page: 什么时候使用PHP"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Introducing_PHP/How_PHP_is_written/conditional_statements.html" class="navigation navigation-prev " aria-label="Previous page: 条件语句"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/Advantages_of_PHP/selling_php_to_your_boss.html" class="navigation navigation-next " aria-label="Next page: 向你的老板推销PHP"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Introducing_PHP/How_PHP_is_written/loops.html" class="navigation navigation-next " aria-label="Next page: 循环"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
