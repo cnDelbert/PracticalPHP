@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.6.10" data-basepath="../.." data-revision="1416753278994">
+    <div class="book" data-level="2.6.10" data-basepath="../.." data-revision="1416839483497">
     
 
 <div class="book-summary">
@@ -1227,7 +1227,45 @@
     }
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>更常用的一种循环方式是<code>for</code>循环，比<code>while</code>循环稍微复杂一点。<code>for</code>循环有三部分：变量声明、循环条件和循环动作。</p>
+<p>更常用的一种循环方式是<code>for</code>循环，比<code>while</code>循环稍微复杂一点。<code>for</code>循环有三部分：变量声明、循环条件和循环动作，一般使用一个变量来记录循环的次数。变量声明部分是用来声明记录循环次数的变量的，循环条件是用来检查循环变量是否满足条件的，循环动作是每次循环结束需要对循环变量执行的操作。</p>
+<p>下面是一个for循环的例子：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">10</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Number $i\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如上所示，<code>for</code>循环有三个部分，用分号间隔。首先，我们将1赋值给变量<code>$i</code>，然后检查<code>$i</code>是不是小于10，当<code>$i</code>小于10的时候才会执行循环。最后，在每次循环结束的时候，<code>$i</code>都会被加上1。<code>for</code>循环就是由这三部分组成的。</p>
+<p>上面这段代码的作用是从1数到10并输出。注意并没有输出<code>Number 10</code>，是因为要求<code>$i</code>小于10而不是等于10。下面是输出：</p>
+<pre><code class="lang-text">Number 1
+Number 2
+Number 3
+Number 4
+Number 5
+Number 6
+Number 7
+Number 8
+Number 9
+</code></pre>
+<p>代码当中的<code>\n</code>是用来输出换行的，如果是Windows系统的话，你应该用<code>\r\n</code>。以后会进行解释，现在无须担心。</p>
+<p>第三种也是最不重要的一种循环方式是<code>do - while</code>循环。同<code>while</code>循环的唯一区别就是它至少会循环一次。看一下下面的代码：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$foo</span> = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">while</span> (<span class="hljs-variable">$foo</span> &lt; <span class="hljs-number">10</span>) {
+        do_bar();
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>在这种情况下，<code>do_bar()</code>函数永远不会执行，因为<code>$foo</code>的初始值就大于10了。然而，如果换用<code>do - while</code>循环的话：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$foo</span> = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">do</span> {
+        do_bar();
+    } <span class="hljs-keyword">while</span> (<span class="hljs-variable">$foo</span> &lt; <span class="hljs-number">10</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这样，在<code>$foo</code>同10进行比较大小之前，已经执行过一次<code>do_bar()</code>了；又由于条件不满足，<code>do_bar()</code>所在的循环将不会再次执行。<code>do - while</code>同<code>while</code>的区别就是前者会至少执行一次。</p>
+<p>最后一种循环方式是<code>foreach</code>循环，主要用于数组数据的循环。由于数组的工作方式比较特别，这种循环方式也将放到数组一章中进行详细讲解。</p>
 
                     
                     </section>
