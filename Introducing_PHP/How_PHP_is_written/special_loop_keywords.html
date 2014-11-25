@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>从PHP 4升级 | Practical PHP Programming</title>
+        <title>特殊的循环关键字 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/History/the_creators_of_php.html" />
+    <link rel="next" href="../../Simple_variables_and_operators/index.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/History/upgrading_from_php_3.html" />
+    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/infinite_loops.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.1.5" data-basepath="../.." data-revision="1416925270542">
+    <div class="book" data-level="2.6.12" data-basepath="../.." data-revision="1416925270542">
     
 
 <div class="book-summary">
@@ -409,7 +409,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.1.5" data-path="Introducing_PHP/History/upgrading_from_php_4.html">
+        <li class="chapter " data-level="2.1.5" data-path="Introducing_PHP/History/upgrading_from_php_4.html">
             
                 
                     <a href="../../Introducing_PHP/History/upgrading_from_php_4.html">
@@ -853,7 +853,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.6.12" data-path="Introducing_PHP/How_PHP_is_written/special_loop_keywords.html">
+        <li class="chapter active" data-level="2.6.12" data-path="Introducing_PHP/How_PHP_is_written/special_loop_keywords.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/special_loop_keywords.html">
@@ -1233,13 +1233,27 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_30">
                     
-                        <h1 id="php-4">从PHP 4进行升级</h1>
-<p><a href="http://www.tuxradar.com/practicalphp/2/1/5" target="_blank">点击查看原文</a></p>
-<hr>
-
-<p>估计同样不会有人再使用了。Delbert查看了一下PHP 5的release note，PHP 5的第一个beta版本<a href="http://php.net/ChangeLog-5.php#5.0.0b1" target="_blank">Version 5.0.0 Beta 1</a>是2003年就已经发布了的，第一个RC版本<a href="http://php.net/ChangeLog-5.php#5.0.0RC1" target="_blank">Version 5.0.0 Release Candidate 1</a>在2004年5月发布，第一个正式版<a href="http://php.net/ChangeLog-5.php#5.0.0" target="_blank">Version 5.0.0</a>是在2004年7月就已经发布了，因此不要幻想谁还用4.X的了……</p>
+                        <h1 id="">特殊的循环关键字</h1>
+<p>在循环当中，你会用到两个特殊的关键字：<code>break</code>和<code>continue</code>。我们之前已经在<code>switch - case</code>当中用过<code>break</code>了，用来跳出<code>switch - case</code>块，在循环中的作用也是一样的。<code>break</code>用来跳出循环，继续执行下面的代码，而<code>continue</code>用来跳过当前循环中的剩余代码，直接进入下一次循环。</p>
+<p>例如：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">10</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$i</span> == <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$i</span> == <span class="hljs-number">7</span>) <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Number $i\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这个更改后的循环输出：</p>
+<pre><code class="lang-text">Number 1
+Number 2
+Number 4
+Number 5
+Number 6
+</code></pre>
+<p>注意，<code>Number 3</code>被直接跳过，在<code>Number 6</code>后没有输出7，循环就直接退出了。这就是两个关键字的作用。当数字是3时，<code>continue</code>跳过输出，直接进入第四次循环；当数字是7时，循环直接终止并退出。</p>
 
                     
                     </section>
@@ -1250,10 +1264,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/History/upgrading_from_php_3.html" class="navigation navigation-prev " aria-label="Previous page: 从PHP 3升级"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Introducing_PHP/How_PHP_is_written/infinite_loops.html" class="navigation navigation-prev " aria-label="Previous page: 无尽的循环"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/History/the_creators_of_php.html" class="navigation navigation-next " aria-label="Next page: PHP的创造者们"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Simple_variables_and_operators/index.html" class="navigation navigation-next " aria-label="Next page: 简单的变量和操作符"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
