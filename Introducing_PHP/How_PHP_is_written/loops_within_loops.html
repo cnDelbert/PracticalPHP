@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.6.13" data-basepath="../.." data-revision="1416926050216">
+    <div class="book" data-level="2.6.13" data-basepath="../.." data-revision="1416967933136">
     
 
 <div class="book-summary">
@@ -1287,6 +1287,38 @@ I: 1, J: 2, K: 1
 I: 2, J: 1, K: 1
 I: 2, J: 2, K: 1
 </code></pre>
+<p>如上所示，<code>$k</code>只循环了一次就被打断了，而其他循环都循环了若干次。你可以尝试在<code>break</code>后加个数字，如<code>break 2</code>来跳出两次循环或<code>switch - case</code>语句。例如：</p>
+<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">4</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
+            <span class="hljs-keyword">break</span> <span class="hljs-number">2</span>;
+        }
+    }
+}
+</code></pre>
+<p>会输出</p>
+<pre><code class="lang-text">I: 1, J: 1, K: 1
+I: 2, J: 1, K: 1
+</code></pre>
+<p>这次，整个循环只执行了两次，因为<code>$k</code>内部调用了<code>break 2</code>，跳出了<code>$k</code>和<code>$j</code>的循环。如果换成<code>break 3</code>的话，将会跳出全部三个循环，继续下面的代码。</p>
+<p>需要注意的是，<code>break</code>在<code>switch - case</code>语句和循环中都起作用，例如：</p>
+<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">4</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">switch</span>(<span class="hljs-variable">$k</span>) {
+                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                    <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
+                    <span class="hljs-keyword">break</span> <span class="hljs-number">2</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                    <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
+                    <span class="hljs-keyword">break</span> <span class="hljs-number">3</span>;
+            }
+        }
+    }
+}
+</code></pre>
+<p><code>break 2</code>跳出了<code>switch - case</code>和<code>$k</code>循环，而<code>break 2</code>跳出了<code>switch - case</code>和两层循环。如果想要从<code>switch - case</code>中完全跳出循环，则需要<code>break 4</code>了。</p>
 
                     
                     </section>
