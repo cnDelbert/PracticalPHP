@@ -48,6 +48,8 @@
     - [无尽的循环](Introducing_PHP/How_PHP_is_written/infinite_loops.md)
     - [特殊的循环关键字](Introducing_PHP/How_PHP_is_written/special_loop_keywords.md)
     - [循环嵌套](Introducing_PHP/How_PHP_is_written/loops_within_loops.md)
+    - [混合处理模式](Introducing_PHP/How_PHP_is_written/mixed-mode_processing.md)
+    - [包含其他文件](Introducing_PHP/How_PHP_is_written/including_other_files.md)
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
   - [检查变量是否被赋值](Simple_variables_and_operators/checking_a_variable_is_set.md)
