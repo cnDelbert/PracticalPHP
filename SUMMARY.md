@@ -54,6 +54,8 @@
   - [编辑PHP配置](Introducing_PHP/editing_your_php_configuration.md)
   - [总结](Introducing_PHP/summary.md)
   - [练习](Introducing_PHP/exercises.md)
+  - [深入阅读](Introducing_PHP/further_reading.md)
+  - [下一章](Introducing_PHP/next_chapter.md)
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
   - [检查变量是否被赋值](Simple_variables_and_operators/checking_a_variable_is_set.md)
