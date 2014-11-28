@@ -2,7 +2,7 @@
 
     "title": "Practical PHP Programming",
     "description": "A Chinese Translation for Practical PHP Programming By @Delbert, Delbert翻译的中文版本的《PHP编程实践》",
-
+    "plugins": "quizzes",
     "pluginsConfig": {
         "fontSettings": {
             "theme": "white",
