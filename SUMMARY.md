@@ -60,6 +60,7 @@
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
   - [检查变量是否被赋值](Simple_variables_and_operators/checking_a_variable_is_set.md)
   - [自动类型转换](Simple_variables_and_operators/automatic_type_conversion.md)
+  - [强制类型转换](Simple_variables_and_operators/forcing_a_type_with_type_casting.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]

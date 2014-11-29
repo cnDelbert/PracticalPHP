@@ -19,3 +19,17 @@ PHP的自动类型转换有时候会产生一些想不到的结果。这并不�
 Bool is set to 1
 Bool is set to
 ```
+
+如上所示，`false`并没有打印出0，而是什么都没打印出来，导致输出错误。为了解决这个问题，我们应该告诉PHP这个变量要转换成什么值。上面的例子是要将布尔类型转换为整型，从而`true`输出1，`false`输出0.
+
+```php
+ <?php
+    $bool = true;
+    print "Bool is set to $bool\n";
+    $bool = false;
+    print "Bool is set to ";
+    print (int)$bool;
+?>
+```
+
+这次就输出了你想要的1和0了。
