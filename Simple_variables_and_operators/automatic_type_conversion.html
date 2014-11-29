@@ -17,7 +17,7 @@
         
     
     
-    <link rel="next" href="../Functions/index.html" />
+    <link rel="next" href="../Simple_variables_and_operators/forcing_a_type_with_type_casting.html" />
     
     
     <link rel="prev" href="../Simple_variables_and_operators/checking_a_variable_is_set.html" />
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.3" data-basepath=".." data-revision="1417254948696">
+    <div class="book" data-level="3.3" data-basepath=".." data-revision="1417272297204">
     
 
 <div class="book-summary">
@@ -1091,6 +1091,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="3.4" data-path="Simple_variables_and_operators/forcing_a_type_with_type_casting.html">
+            
+                
+                    <a href="../Simple_variables_and_operators/forcing_a_type_with_type_casting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         强制类型转换
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1381,7 +1397,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_60">
+                    <section class="normal" id="section-gitbook_61">
                     
                         <h1 id="">自动类型转换</h1>
 <p>由于PHP是弱类型的，当有需要的时候，会自动从一种类型转换为另一种类型。但是自动类型转换的时候可能出现无意义的转换，或者出现不想要的结果。例如，在一个数组上<code>print</code>一个数组的时候，它并不会自动将数组的每个元素转换为字符串输出。将对象视为字符串有其自己的行为，但现在来说并不重要。</p>
@@ -1397,6 +1413,16 @@
 <pre><code class="lang-text">Bool is set to 1
 Bool is set to
 </code></pre>
+<p>如上所示，<code>false</code>并没有打印出0，而是什么都没打印出来，导致输出错误。为了解决这个问题，我们应该告诉PHP这个变量要转换成什么值。上面的例子是要将布尔类型转换为整型，从而<code>true</code>输出1，<code>false</code>输出0.</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">true</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to $bool\n"</span>;
+    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to "</span>;
+    <span class="hljs-keyword">print</span> (int)<span class="hljs-variable">$bool</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这次就输出了你想要的1和0了。</p>
 
                     
                     </section>
@@ -1410,7 +1436,7 @@ Bool is set to
         <a href="../Simple_variables_and_operators/checking_a_variable_is_set.html" class="navigation navigation-prev " aria-label="Previous page: 检查变量是否被赋值"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Functions/index.html" class="navigation navigation-next " aria-label="Next page: 函数"><i class="fa fa-angle-right"></i></a>
+        <a href="../Simple_variables_and_operators/forcing_a_type_with_type_casting.html" class="navigation navigation-next " aria-label="Next page: 强制类型转换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
