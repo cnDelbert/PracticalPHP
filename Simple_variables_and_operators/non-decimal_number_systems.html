@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.5" data-basepath=".." data-revision="1417357516483">
+    <div class="book" data-level="3.5" data-basepath=".." data-revision="1417442822114">
     
 
 <div class="book-summary">
@@ -1416,6 +1416,22 @@
                     <section class="normal" id="section-gitbook_65">
                     
                         <h1 id="">非十进制数字系统</h1>
+<p>虽然你在PHP当中用的大部分都是十进制(decimal)，但有时候你可能需要十六进制(hexadecimal)或八进制(octal)的。十六进制用的少，八进制用的更少，但你需要对二者有所了解，万一有一天用到了呢？</p>
+<p>正如你所知道的，十进制用0到9十个数字，八进制用0到7八个数字来表示，十六进制用0到9加上a到f来表示。十进制中的3291，与八进制中的6333和十六进制中的CDB相等。然而，如果你直接写<code>$cotalnum = 6333</code>是没有用的。</p>
+<p>这是由于PHP默认将6333作为十进制读入，相当于八进制中的14275。为了与十进制相区别，在输入八进制的时候前面需要加上<code>0</code>，也就是为了输入八进制的6333，你需要这么写：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$octalnum</span> = <span class="hljs-number">06333</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$octalnum</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>代码输出3291，这是由于PHP默认工作在十进制模式下，自动将<code>06333</code>转换为十进制了。</p>
+<p>同样的，如果要输入十六进制，需要在前面加上<code>0x</code>，例如，输入十进制的68：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$hexnum</span> = <span class="hljs-number">0x44</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$hexnum</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这样，输出的就是68了。八进制在PHP中极少使用。如果你用Unix，可能需要说明权限，这可能是唯一的用处了。十六进制相对常用一些，因为一些哈希算法返回的是十六进制的字符，HTML当中的颜色代码也是用十六进制表示的。</p>
 
                     
                     </section>
