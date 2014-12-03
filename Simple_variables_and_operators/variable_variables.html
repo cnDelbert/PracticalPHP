@@ -17,7 +17,7 @@
         
     
     
-    <link rel="next" href="../Functions/index.html" />
+    <link rel="next" href="../Simple_variables_and_operators/superglobals.html" />
     
     
     <link rel="prev" href="../Simple_variables_and_operators/variable_scope.html" />
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.7" data-basepath=".." data-revision="1417487650458">
+    <div class="book" data-level="3.7" data-basepath=".." data-revision="1417617201393">
     
 
 <div class="book-summary">
@@ -1155,6 +1155,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="3.8" data-path="Simple_variables_and_operators/superglobals.html">
+            
+                
+                    <a href="../Simple_variables_and_operators/superglobals.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                         超全局变量
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1448,7 +1464,26 @@
                     <section class="normal" id="section-gitbook_68">
                     
                         <h1 id="">可变变量</h1>
-<p>可变变量不仅难以使用，而且解释起来也比较复杂，左移你可能多读几遍本章节。</p>
+<p>可变变量不仅难以使用，而且解释起来也比较复杂，所以你可能需要多读几遍本章节。可变变量允许你不用直接知道变量名就可以使用变量，相当于变量的间接引用。来看一下下面的代码：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$bar</span> = <span class="hljs-number">10</span>;
+    <span class="hljs-variable">$foo</span> = <span class="hljs-string">"bar"</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这样我们就有两种方式来输出<code>$bar</code>，一种是直接用<code>$bar</code>，另一种是<code>$$foo</code>，对，你没看错，有两个美元符号。</p>
+<p>通过<code>$$foo</code>的方式，PHP将会首先查找<code>$foo</code>的内容，将其转换为字符串，之后再查找字符串所对应的变量名，最后返回变量的值。在上面的例子当中，<code>$foo</code>是字符串<code>bar</code>，PHP会查找<code>$bar</code>并输出它的值，也就是10。</p>
+<p>可变变量相当难用，或许在你束手无策的时候能有点用处。当然，你间接引用越多，代码月难以阅读。例如，下面的代码都输出了<code>Variable!</code>，但我相信你也认为这个很难阅读。</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$foo</span> = <span class="hljs-string">"Variable!\n"</span>;
+    <span class="hljs-variable">$bar</span> = <span class="hljs-string">"foo"</span>;
+    <span class="hljs-variable">$wom</span> = <span class="hljs-string">"bar"</span>;
+    <span class="hljs-variable">$bat</span> = <span class="hljs-string">"wom"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$foo</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$$bar</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$$$wom</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$$$$bat</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
 
                     
                     </section>
@@ -1462,7 +1497,7 @@
         <a href="../Simple_variables_and_operators/variable_scope.html" class="navigation navigation-prev " aria-label="Previous page: 变量的作用域"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Functions/index.html" class="navigation navigation-next " aria-label="Next page: 函数"><i class="fa fa-angle-right"></i></a>
+        <a href="../Simple_variables_and_operators/superglobals.html" class="navigation navigation-next " aria-label="Next page: 超全局变量"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
