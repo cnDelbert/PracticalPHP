@@ -64,6 +64,7 @@
   - [非十进制数字系统](Simple_variables_and_operators/non-decimal_number_systems.md)
   - [变量的作用域](Simple_variables_and_operators/variable_scope.md)
   - [可变变量](Simple_variables_and_operators/variable_variables.md)
+  - [超全局变量](Simple_variables_and_operators/superglobals.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
