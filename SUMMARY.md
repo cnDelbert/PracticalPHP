@@ -65,6 +65,7 @@
   - [变量的作用域](Simple_variables_and_operators/variable_scope.md)
   - [可变变量](Simple_variables_and_operators/variable_variables.md)
   - [超全局变量](Simple_variables_and_operators/superglobals.md)
+  - [预设变量](Simple_variables_and_operators/pre-set_variables.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
