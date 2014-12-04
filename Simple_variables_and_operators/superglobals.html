@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.8" data-basepath=".." data-revision="1417617201393">
+    <div class="book" data-level="3.8" data-basepath=".." data-revision="1417683735854">
     
 
 <div class="book-summary">
@@ -1461,7 +1461,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_65">
+                    <section class="normal" id="section-gitbook_66">
                     
                         <h1 id="">超全局变量</h1>
 <p>在PHP当中有几个特殊的数组被叫做超全局变量。它们之所以被称为“超全局变量”是因为不管它们在代码的什么地方，都能够访问到。这些变量在PHP 4.1之前是没有的，所以推荐你用新版本的PHP一遍能够使用超全局变量。超全局变量同PHP种其他的数组一样使用，也就是说也有遍历等方法。</p>
@@ -1496,21 +1496,23 @@
 </tr>
 <tr>
 <td style="text-align:center"><code>$_REQUEST</code></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">包含所有HTTP GET/POST/cookie所传递的变量。相当于上述三者的结合，危险程度仅次于<code>$GLOBALS</code>。由于其包含来自不信任源（如访客）的变量，除非有好的理由，否则尽量不要使用。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>$_SESSION</code></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">包含所有储存在用户session当中的变量。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>$_SERVER</code></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">包含你所使用web服务器或与你代码执行直接相关的变量。</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>$_ENV</code></td>
+<td style="text-align:center">包含所有系统为你的代码配置的环境变量。</td>
 </tr>
 </tbody>
 </table>
+<p>有两种超全局变量不鼓励用户使用，分别是<code>$GLOBALS</code>和<code>$_REQUEST</code>。这两个数组都是其他数组的组合，并且混入了不受信任的用户数据。当你使用<code>$_COOKIE[&#39;somevar&#39;]</code>的时候，你知道这个变量来自于用户的计算机而不是通过编辑URL地址得来的。而当你使用<code>$_REQUEST[&#39;somevar&#39;]</code>，你就无法保证这一点了。</p>
 
                     
                     </section>
