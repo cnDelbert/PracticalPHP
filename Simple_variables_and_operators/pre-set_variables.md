@@ -15,4 +15,16 @@
 
 > 注意是`HTTP_REFERER`而不是`HTTP_REFERRER`。**referer**正确英语拼法是**referrer**,由于早期HTTP规范的拼写错误,为了保持向后兼容而将错就错。
 
-在上面的变量当中，最重要的是`HTTP_REFERER`和`HTTP_AGENT`，
+在上面的变量当中，最重要的是`HTTP_REFERER`和`HTTP_AGENT`，通过他们，你可以知道你访客的一些信息，并做出相应的动作：
+
+```php
+<?php
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        print "The page you were on previously was {$_SERVER['HTTP_REFERER']}<br />";
+    } else {
+        print "You didn't click any links to get here<br />";
+    }
+?>
+
+<a href="refer.php">Click me!</a>
+```
