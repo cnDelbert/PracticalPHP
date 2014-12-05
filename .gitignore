@@ -1,0 +1,10 @@
+
+# folder
+_book/
+_git/
+
+# extension
+*.bat
+
+# OS relative
+.DS_Store
