@@ -28,3 +28,5 @@
 
 <a href="refer.php">Click me!</a>
 ```
+
+当你在浏览器当中手动输入URL的时候，由于`HTTP_REFERER`未设置，因此会输出“You didn't click any links to get here”
