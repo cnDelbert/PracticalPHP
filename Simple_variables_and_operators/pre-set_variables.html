@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.9" data-basepath=".." data-revision="1417704416507">
+    <div class="book" data-level="3.9" data-basepath=".." data-revision="1417876882053">
     
 
 <div class="book-summary">
@@ -1480,7 +1480,57 @@
                     <section class="normal" id="section-gitbook_66">
                     
                         <h1 id="">预设变量</h1>
-<p>在你开始写你的代码之前，PHP已经给你定义了</p>
+<p>在你开始写你的代码之前，PHP已经给你定义了一些关于服务器、关于环境以及来自访问者请求的变量。这些都存储在超全局变量当中，你可以通过<code>phpinfo()</code>函数将其输出。</p>
+<p>下面是保存在<code>$_SERVER</code>当中最常使用的变量：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量名</th>
+<th style="text-align:center">取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>HTTP_REFERER</code></td>
+<td style="text-align:center">如果用户通过点击链接访问当前页面，则为链接过来的url地址；如果用户直接访问，则为空值。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>HTTP_USER_AGENT</code></td>
+<td style="text-align:center">用户浏览器设定的值。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>PATH_INFO</code></td>
+<td style="text-align:center">网址中文件名后面部分传递的数据。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>PHP_SELF</code></td>
+<td style="text-align:center">当前文件名。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>REQUEST_METHOD</code></td>
+<td style="text-align:center">GET或POST。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>QUERY_STRING</code></td>
+<td style="text-align:center">GET请求中问号之后的所有字符串。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意是<code>HTTP_REFERER</code>而不是<code>HTTP_REFERRER</code>。<strong>referer</strong>正确英语拼法是<strong>referrer</strong>,由于早期HTTP规范的拼写错误,为了保持向后兼容而将错就错。</p>
+</blockquote>
+<p>在上面的变量当中，最重要的是<code>HTTP_REFERER</code>和<code>HTTP_AGENT</code>，通过他们，你可以知道你访客的一些信息，并做出相应的动作：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">'HTTP_REFERER'</span>])) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"The page you were on previously was {$_SERVER['HTTP_REFERER']}&lt;br /&gt;"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"You didn't click any links to get here&lt;br /&gt;"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+
+&lt;a href=<span class="hljs-string">"refer.php"</span>&gt;Click me!&lt;/a&gt;
+</code></pre>
+<p>当你在浏览器当中手动输入URL的时候，由于<code>HTTP_REFERER</code>未设置，因此会输出“You didn&#39;t click any links to get here”</p>
 
                     
                     </section>
