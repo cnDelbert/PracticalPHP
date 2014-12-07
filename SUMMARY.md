@@ -66,6 +66,10 @@
   - [可变变量](Simple_variables_and_operators/variable_variables.md)
   - [超全局变量](Simple_variables_and_operators/superglobals.md)
   - [预设变量](Simple_variables_and_operators/pre-set_variables.md)
+  - [引用](Simple_variables_and_operators/references.md)
+  - [常量](Simple_variables_and_operators/Constants/index.md)
+    - [预设常量](Simple_variables_and_operators/Constants/pre-set_constants.md)
+  - [操作符]
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
