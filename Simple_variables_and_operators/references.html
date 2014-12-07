@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>关于我 | Practical PHP Programming</title>
+        <title>引用 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../Preface/acknowledgements.html" />
+    <link rel="next" href="../Simple_variables_and_operators/Constants/index.html" />
     
     
-    <link rel="prev" href="../Preface/give_something_back.html" />
+    <link rel="prev" href="../Simple_variables_and_operators/pre-set_variables.html" />
     
 
         
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="1.12" data-basepath=".." data-revision="1417961641356">
+    <div class="book" data-level="3.10" data-basepath=".." data-revision="1417961641356">
     
 
 <div class="book-summary">
@@ -278,7 +278,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1.12" data-path="Preface/about_me.html">
+        <li class="chapter " data-level="1.12" data-path="Preface/about_me.html">
             
                 
                     <a href="../Preface/about_me.html">
@@ -1188,7 +1188,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.10" data-path="Simple_variables_and_operators/references.html">
+        <li class="chapter active" data-level="3.10" data-path="Simple_variables_and_operators/references.html">
             
                 
                     <a href="../Simple_variables_and_operators/references.html">
@@ -1539,20 +1539,28 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_48">
+                    <section class="normal" id="section-gitbook_69">
                     
-                        <h1 id="">关于我</h1>
-<p>我是一名全职的IT记者，供职于英国巴斯的Future出版社——或许你在Linux Format, Mac Format, PC Answers, PC Plus 或 PC Format上看见过我的名字。我非常热衷于免费软件运动，我在单位和家里都用Linux系统，业余时间也编编程。我认为Mono很酷，我有时候也在一些编程社区教人们学习C#.</p>
-<hr>
-
-<p>Delbert目前是一名全职的研究生，从来都不务正业。你可以在下面找到我：</p>
-<ul>
-<li>Weibo: <a href="http://weibo.com/delbert" target="_blank">@Delbert</a></li>
-<li>GitHub: <a href="https://github.com/cnDelbert/" target="_blank">@cnDelbert</a></li>
-<li>Blog: <a href="http://delbert.me" target="_blank">Delbert&#39;s Blog</a></li>
-<li>Twitter: <a href="https://twitter.com/cnDelbert" target="_blank">@cnDelbert</a></li>
-<li>tbd...</li>
-</ul>
+                        <h1 id="">引用</h1>
+<p>当你使用<code>=</code>操作符的时候，PHP进行“复制相等”的操作，就是将操作数二里面的值复制给操作数一。大部分情况下是没有问题的，但是当你将操作数二中的值进行更改之后，操作数一却并不会随之改变。</p>
+<p>在这种情况下，引用的作用就出来了——引用允许你将两个变量指向相同的数据。使用引用，将操作数一设置为操作数二是瞬间就完成的。而且，由于两个变量指向相同的数据，你随便改变其中一个，另一个也随之改变。通过引用进行赋值，你需要在等号后面加上<code>&amp;</code>符号，也就是使用<code>=&amp;</code>。来看一下例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$a</span> = <span class="hljs-number">10</span>;
+    <span class="hljs-variable">$b</span> =&amp; <span class="hljs-variable">$a</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$a</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$b</span>;
+    ++<span class="hljs-variable">$a</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$a</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$b</span>;
+    ++<span class="hljs-variable">$b</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$a</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$b</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这里，我们用引用操作将<code>$b</code>和<code>$a</code>只想同样的值，通过前两个打印语句可以看到相等。在<code>$a</code>进行自加操作之后，再次打印两个变量的值，两个都是11了。最后，为了验证引用是双向的，将<code>$b</code>进行自加操作，输出两个变量的值，二者都再次变化了。</p>
+<p>通过上面的例子，用简单的整型来演示了引用，这个数据量太小，因此引用赋值也不比复制赋值更快。如果你想达到“两个变量一个值”，通过引用来赋值是很不错的。</p>
+<p>对于函数而言，引用允许函数像一个变量一样使用，而不是复制，这个以后再说。</p>
+<p>在PHP当中，对象也通常通过引用来进行复制，讲到的时候再进行讨论。</p>
 
                     
                     </section>
@@ -1563,10 +1571,10 @@
         </div>
 
         
-        <a href="../Preface/give_something_back.html" class="navigation navigation-prev " aria-label="Previous page: 给点反馈"><i class="fa fa-angle-left"></i></a>
+        <a href="../Simple_variables_and_operators/pre-set_variables.html" class="navigation navigation-prev " aria-label="Previous page: 预设变量"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Preface/acknowledgements.html" class="navigation navigation-next " aria-label="Next page: 致谢"><i class="fa fa-angle-right"></i></a>
+        <a href="../Simple_variables_and_operators/Constants/index.html" class="navigation navigation-next " aria-label="Next page: 常量"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
