@@ -29,4 +29,20 @@
 <a href="refer.php">Click me!</a>
 ```
 
-当你在浏览器当中手动输入URL的时候，由于`HTTP_REFERER`未设置，因此会输出“You didn't click any links to get here”
+当你在浏览器当中手动输入URL的时候，由于`HTTP_REFERER`未设置，因此会输出“You didn't click any links to get here”。然而，如果你通过下面的“Click me!”点击重新加载了该页面，就会显示不同的东西了。虽然这样显得有点滑稽，`HTTP_REFERER`通常用来判断访客来源，不管你是不是使用这个来显示“对不起，由于您来自外站，不能直接下载本站文件”或“欢迎来自Google的朋友”，这都提供了一种思路。
+
+`$_SERVER`当中的`PATH_INFO`元素很有意思，因为你可以在加载代码之后获取到路径信息，例如：
+
+```php
+ <?php
+    if (isset($_SERVER['PATH_INFO'])) {
+        print "The page you requested was {$_SERVER['PATH_INFO']}<br />";
+    } else {
+        print "You didn't request a page<br />";
+    }
+?>
+```
+
+保存为`pathinfo.php`之后放到网站目录下，从浏览器当中加载，你应该看到“You didn't request a page”。现在，在地址栏的“pathinfo.php”后加入一个路径信息，例如`www.yoursite.com/pathinfo.php/path/to/some/file.txt`，回车后，就能看到后面的路径信息加载出来了。这个在在线文件系统当中很常用，在URL中告诉脚本你想要哪个文件。
+
+> 作者说明：由于参考信息是浏览器设置的，也就意味着这个很容易被假冒。一个例子就是更改你电脑上的“hosts”文件，将随便一个域名指向本地，例如example.com，之后，黑客从他的电脑上设置的链接跳转到你的脚本，你的脚本就会提示他来自example.com。所以，作为一个好的开始，你不应该依赖并信任`HTTP_REFERER`中的值。
