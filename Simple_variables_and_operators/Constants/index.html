@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.11" data-basepath="../.." data-revision="1417961641356">
+    <div class="book" data-level="3.11" data-basepath="../.." data-revision="1418130358309">
     
 
 <div class="book-summary">
@@ -1538,6 +1538,36 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_62">
+                    
+                        <h1 id="">常量</h1>
+<p>如果你为了方便，在脚本中设了一个变量，之后不再进行改变的话，那么你就应该用一个常量。常量和变量一样，只是它们一旦被定义，就不能取消或更改——正如“常量”这个名字一样。在很多语言中，常量要比变量快，所以才被推荐使用，在PHP中却不是这样的。虽然使用常量要比变量稍微快一点，但是主要原因还在下面：常量前面不用添加美元符号，易于同其他变量进行区别；此外，常量自动是全局变量，比变量的作用范围要大。</p>
+<p>要设置常量，需要用<code>define()</code>函数，它需要两个参数，第一个是要设置的常量名，第二个是要常量将要被赋予的值。例如，下面的例子是将<code>time()</code>函数的返回值赋值给常量<code>CURRENT_TIME</code>，并将其打印输出：</p>
+<pre><code class="lang-php">define(<span class="hljs-string">"CURRENT_TIME"</span>, time());
+<span class="hljs-keyword">print</span> CURRENT_TIME;
+</code></pre>
+<p>注意，我们设置的不是<code>$CURRENT_TIME</code>，也不是<code>Current_Time</code>，常量同变量一样都是大小写敏感的，但是却不用美元符号开头。当然，你也可以给<code>define()</code>传递第三个参数<code>true</code>将常量设置为大小写不敏感的：</p>
+<pre><code class="lang-php">define(<span class="hljs-string">"CURRENT_TIME"</span>, time(), <span class="hljs-keyword">true</span>);
+<span class="hljs-keyword">print</span> Current_TiMe;
+</code></pre>
+<p>对常量而言，有两个很有用的函数，分别是<code>defined()</code>和<code>constant()</code>。<code>defined()</code>函数相当于变量里面的<code>isset()</code>，如果传递进去的常量被定义的话则返回<code>true</code>，例如：</p>
+<pre><code class="lang-php">define(<span class="hljs-string">"CURRENT_TIME"</span>, time(), <span class="hljs-keyword">true</span>);
+<span class="hljs-keyword">if</span> (defined(<span class="hljs-string">"CURRENT_time"</span>)) {
+    <span class="hljs-comment">/// etc</span>
+}
+</code></pre>
+<p>注意，传递给<code>defined()</code>的常量名需要加引号。</p>
+<p>最后，<code>constant()</code>看起来可能有些累赘，但是它返回常量的值这点却是很有用的。我知道你可能想说，像<code>print MY_CONSTANT;</code>这样直接打印出来不久行了吗？但是，万一你不知道常量的名呢？如果你用的是变量，你可以使用<strong>可变变量</strong>，但是在常量的情况下是无效的，因此才有了<code>constant()</code>这个函数。</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    define(<span class="hljs-string">"Current_Time"</span>, time(), <span class="hljs-keyword">true</span>);
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-string">"CURRENT_TIME"</span>;
+    <span class="hljs-keyword">print</span> constant(<span class="hljs-variable">$somevar</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+
+                    
+                    </section>
                 
                 
                 </div>
