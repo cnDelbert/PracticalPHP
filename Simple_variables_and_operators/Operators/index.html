@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>早期版本的PHP | Practical PHP Programming</title>
+        <title>操作符 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/History/current_release.html" />
+    <link rel="next" href="../../Functions/index.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/History/background.html" />
+    <link rel="prev" href="../../Simple_variables_and_operators/Constants/pre-set_constants.html" />
     
 
         
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="1418136272188">
+    <div class="book" data-level="3.12" data-basepath="../.." data-revision="1418136272188">
     
 
 <div class="book-summary">
@@ -365,7 +365,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.1.2" data-path="Introducing_PHP/History/early_versions_of_php.html">
+        <li class="chapter " data-level="2.1.2" data-path="Introducing_PHP/History/early_versions_of_php.html">
             
                 
                     <a href="../../Introducing_PHP/History/early_versions_of_php.html">
@@ -1242,7 +1242,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.12" data-path="Simple_variables_and_operators/Operators/index.html">
+        <li class="chapter active" data-level="3.12" data-path="Simple_variables_and_operators/Operators/index.html">
             
                 
                     <a href="../../Simple_variables_and_operators/Operators/index.html">
@@ -1547,31 +1547,42 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_34">
+                    <section class="normal" id="section-gitbook_68">
                     
-                        <h1 id="php">早期版本的PHP</h1>
-<p>PHP语言是Rasmus Lerdorf创造出来的，它的历史可以追溯到(20世纪)90年代中叶，当时主要用来使web任务处理起来简单一些，减少重复劳动。那时候，使用PHP的主要目的是以最小的逻辑代价来达到所需的结果，这就导致PHP是以HTML为中心的——PHP代码是被嵌入到HTML代码当中的。</p>
-<p>第一个流行的PHP版本被称为PHP/FI 2.0，意为“个人主页/表单解释程序”(<strong>P</strong>ersonal <strong>H</strong>ome <strong>P</strong>age/<strong>F</strong>orm <strong>I</strong>nterpreter)。尽管它的语法都还没有统一，但还是成功吸引到了包括我在内的不少信徒。那时候存在的最大问题是PHP/FI的语法分析器大部分是手写的，因此，用户经常遇到不是因为技术原因引起的脚本错误，而仅仅是因为PHP/FI的语法分析器太烂了。而且，分析器完全绑定到Apache web服务器上，也就不可能有很高的效率。</p>
-<blockquote>
-<p>作者说明：语法分析器(parser)将你的脚本转换为计算机能够理解的机器语言。语法分析器来自单词“parse”，意思是将文本分解成各个成分并进行分析。</p>
-</blockquote>
-<p>在Zeev Suraski和Andi Gutmans用像Flex和Bison这样的标准的“编译程序编译器”从头重写了PHP之后，其中一些问题在PHP 3中就被解决了。这一改变使得编译器更加健壮，同时也给很多PHP用户带来了信心。</p>
-<p>PHP 3同时也是一种可扩展的语言，这在之前的版本中是从来没有过的。一些特别热情的开发者用PHP编写自己的模块来增加一些核心功能。
-语法分析器当时仍然绑定在Apache上，虽然效率同PHP/FI相比有了很大的进步，但是仍然没有很出众的地方。</p>
-<p>升级到PHP 3唯一一点负面消息是PHP 3比之前更加严格了——一些在PHP/FI下正常工作的代码在升级之后无法工作了。PHP 3当时还算小众，因此也没有产生太大影响。</p>
-<p>从PHP/FI到PHP 3的全面升级使得一些Perl用户想要尝试一下这个更加容易使用的系统。那时，除了那些对PHP钻研透彻的人，对大众而言，Perl无疑具有更快的执行效率，然而PHP在开发效率方面领先，这也是PHP的关键卖点。</p>
-<p>PHP 3开始对面向对象进行有限的支持，这相当于给PHP的增长又加了一把火。到2000年中期PHP 3被换掉的时候，已经有超过2,500,000个站点使用PHP了，而18个月之前仅有250,000个站点使用。</p>
-<p>2000年中期，PHP 4发布，与PHP 3几乎在各个方面都不相同。由于当时PHP向后兼容的扩展程序已经完成，从PHP 3升级到PHP 4比上次从PHP/FI到PHP 3的升级平滑得多。</p>
-<p>或许PHP 4最重要的改进是将PHP切换到了Zend引擎上。Zend引擎是Zeev Suraski和Andi Gutmans创建的Zend公司的产品，用来提升PHP的整体环境，同时也使PHP较之以往有更强的灵活性。引擎接管了PHP的核心，引入了引用计数，使得引擎能够自动追踪脚本所使用的资源，同时能够自动释放内存，保证没有内存泄漏。</p>
-<p>同时，PHP 4也完全从web服务器中分离出来，意味着PHP可以在Apache 2，微软的IIS，Zeus甚至其他的web服务器上运行。PHP的开放使用使得世界上有大约50%的PHP程序没有使用Apache作为他们的web服务器。</p>
-<p>由于上述两个主要因素，PHP的性能有了一个巨大的跳跃。首先，PHP的执行范本同之前版本不同。PHP 3和以前版本使用一种叫做“边解释边执行”的方式，也就是说，PHP读一行代码，解释这行代码，执行这行代码，再读下一行代码，解释，执行，循环往复。这就意味着代码可能会被重复阅读和执行多次，而这时完全没有必要的。</p>
-<p>PHP采用新的“先编译后执行”的方式，先整体读入你的脚本并编译成二进制码，之后再执行，极大提高了效率——平均速度提高了大约100%，一些标准检测程序甚至表明，在PHP 4达到极限的时候，代码性能有了50倍的提升。</p>
-<blockquote>
-<p>作者说明：“二进制码”是由你的脚本转化而来的PHP能够读懂的语言——通常来说，二进制码由于要被分解成很多简单的代码片段，所以往往要比你本身的脚本要长很多。</p>
-</blockquote>
-<p>此外，由于PHP 4在执行之前先将整个版本进行编译，使得在执行之前优化和缓存编译后的代码称为可能。本书稍后将会阐述这是怎样工作的。</p>
-<p>其次，PHP 4引入了多线程，可以显著缩短运行时间，非核心函数独立于主脚本进程来运行，促进了流线型化执行。</p>
-<p>PHP 4在2007年底将不再提供支持服务，因此我们也不应该用其来编写新的代码了。</p>
+                        <h1 id="">操作符</h1>
+<p>操作符对操作数进行操作，改变传入的值。例如，在<code>2 + 3</code>中，2和3是操作数，<code>+</code>是操作符。有三种操作符：一元、二元和三元操作符。一元操作符只有一个操作数，二元操作符有两个操作数，三元的有三个。如你所见，<code>+</code>是二元操作符，将两个变量作为输入。</p>
+<p>PHP中有大量操作符，你需要重点记忆14个。</p>
+<p>首先是最重要的操作符。不用一次全部记忆，后面有例子来帮你记忆：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">二元，将操作数一同操作数二相加。</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">二元，从操作数一种减去操作数二。</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">二元，将操作数一同操作数而相乘。</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">二元，操作数一除以操作数二。</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">二元，将字符串一同字符串二相连。</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -1582,10 +1593,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/History/background.html" class="navigation navigation-prev " aria-label="Previous page: 背景"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Simple_variables_and_operators/Constants/pre-set_constants.html" class="navigation navigation-prev " aria-label="Previous page: 预设常量"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/History/current_release.html" class="navigation navigation-next " aria-label="Next page: 当前版本"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Functions/index.html" class="navigation navigation-next " aria-label="Next page: 函数"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
