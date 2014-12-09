@@ -69,7 +69,7 @@
   - [引用](Simple_variables_and_operators/references.md)
   - [常量](Simple_variables_and_operators/Constants/index.md)
     - [预设常量](Simple_variables_and_operators/Constants/pre-set_constants.md)
-  - [操作符]
+  - [操作符](Simple_variables_and_operators/Operators/index.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
