@@ -70,6 +70,13 @@
   - [常量](Simple_variables_and_operators/Constants/index.md)
     - [预设常量](Simple_variables_and_operators/Constants/pre-set_constants.md)
   - [操作符](Simple_variables_and_operators/Operators/index.md)
+    - [组合操作符](Simple_variables_and_operators/Operators/shorthand_unary_operators.md)
+    - [比较操作符]
+    - [完整操作符列表]
+    - [三元操作符]
+    - [执行操作符]
+    - [范围解析操作符]
+    - [操作符优先级和结合性]
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
