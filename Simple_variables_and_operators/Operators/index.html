@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.12" data-basepath="../.." data-revision="1418136272188">
+    <div class="book" data-level="3.12" data-basepath="../.." data-revision="1418181002171">
     
 
 <div class="book-summary">
@@ -1581,8 +1581,62 @@
 <td style="text-align:center">.</td>
 <td style="text-align:center">二元，将字符串一同字符串二相连。</td>
 </tr>
+<tr>
+<td style="text-align:center">!</td>
+<td style="text-align:center">一元，取反操作。</td>
+</tr>
+<tr>
+<td style="text-align:center">++和--</td>
+<td style="text-align:center">一元，变量自增或自减。</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">二元，将操作数二赋值给操作数一。</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">二元，测试操作数一同操作数是否相等。</td>
+</tr>
+<tr>
+<td style="text-align:center">===</td>
+<td style="text-align:center">二元，测试操作数一同操作数是否<em>绝对</em>相等。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;和&gt;</td>
+<td style="text-align:center">二元，小于和大于，也被叫做“低俗小说”操作符（如果不知道也没关系）。</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">二元，逻辑与，测试两边的条件是否都为真。</td>
+</tr>
+<tr>
+<td style="text-align:center">&#124;&#124;</td>
+<td style="text-align:center">二元，逻辑或，测试两边的条件是否至少一边为真。</td>
+</tr>
 </tbody>
 </table>
+<p>下面是这些操作符使用的一些例子：</p>
+<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">5</span> + <span class="hljs-number">5</span>; <span class="hljs-comment">// 10</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">5</span> - <span class="hljs-number">5</span>; <span class="hljs-comment">// 0</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">5</span> + <span class="hljs-number">5</span> - (<span class="hljs-number">5</span> + <span class="hljs-number">5</span>); <span class="hljs-comment">// 0</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">5</span> * <span class="hljs-number">5</span>; <span class="hljs-comment">// 25</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">10</span> * <span class="hljs-number">5</span> - <span class="hljs-number">5</span>; <span class="hljs-comment">// 45</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-variable">$somevar</span> . <span class="hljs-string">"appended to end"</span>;
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-keyword">false</span>;
+    <span class="hljs-variable">$somevar</span> = !<span class="hljs-variable">$somevar</span>; <span class="hljs-comment">// $somevar is now set to true</span>
+    <span class="hljs-variable">$somevar</span> = <span class="hljs-number">5</span>;
+    <span class="hljs-variable">$somevar</span>++; <span class="hljs-comment">// $somevar is now 6</span>
+    <span class="hljs-variable">$somevar</span>--; <span class="hljs-comment">// $somevar is now 5 again</span>
+    ++<span class="hljs-variable">$somevar</span>; <span class="hljs-comment">// $somevar is 6</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>注意在第三个表达式中，使用了括号来进行分隔，改变了运算的优先级。有时候有些括号是不必要的，如<code>10 * 5 - 5</code>当中会优先计算<code>10 * 5</code>，因为乘法的优先级要高于减法。</p>
+<p>有时候虽然计算的时候有明确的优先级，但是使用括号可以使你表达式的含义更加明确。括号内的表达式通常会有限计算，你可以使用任意顺序的括号来正确表示你的表达式。</p>
+<blockquote>
+<p>作者说明：如果你直接使用，你可能忽略这句话：有时候虽然计算的时候有明确的优先级，但是使用括号可以使你表达式的含义更加明确。</p>
+<p>我不能说这有多重要，如果你不使用括号，你迫使你代码的渎职记忆操作符优先级和关系表，这是不对的。在一些可能有歧义的情况下不用括号，上帝也会抓狂的。</p>
+</blockquote>
 
                     
                     </section>
