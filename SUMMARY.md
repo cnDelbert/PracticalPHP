@@ -71,8 +71,8 @@
     - [预设常量](Simple_variables_and_operators/Constants/pre-set_constants.md)
   - [操作符](Simple_variables_and_operators/Operators/index.md)
     - [组合操作符](Simple_variables_and_operators/Operators/shorthand_unary_operators.md)
-    - [比较操作符]
-    - [完整操作符列表]
+    - [比较操作符](Simple_variables_and_operators/Operators/comparison_operators.md)
+    - [完整的操作符列表](Simple_variables_and_operators/Operators/complete_operator_list.md)
     - [三元操作符]
     - [执行操作符]
     - [范围解析操作符]
