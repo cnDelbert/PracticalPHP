@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418739084946">
+    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418741040279">
     
 
 <div class="book-summary">
@@ -1755,10 +1755,82 @@
 <td style="text-align:center">同一</td>
 <td style="text-align:center"><code>$a</code>与<code>$b</code>相等且同类型时返回真</td>
 </tr>
+<tr>
+<td style="text-align:center"><code>$a != $b</code></td>
+<td style="text-align:center">不等</td>
+<td style="text-align:center"><code>$a</code>与<code>$b</code>不等时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a &lt;&gt; $b</code></td>
+<td style="text-align:center">不等</td>
+<td style="text-align:center"><code>$a</code>与<code>$b</code>不等时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a !== $b</code></td>
+<td style="text-align:center">不同一</td>
+<td style="text-align:center"><code>$a</code>与<code>$b</code>不相等或不同类型时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a &lt; $b</code></td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center"><code>$a</code>小于<code>$b</code>时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a &gt; $b</code></td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center"><code>$a</code>大于<code>$b</code>不等时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a &lt;= $b</code></td>
+<td style="text-align:center">小于等于</td>
+<td style="text-align:center"><code>$a</code>小于等于<code>$b</code>时返回真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a &gt;= $b</code></td>
+<td style="text-align:center">大于等于</td>
+<td style="text-align:center"><code>$a</code>大于等于<code>$b</code>时返回真</td>
+</tr>
 </tbody>
 </table>
+<p>总体来说，PHP程序员相比于<code>&lt;&gt;</code>更喜欢<code>!=</code>，虽然二者作用完全一样。这种偏爱是由于大部分PHP语法同C相同，而C语言之使用<code>!=</code>。</p>
+<p>同一<code>===</code>使用频率远远不如相等<code>==</code>，但是在某些场合下特别有用。我们用下面的代码来说明两个变量只有在值相同且类型相同的情况下才是同一这个问题：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-number">12</span> == <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-number">12</span> === <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"12"</span> == <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"12"</span> === <span class="hljs-number">12</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如果你在命令行当中运行上面的脚本，PHP在前三行输出1，第四行什么都没输出。正如之前说过的，PHP输出1表示真，什么都不输出表示假：<code>&quot;12&quot;</code>和<code>12</code>虽然值相同，但是类型不同，前者是一个字符串，后者是一个数字。</p>
 <h2 id="">自增自减操作符</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>++$a</code></th>
+<th style="text-align:center">前置自增</th>
+<th style="text-align:center"><code>$a</code>自增1，之后返回<code>$a</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$a++</code></td>
+<td style="text-align:center">后置自增</td>
+<td style="text-align:center">返回<code>$a</code>，之后<code>$a</code>自增1</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>--$a</code></td>
+<td style="text-align:center">前置自减</td>
+<td style="text-align:center"><code>$a</code>自减1，之后返回<code>$a</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a--</code></td>
+<td style="text-align:center">后置自减</td>
+<td style="text-align:center">返回<code>$a</code>，之后<code>$a</code>自减1</td>
+</tr>
+</tbody>
+</table>
 <h2 id="">逻辑运算符</h2>
+<p>|<code>$a and $b</code>|与|如果<code>$a</code>和<code>$b</code>都为真则为真|</p>
 
                     
                     </section>
