@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418614260615">
+    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418739084946">
     
 
 <div class="book-summary">
@@ -1725,7 +1725,7 @@
 </tbody>
 </table>
 <p>按位操作使用频率不高，通常在PHP高级程序员当中使用。他们按二进制位操作数字，而普通程序员并不需要。</p>
-<p>举例来说，数字8用八位二进制表示是 00001000，左移(&lt;&lt;)一位变成00010000，也就是16。八左移四位成为10000000，相当于128，也就是8乘以了2的4次方。</p>
+<p>举例来说，数字8用八位二进制表示是00001000，左移(&lt;&lt;)一位变成00010000，也就是16。八左移四位成为10000000，相当于128，也就是8乘以了2的4次方。</p>
 <p>按位与(&amp;)操作会按位比较操作数一和操作数二，并最后返回结果。例如<code>52 &amp; 28</code>，换算成八位二进制是 00110100(52)和00011100(28)。PHP首先创造一个 00000000，然后依次比较两数的每个位，当两个位都是1的时候，将对应位置置一。就像下面这样：</p>
 <pre><code class="lang-text">001 1 0 1 00 (52)
 000 1 1 1 00 (28)
@@ -1738,7 +1738,25 @@
 1111 0 1 0 1 (245)
 </code></pre>
 <p>按位或操作允许你将好几种选项拼合在一起，所以很有用。例如，<code>flock()</code>函数，它将一个常量作为第二个参数传入，来描述你想如何锁定文件。例如，<code>LOCK_EX</code>是独占式锁定文件，<code>LOCK_SH</code>是在共享模式下锁定，<code>LOCK_NB</code>是非阻塞模式，使PHP在无锁时不必等待。</p>
+<p>如果想要独占式锁定，又不想阻塞，应该怎么办呢？这种情况下就可以使用按位或操作了：将<code>LOCK_EX | LOCK_NB</code>作为参数传入，PHP就知道你想要什么了。</p>
 <h2 id="">比较操作符</h2>
+<p>所有的比较操作符要么返回真，要么返回假，因此特别适合进行条件判断。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>$a == $b</code></th>
+<th style="text-align:center">相等</th>
+<th style="text-align:center"><code>$a</code>与<code>$b</code>相等时返回真</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$a === $b</code></td>
+<td style="text-align:center">同一</td>
+<td style="text-align:center"><code>$a</code>与<code>$b</code>相等且同类型时返回真</td>
+</tr>
+</tbody>
+</table>
 <h2 id="">自增自减操作符</h2>
 <h2 id="">逻辑运算符</h2>
 
