@@ -17,6 +17,8 @@
         
     
     
+    <link rel="next" href="../../Simple_variables_and_operators/Operators/the_ternary_operator.html" />
+    
     
     <link rel="prev" href="../../Simple_variables_and_operators/Operators/comparison_operators.html" />
     
@@ -34,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418741040279">
+    <div class="book" data-level="3.12.3" data-basepath="../.." data-revision="1418788829857">
     
 
 <div class="book-summary">
@@ -1305,9 +1307,17 @@
         </li>
     
         
-        <li class="chapter " data-level="3.12.4" >
+        <li class="chapter " data-level="3.12.4" data-path="Simple_variables_and_operators/Operators/the_ternary_operator.html">
             
-            <span><b>3.12.4.</b> [三元操作符]</span>
+                
+                    <a href="../../Simple_variables_and_operators/Operators/the_ternary_operator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.12.4.</b>
+                        
+                         三元操作符
+                    </a>
+                
             
             
         </li>
@@ -1315,7 +1325,7 @@
         
         <li class="chapter " data-level="3.12.5" >
             
-            <span><b>3.12.5.</b> [执行操作符]</span>
+            <span><b>3.12.5.</b> [范围解析操作符]</span>
             
             
         </li>
@@ -1323,7 +1333,7 @@
         
         <li class="chapter " data-level="3.12.6" >
             
-            <span><b>3.12.6.</b> [范围解析操作符]</span>
+            <span><b>3.12.6.</b> [执行操作符]</span>
             
             
         </li>
@@ -1631,7 +1641,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_69">
+                    <section class="normal" id="section-gitbook_68">
                     
                         <h1 id="">完整的操作符列表</h1>
 <p>作为一本要成为PHP手册的书，不把PHP所有操作符都列出来是不对的。</p>
@@ -1829,8 +1839,60 @@
 </tr>
 </tbody>
 </table>
+<p>正如你所看到的，自增自建操作符可以放在变量前面，也可以放在变量后面。符号放置的位置不同，效果也不一样。来看一下下面的例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$foo</span> = <span class="hljs-number">5</span>;
+    <span class="hljs-variable">$bar</span> = <span class="hljs-variable">$foo</span>++;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Foo is $foo\n"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bar is $bar\n"</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>上面的代码输出：</p>
+<pre><code class="lang-text">Foo is 6
+Bar is 5
+</code></pre>
+<p>由于<code>++</code>符号放在变量好眠，是后置自增运算符，先返回原变量的值，之后再自增一。在代码的第二行，<code>$foo</code>返回的值保存在<code>$bar</code>当中，之后<code>$foo</code>再自增一。如果我们用<code>++$foo</code>，则会将变量先自增一再返回，也就是说<code>$foo</code>和<code>$bar</code>的值都是6。</p>
 <h2 id="">逻辑运算符</h2>
-<p>|<code>$a and $b</code>|与|如果<code>$a</code>和<code>$b</code>都为真则为真|</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>$a and $b</code></th>
+<th style="text-align:center">与</th>
+<th style="text-align:center">如果<code>$a</code>和<code>$b</code>都为真则为真</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$a &amp;&amp; $b</code></td>
+<td style="text-align:center">与</td>
+<td style="text-align:center">如果<code>$a</code>和<code>$b</code>都为真则为真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a or $b</code></td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">如果<code>$a</code>或<code>$b</code>一个为真则为真</td>
+</tr>
+<tr>
+<td style="text-align:center">`$a</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$b`</td>
+<td>或</td>
+<td>如果<code>$a</code>或<code>$b</code>一个为真则为真</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$a xor $b</code></td>
+<td style="text-align:center">异或</td>
+<td style="text-align:center"><code>$a</code>或<code>$b</code>一个为真则为真，两个都为真时为假</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>!$a</code></td>
+<td style="text-align:center">菲</td>
+<td style="text-align:center"><code>$a</code>为假时为真</td>
+</tr>
+</tbody>
+</table>
+<p>上标中逻辑与和逻辑或都有两种符号表示，在一些复杂的表达式中更容易处理。通常来讲，用<code>&amp;&amp;</code>和<code>||</code>比较多，但是这两个符号在<code>die()</code>函数中会引起异常，之后在详细说明。</p>
+<p>注意一下，PHP中的条件运算符是采用短路算法的，也就是说“你的带入如果想要A或B为真，PHP检查到A为真后就不会检查B的值了，因为已经能够满足条件了”。当然，如果第一个条件判断是吧，在或运算的时候，PHP还是会检查第二个条件的。</p>
 
                     
                     </section>
@@ -1841,8 +1903,10 @@
         </div>
 
         
-        <a href="../../Simple_variables_and_operators/Operators/comparison_operators.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 比较操作符"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Simple_variables_and_operators/Operators/comparison_operators.html" class="navigation navigation-prev " aria-label="Previous page: 比较操作符"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Simple_variables_and_operators/Operators/the_ternary_operator.html" class="navigation navigation-next " aria-label="Next page: 三元操作符"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
