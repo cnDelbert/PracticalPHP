@@ -73,9 +73,9 @@
     - [组合操作符](Simple_variables_and_operators/Operators/shorthand_unary_operators.md)
     - [比较操作符](Simple_variables_and_operators/Operators/comparison_operators.md)
     - [完整的操作符列表](Simple_variables_and_operators/Operators/complete_operator_list.md)
-    - [三元操作符]
-    - [执行操作符]
+    - [三元操作符](Simple_variables_and_operators/Operators/the_ternary_operator.md)
     - [范围解析操作符]
+    - [执行操作符]
     - [操作符优先级和结合性]
 - [函数](Functions/index.md)
 - [数组]
