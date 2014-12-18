@@ -74,9 +74,9 @@
     - [比较操作符](Simple_variables_and_operators/Operators/comparison_operators.md)
     - [完整的操作符列表](Simple_variables_and_operators/Operators/complete_operator_list.md)
     - [三元操作符](Simple_variables_and_operators/Operators/the_ternary_operator.md)
-    - [范围解析操作符]
-    - [执行操作符]
-    - [操作符优先级和结合性]
+    - [范围解析操作符](Simple_variables_and_operators/Operators/the_scope_resolution_operator.md)
+    - [执行操作符](Simple_variables_and_operators/Operators/the_execution_operator.md)
+    - [操作符优先级和结合性](Simple_variables_and_operators/Operators/operator_precedence_and_associativity.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
