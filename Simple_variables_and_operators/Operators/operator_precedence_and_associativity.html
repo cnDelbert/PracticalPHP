@@ -17,7 +17,7 @@
         
     
     
-    <link rel="next" href="../../Functions/index.html" />
+    <link rel="next" href="../../Simple_variables_and_operators/summary.html" />
     
     
     <link rel="prev" href="../../Simple_variables_and_operators/Operators/the_execution_operator.html" />
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="3.12.7" data-basepath="../.." data-revision="1418913303639">
+    <div class="book" data-level="3.12.7" data-basepath="../.." data-revision="1419000545933">
     
 
 <div class="book-summary">
@@ -1375,6 +1375,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="3.13" data-path="Simple_variables_and_operators/summary.html">
+            
+                
+                    <a href="../../Simple_variables_and_operators/summary.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.13.</b>
+                        
+                         总结
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1665,9 +1681,117 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_70">
+                    <section class="normal" id="section-gitbook_71">
                     
                         <h1 id="">操作符优先级和结合性</h1>
+<p>当处理复杂的表达式的时候，基本各种程序语言，包括PHP在内，都会遵循数学上的一套规则，也就是运算符的优先级和结合性。例如：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$foo</span> = <span class="hljs-number">5</span> * <span class="hljs-number">10</span> - <span class="hljs-number">1</span>;
+</code></pre>
+<p><code>$foo</code>应该是49还是45呢？如果你看不出为什么有两种可能，我们用括号来表明一下：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$foo</span> = (<span class="hljs-number">5</span> * <span class="hljs-number">10</span>) - <span class="hljs-number">1</span>;
+<span class="hljs-variable">$foo</span> = <span class="hljs-number">5</span> * (<span class="hljs-number">10</span> - <span class="hljs-number">1</span>);
+</code></pre>
+<p>第一种情况中，5先乘以10再减1得到49；第二种情况先计算10减1，之后再与5相乘，得45。如果你的表达式有歧义，PHP将很根据内部的一套规则来解释你的代码，来确定先进行哪种计算。</p>
+<p>来看一下下面的代码</p>
+<pre><code class="lang-php"><span class="hljs-variable">$foo</span> = <span class="hljs-number">5</span> - <span class="hljs-number">5</span> - <span class="hljs-number">5</span>;
+</code></pre>
+<p>像之前的表达式一样，也可能有两种可能的结果，5或-5。下面分别是二者是如何得来的：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$foo</span> = <span class="hljs-number">5</span> - (<span class="hljs-number">5</span> - <span class="hljs-number">5</span>);
+<span class="hljs-variable">$foo</span> = (<span class="hljs-number">5</span> - <span class="hljs-number">5</span>) - <span class="hljs-number">5</span>;
+</code></pre>
+<p>那谁来确定那种结果是正确的呢？答案是根据操作符的结合性，来确定哪个方向的操作先被执行。中间的5左右两边各有一个减号，但是因为减号是左结合的，县进行左边的操作，因此答案是第二种，-5。</p>
+<p>如果你认为这些听起来都很复杂，放松——这些规则只有在你没有显式表明你的指令的时候才会生效。除非你很明确这些指令，否则，尽量用括号将表达式括起来来表明你的真实意图，为了PHP，也为了阅读你源码的人。</p>
+<p>如果你不得不依赖PHP内建的优先级和结合性规则，下面是完整的结合性列表，按照优先级从最低到最高的顺序排列：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">结合性</th>
+<th style="text-align:center">操作符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">,</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">or</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">xor</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">and</td>
+</tr>
+<tr>
+<td style="text-align:center">右</td>
+<td style="text-align:center">print</td>
+</tr>
+<tr>
+<td style="text-align:center">右</td>
+<td style="text-align:center">= += -= *= /= .= &amp;= &#124;= %= ^= &lt;&lt;= &gt;&gt;=</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">?:</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">&#124;&#124;</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">&amp;&amp;</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">&#124;</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">^</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">&amp;</td>
+</tr>
+<tr>
+<td style="text-align:center">无结合性</td>
+<td style="text-align:center">== != === !==</td>
+</tr>
+<tr>
+<td style="text-align:center">无结合性</td>
+<td style="text-align:center">&lt; &lt;= &gt; &gt;=</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">&lt;&lt; &gt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">+ - .</td>
+</tr>
+<tr>
+<td style="text-align:center">左</td>
+<td style="text-align:center">* / %</td>
+</tr>
+<tr>
+<td style="text-align:center">右</td>
+<td style="text-align:center">! ~ ++ -- (int) (float) (string) (array) (object) @</td>
+</tr>
+<tr>
+<td style="text-align:center">右</td>
+<td style="text-align:center">[</td>
+</tr>
+<tr>
+<td style="text-align:center">无结合性</td>
+<td style="text-align:center">new</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -1681,7 +1805,7 @@
         <a href="../../Simple_variables_and_operators/Operators/the_execution_operator.html" class="navigation navigation-prev " aria-label="Previous page: 执行操作符"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Functions/index.html" class="navigation navigation-next " aria-label="Next page: 函数"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Simple_variables_and_operators/summary.html" class="navigation navigation-next " aria-label="Next page: 总结"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
