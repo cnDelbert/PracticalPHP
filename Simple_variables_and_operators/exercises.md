@@ -11,23 +11,34 @@
 
 > 变量名不能以数字开头。
 
----
+超全局变量的可访问性是怎样的？
+- [ ] 仅在函数外可访问
+- [ ] 仅在函数内可访问
+- [ ] 除了类中，其余地方都可访问
+- [ ] 因为被定义为`GLOBAL`，所以任意地方都可访问
+- [x] 以上都不对
 
----
+> 自行查看*超全局变量*一节。
+
 
 `$foo = "wombat" * 2`，`$foo`的值是什么？
 
-```php
+```js
 $foo =
 ```
 
-```php
+```js
 $foo = 0;
 ```
 
-```php
-if($foo == 0) print true;
-else print false;
+```js
+assert($foo == 0);
+if($foo == 0) alert("Correct");
+else alert("Incorrect");
+```
+
+```js
+var $foo;
 ```
 
 ---
