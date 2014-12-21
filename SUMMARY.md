@@ -54,7 +54,7 @@
   - [编辑PHP配置](Introducing_PHP/editing_your_php_configuration.md)
   - [总结](Introducing_PHP/summary.md)
   - [练习](Introducing_PHP/exercises.md)
-  - [深入阅读](Introducing_PHP/further_reading.md)
+  - [扩展阅读](Introducing_PHP/further_reading.md)
   - [下一章](Introducing_PHP/next_chapter.md)
 - [简单的变量和操作符](Simple_variables_and_operators/index.md)
   - [数据类型](Simple_variables_and_operators/types_of_data.md)
@@ -79,7 +79,10 @@
     - [操作符优先级和结合性](Simple_variables_and_operators/Operators/operator_precedence_and_associativity.md)
   - [总结](Simple_variables_and_operators/summary.md)
   - [练习](Simple_variables_and_operators/exercises.md)
+  - [扩展阅读](Simple_variables_and_operators/further_reading.md)
+  - [下一章](Simple_variables_and_operators/next_chapter.md)
 - [函数](Functions/index.md)
+  - [函数概要](Functions/functions_overview.md)
 - [数组]
 - [对象]
 - [HTML表单]
