@@ -78,6 +78,7 @@
     - [执行操作符](Simple_variables_and_operators/Operators/the_execution_operator.md)
     - [操作符优先级和结合性](Simple_variables_and_operators/Operators/operator_precedence_and_associativity.md)
   - [总结](Simple_variables_and_operators/summary.md)
+  - [练习](Simple_variables_and_operators/exercises.md)
 - [函数](Functions/index.md)
 - [数组]
 - [对象]
