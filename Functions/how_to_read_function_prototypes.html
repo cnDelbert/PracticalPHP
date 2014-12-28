@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4.2" data-basepath=".." data-revision="1419773358040">
+    <div class="book" data-level="4.2" data-basepath=".." data-revision="1419777946967">
     
 
 <div class="book-summary">
@@ -1773,6 +1773,26 @@
 <pre><code class="lang-php">string strtoupper(string string)
 </code></pre>
 <p>意思是函数将一个<code>string</code>作为参数传入，并返回一个<code>string</code>。上面用了<code>string string</code>是因为PHP手册为了描述每个参数做什么，给每个参数命了名。这里告诉我们<code>strtoupper()</code>接受一个叫做<code>string</code>的字符串(string)类型的参数——虽然我认为这不是最好的命名，但是最起码这是有意义的。这个函数也返回一个字符串——手册像大部分类似C的语言一样，将返回的类型放在了函数名的前面。</p>
+<p>当函数使用引用作为参数时，这个参数将通过一个<code>&amp;</code>符号传递给原型。这并不意味着你在函数调用时必须使用原型，这只是告诉你这个参数是一个引用。</p>
+<p>下面来看一下<code>sha1()</code>的原型：</p>
+<pre><code class="lang-php">string sha1(string source[, bool raw_output])
+</code></pre>
+<p>正如上面所说的，<code>sha1()</code>返回一个字符串，将一个字符串作为它的第一个参数，将一个布尔值作为它的第二个参数。然而，布尔值在方括号<code>[]</code>当中——意思是“这是一个可选的参数”。</p>
+<p>可选参数有时候让人有些迷惑，比如<code>mysql_connect()</code>的完全定义如下：</p>
+<pre><code class="lang-php">resource mysql_connect([string server[, string username[, string password[, bool new_link[, int client_flags]]]]])
+</code></pre>
+<p><code>mysql_connect()</code>的每个参数都是可选的，如果你没有提供参数的值的话，PHP将给每个参数赋上对应的默认值。原型当中包含两种特殊的数据类型：数字（number）和混合(mixed)。数字可以是浮点型或整型，混合意味着接受或返回两种或两种以上的数据类型。</p>
+<p>例如<code>pow()</code>的定义如下：</p>
+<pre><code class="lang-php">number pow(number base, number exp)
+</code></pre>
+<p>接受任意数字，也返回数字。而序列化<code>serialize()</code>的定义如下：</p>
+<pre><code class="lang-php">string serialize(mixed value)
+</code></pre>
+<p>当你用<code>serialize()</code>的时候，你就会发现它对对象和类都使用，这也就是为什么这个函数的参数是混合类型的。还有一种数据类型是空类型(void)，意思是“没有返回值”或“没有参数”。</p>
+<p>函数原型的最后一个管理是使用<code>...</code>，意思是“参数的数目不定”。例如，<code>isset</code>函数的原型是：</p>
+<pre><code class="lang-php">bool <span class="hljs-keyword">isset</span>(mixed <span class="hljs-keyword">var</span>[, mixed <span class="hljs-keyword">var</span>[, mixed ...]])
+</code></pre>
+<p>最少接受一个变量作为参数，因为<code>...</code>，所以可以接受多个参数。</p>
 
                     
                     </section>
