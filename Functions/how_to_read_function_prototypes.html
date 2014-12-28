@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4.2" data-basepath=".." data-revision="1419770742990">
+    <div class="book" data-level="4.2" data-basepath=".." data-revision="1419773358040">
     
 
 <div class="book-summary">
@@ -1765,10 +1765,14 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_61">
+                    <section class="normal" id="section-gitbook_60">
                     
                         <h1 id="">如何阅读函数原型</h1>
-<p>通过函数原型，可以标准地描述函数接受的参数和函数的返回值。函数原型在本书和PHP在线手册中都有所说明。</p>
+<p>通过函数原型，可以标准地描述函数接受的参数和函数的返回值。函数原型在本书和PHP在线手册中都有所使用。一旦你掌握了阅读函数原型的艺术，你应该仅仅通过阅读函数原型就能够大概了解函数的使用方法。然而，你不必为了了解函数原型是如何工作的而阅读本书——所有的函数使用方法都有文字描述，列出函数原型仅仅是为了方便。</p>
+<p>因为函数原型在本书的每个函数中都有所使用，所以你在继续阅读之前应该了解。现在先不用担心每个函数的作用是什么，因为在本书后面都有所讲解。我直接从PHP手册中拿出对应的函数原型，因此，你可以很方便地从手册中找到。下面是一个基本的函数<code>strtoupper()</code>的原型：</p>
+<pre><code class="lang-php">string strtoupper(string string)
+</code></pre>
+<p>意思是函数将一个<code>string</code>作为参数传入，并返回一个<code>string</code>。上面用了<code>string string</code>是因为PHP手册为了描述每个参数做什么，给每个参数命了名。这里告诉我们<code>strtoupper()</code>接受一个叫做<code>string</code>的字符串(string)类型的参数——虽然我认为这不是最好的命名，但是最起码这是有意义的。这个函数也返回一个字符串——手册像大部分类似C的语言一样，将返回的类型放在了函数名的前面。</p>
 
                     
                     </section>
