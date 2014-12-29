@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>自动类型转换 | Practical PHP Programming</title>
+        <title>控制脚本执行 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,8 @@
         
     
     
-    <link rel="next" href="../Simple_variables_and_operators/forcing_a_type_with_type_casting.html" />
     
-    
-    <link rel="prev" href="../Simple_variables_and_operators/checking_a_variable_is_set.html" />
+    <link rel="prev" href="../Functions/working_with_variables.html" />
     
 
         
@@ -36,7 +34,7 @@
 
 
         
-    <div class="book" data-level="3.3" data-basepath=".." data-revision="1419864473724">
+    <div class="book" data-level="4.4" data-basepath=".." data-revision="1419864473724">
     
 
 <div class="book-summary">
@@ -1076,7 +1074,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.3" data-path="Simple_variables_and_operators/automatic_type_conversion.html">
+        <li class="chapter " data-level="3.3" data-path="Simple_variables_and_operators/automatic_type_conversion.html">
             
                 
                     <a href="../Simple_variables_and_operators/automatic_type_conversion.html">
@@ -1510,7 +1508,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.4" data-path="Functions/controlling_script_execution.html">
+        <li class="chapter active" data-level="4.4" data-path="Functions/controlling_script_execution.html">
             
                 
                     <a href="../Functions/controlling_script_execution.html">
@@ -1799,32 +1797,30 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_68">
+                    <section class="normal" id="section-gitbook_60">
                     
-                        <h1 id="">自动类型转换</h1>
-<p>由于PHP是弱类型的，当有需要的时候，会自动从一种类型转换为另一种类型。但是自动类型转换的时候可能出现无意义的转换，或者出现不想要的结果。例如，在一个数组上<code>print</code>一个数组的时候，它并不会自动将数组的每个元素转换为字符串输出。将对象视为字符串有其自己的行为，但现在来说并不重要。</p>
-<p>PHP的自动类型转换有时候会产生一些想不到的结果。这并不是由于PHP的语法不好，更多的是你的代码需要更显式的转换。例如，从布尔型转换为字符串型时，<code>true</code>会产生1，而<code>false</code>会产生空。例子如下：</p>
-<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
-    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">true</span>;
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to $bool\n"</span>;
-    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">false</span>;
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to $bool\n"</span>;
+                        <h1 id="">控制脚本执行</h1>
+<pre><code class="lang-php">void <span class="hljs-keyword">exit</span> ( [mixed status])
+mixed <span class="hljs-keyword">eval</span> ( [string code_string])
+void <span class="hljs-keyword">die</span> ( [mixed status])
+</code></pre>
+<p>两个简单的函数使你的脚本如虎添翼：<code>exit()</code>和<code>eval()</code>——二者都很简单。<code>exit()</code>只有一个可选参数，会立即停止执行脚本。如果你给它传递一个参数，这个参数将被作为退出码；如果这个参数是个字符串，这个字符串将被打印出来。函数<code>die()</code>是<code>exit()</code>的别名，它们两个工作方式完全一样。<code>eval()</code>将一个字符串作为参数，如果这个字符串是PHP代码的话，它将执行这个代码。下面是<code>exit()</code>和<code>eval()</code>的例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$str</span> = <span class="hljs-string">"exit()"</span>;
+    <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$str</span>);
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>输出如下</p>
-<pre><code class="lang-text">Bool is set to 1
-Bool is set to
+<blockquote>
+<p>对于老学究而言，<code>exit()</code>不是函数，而是一种语言结构。</p>
+</blockquote>
+<p>上面的脚本将<code>&quot;exit()&quot;</code>赋值给<code>$str</code>，然后将<code>$str</code>传递给<code>eval()</code>。如上所述，如果传入的字符串是PHP代码的话，<code>eval()</code>会将去执行，因此，通过<code>eval()</code>执行<code>exit()</code>导致代码中止。</p>
+<p><code>exit()</code>是个用的很多的函数，只要你想中止代码执行，就可以使用。例如：</p>
+<pre><code class="lang-php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$blah</span> != <span class="hljs-variable">$blahblah</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Access denied."</span>;
+    <span class="hljs-keyword">exit</span>;
+}
 </code></pre>
-<p>如上所示，<code>false</code>并没有打印出0，而是什么都没打印出来，导致输出错误。为了解决这个问题，我们应该告诉PHP这个变量要转换成什么值。上面的例子是要将布尔类型转换为整型，从而<code>true</code>输出1，<code>false</code>输出0.</p>
-<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
-    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">true</span>;
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to $bool\n"</span>;
-    <span class="hljs-variable">$bool</span> = <span class="hljs-keyword">false</span>;
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"Bool is set to "</span>;
-    <span class="hljs-keyword">print</span> (int)<span class="hljs-variable">$bool</span>;
-<span class="hljs-preprocessor">?&gt;</span>
-</code></pre>
-<p>这次就输出了你想要的1和0了。</p>
+<p><code>eval()</code>看起来对你没有什么用，但实际用处还是很大的：允许你将任意字符串传入并作为PHP代码执行，逊于你讲PHP代码存在数据库当中，或凭空执行代码。总之，给了你极大的便利。</p>
 
                     
                     </section>
@@ -1835,10 +1831,8 @@ Bool is set to
         </div>
 
         
-        <a href="../Simple_variables_and_operators/checking_a_variable_is_set.html" class="navigation navigation-prev " aria-label="Previous page: 检查变量是否被赋值"><i class="fa fa-angle-left"></i></a>
+        <a href="../Functions/working_with_variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 处理变量"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../Simple_variables_and_operators/forcing_a_type_with_type_casting.html" class="navigation navigation-next " aria-label="Next page: 强制类型转换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
