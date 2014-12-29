@@ -84,6 +84,7 @@
 - [函数](Functions/index.md)
   - [函数概要](Functions/functions_overview.md)
   - [怎样阅读函数原型](Functions/how_to_read_function_prototypes.md)
+  - [处理变量](Functions/working_with_variables.md)
 - [数组]
 - [对象]
 - [HTML表单]
