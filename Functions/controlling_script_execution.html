@@ -17,6 +17,8 @@
         
     
     
+    <link rel="next" href="../Functions/Working_with_date_and_time/index.html" />
+    
     
     <link rel="prev" href="../Functions/working_with_variables.html" />
     
@@ -34,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.4" data-basepath=".." data-revision="1419864473724">
+    <div class="book" data-level="4.4" data-basepath=".." data-revision="1419946012178">
     
 
 <div class="book-summary">
@@ -1523,6 +1525,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.5" data-path="Functions/Working_with_date_and_time/index.html">
+            
+                
+                    <a href="../Functions/Working_with_date_and_time/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                         处理日期时间
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1797,7 +1815,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_60">
+                    <section class="normal" id="section-gitbook_61">
                     
                         <h1 id="">控制脚本执行</h1>
 <pre><code class="lang-php">void <span class="hljs-keyword">exit</span> ( [mixed status])
@@ -1821,6 +1839,25 @@ void <span class="hljs-keyword">die</span> ( [mixed status])
 }
 </code></pre>
 <p><code>eval()</code>看起来对你没有什么用，但实际用处还是很大的：允许你将任意字符串传入并作为PHP代码执行，逊于你讲PHP代码存在数据库当中，或凭空执行代码。总之，给了你极大的便利。</p>
+<p><code>exit()</code>函数最多带一个参数，可以是程序返回码，也可以是数字。许多程序返回数字，其他程序可以根据返回的数字来判断执行情况。在这种情况下，0通常意味“程序正常”，其他返回码则往往说明“程序出错”。在<code>exit()</code>中使用字符串的话，PHP会先输出这个字符串，之后再中止程序——通常使用<code>exit()</code>的别名<code>die()</code>：</p>
+<pre><code class="lang-php">do_some_func() <span class="hljs-keyword">OR</span> <span class="hljs-keyword">die</span>(<span class="hljs-string">"do_some_func() returned false!"</span>);
+</code></pre>
+<p>在这种情况下，将会调用<code>do_some_func()</code>，如果返回<code>false</code>的话，将会调用<code>die()</code>中止程序。在你被代码绕晕之前，这是确保这个函数正确成功执行的最快最好的方法。因为<code>OR</code>操作符的短路功能，只有第一个函数返回<code>false</code>的情况下，PHP才会去执行后面的部分。</p>
+<p>这是<code>OR</code>操作符最常用的情景。想一下前面介绍的，<code>||</code>操作符从优先级上来说比<code>OR</code>要高，同时，<code>||</code>的优先级比<code>=</code>也要高。</p>
+<p>现在，来猜猜下面的代码的执行结果是什么：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$fp</span> = fopen(<span class="hljs-string">"somefile"</span>, <span class="hljs-string">"r"</span>) || <span class="hljs-keyword">die</span>(<span class="hljs-string">"Could not open file!"</span>);
+</code></pre>
+<p>表面上看起来和上面<code>die()</code>的例子一样：PHP将尝试载入文件somefile并将文件指针保存到<code>$fp</code>当中，如果失败的话，程序退出并输出Could not open file!。实际并<strong>不是</strong>这样的。相反，由于<code>||</code>的优先级比<code>=</code>要高，将会首先计算，所以PHP将首先尝试载入文件。如果成功了，<code>fopen()</code>将会返回于true的资源。当然，调用<code>die()</code>肯定是会成功的，因此也会返回为true的资源。由于PHP的<code>||</code>有短路的特性，当<code>fopen()</code>调用成功的时候，<code>die()</code>便不会被执行，而<code>||</code>会因为其左侧(<code>fopen()</code>函数)返回true而返回1。</p>
+<p>实际上，PHP是这样读入这行代码的：</p>
+<pre><code class="lang-php"><span class="hljs-variable">$fp</span> = (fopen(<span class="hljs-string">"somefile"</span>, <span class="hljs-string">"r"</span>) || <span class="hljs-keyword">die</span>(<span class="hljs-string">"Could not open file!"</span>));
+</code></pre>
+<p>最终，<code>$fp</code>将被赋值为1。很明显，这不是我们想要的。这就是为什么用<code>OR</code>操作符的原因了。由于<code>OR</code>的优先级比<code>=</code>要低，PHP会这样读入代码：</p>
+<pre><code class="lang-php">(<span class="hljs-variable">$fp</span> = fopen(<span class="hljs-string">"somefile"</span>, <span class="hljs-string">"r"</span>)) <span class="hljs-keyword">or</span> <span class="hljs-keyword">die</span>(<span class="hljs-string">"Could not open file!"</span>);
+</code></pre>
+<p>也就是说，<code>fopen()</code>被调用后，返回值被赋值给<code>$fp</code>，之后再通过比较操作符。这就是为什么需要<code>||</code>也需要<code>OR</code>的原因了。使用的时候你需要注意正确选择。</p>
+<blockquote>
+<p>作者说明：我建议你时刻谨记PHP创造者Rasmus Lerdorf的话：“如果<code>eval()</code>是答案的话，几乎可以肯定你问了一个愚蠢的问题。”这并不是说<code>eval()</code>不好，而是说你应该在使用之前再三考虑。</p>
+</blockquote>
 
                     
                     </section>
@@ -1831,8 +1868,10 @@ void <span class="hljs-keyword">die</span> ( [mixed status])
         </div>
 
         
-        <a href="../Functions/working_with_variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 处理变量"><i class="fa fa-angle-left"></i></a>
+        <a href="../Functions/working_with_variables.html" class="navigation navigation-prev " aria-label="Previous page: 处理变量"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../Functions/Working_with_date_and_time/index.html" class="navigation navigation-next " aria-label="Next page: 处理日期时间"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
