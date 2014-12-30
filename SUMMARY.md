@@ -86,6 +86,8 @@
   - [怎样阅读函数原型](Functions/how_to_read_function_prototypes.md)
   - [处理变量](Functions/working_with_variables.md)
   - [控制脚本执行](Functions/controlling_script_execution.md)
+  - [处理日期时间](Functions/Working_with_date_and_time/index.md)
+    -[读取当前时间](Functions/Working_with_date_and_time/reading_the_current_time.md)
 - [数组]
 - [对象]
 - [HTML表单]
