@@ -87,7 +87,8 @@
   - [处理变量](Functions/working_with_variables.md)
   - [控制脚本执行](Functions/controlling_script_execution.md)
   - [处理日期时间](Functions/Working_with_date_and_time/index.md)
-    -[读取当前时间](Functions/Working_with_date_and_time/reading_the_current_time.md)
+    - [读取当前时间](Functions/Working_with_date_and_time/reading_the_current_time.md)
+    - [从字符串转换](Functions/Working_with_date_and_time/converting_from_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
