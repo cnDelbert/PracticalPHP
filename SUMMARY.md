@@ -89,6 +89,7 @@
   - [处理日期时间](Functions/Working_with_date_and_time/index.md)
     - [读取当前时间](Functions/Working_with_date_and_time/reading_the_current_time.md)
     - [从字符串转换](Functions/Working_with_date_and_time/converting_from_a_string.md)
+    - [转换为字符串](Functions/Working_with_date_and_time/converting_to_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
