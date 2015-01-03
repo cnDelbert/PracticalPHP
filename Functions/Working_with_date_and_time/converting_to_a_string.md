@@ -20,9 +20,9 @@ string date ( string format [, int timestamp])
 |A |大写的 am/pm |AM 或 PM |
 |B |Swatch Internet Time |000 到 999 |
 |c |ISO 8601 日期, 时间, and 时区 |2004-06-18T09:26:55+01:00 |
-|d |2-digit day of month, leading zeros |01 to 31 |
-|D |Day string, three letters |Mon, Thu, Sat |
-|F |Month string, full |January, August |
+|d |0开头的两位的月份 |01 to 31 |
+|D |三个字母的星期字符串 |Mon, Thu, Sat |
+|F |英文月份 |January, August |
 |g |12-hour clock hour, no leading zeros |1 to 12 |
 |G |24-hour clock hour, no leading zeros |0 to 23 |
 |h |12-hour clock hour, leading zeros |01 to 12 |
