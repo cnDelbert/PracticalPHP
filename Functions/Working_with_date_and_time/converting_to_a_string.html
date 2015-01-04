@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4.5.3" data-basepath="../.." data-revision="1420378517862">
+    <div class="book" data-level="4.5.3" data-basepath="../.." data-revision="1420379391760">
     
 
 <div class="book-summary">
@@ -1923,41 +1923,141 @@
 </tr>
 <tr>
 <td style="text-align:center">g</td>
-<td style="text-align:center">12-hour clock hour, no leading zeros</td>
+<td style="text-align:center">12小时制，不补零</td>
 <td style="text-align:center">1 to 12</td>
 </tr>
 <tr>
 <td style="text-align:center">G</td>
-<td style="text-align:center">24-hour clock hour, no leading zeros</td>
+<td style="text-align:center">24小时制，不补零</td>
 <td style="text-align:center">0 to 23</td>
 </tr>
 <tr>
 <td style="text-align:center">h</td>
-<td style="text-align:center">12-hour clock hour, leading zeros</td>
+<td style="text-align:center">12小时制，补零</td>
 <td style="text-align:center">01 to 12</td>
 </tr>
 <tr>
 <td style="text-align:center">H</td>
-<td style="text-align:center">24-hour clock hour, leading zeros</td>
+<td style="text-align:center">24小时制，补零</td>
 <td style="text-align:center">00 to 23</td>
 </tr>
 <tr>
 <td style="text-align:center">i</td>
-<td style="text-align:center">Minutes with leading zeros</td>
+<td style="text-align:center">补零的分钟数</td>
 <td style="text-align:center">00 to 59</td>
 </tr>
 <tr>
 <td style="text-align:center">I</td>
-<td style="text-align:center">Is daylight savings time active?</td>
+<td style="text-align:center">是否采用夏时制?</td>
 <td style="text-align:center">1 if yes, 0 if no</td>
 </tr>
 <tr>
 <td style="text-align:center">j</td>
-<td style="text-align:center">Day of month, no leading zeros</td>
+<td style="text-align:center">不补零的日期</td>
 <td style="text-align:center">1 to 31</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">星期几全拼</td>
+<td style="text-align:center">Monday, Saturday</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">是闰年吗?</td>
+<td style="text-align:center">1 if yes, 0 if no</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">补零的月份</td>
+<td style="text-align:center">01 to 12</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">短字符串型月份</td>
+<td style="text-align:center">Jan, Aug</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">不补零的月份</td>
+<td style="text-align:center">1 to 12</td>
+</tr>
+<tr>
+<td style="text-align:center">O</td>
+<td style="text-align:center">与GMT的时间差</td>
+<td style="text-align:center">200</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">RFC-822 格式的日期</td>
+<td style="text-align:center">Sat, 22 Dec 1979 17:30 +0000</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">补零的秒数</td>
+<td style="text-align:center">00 to 59</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">英文序数词后缀</td>
+<td style="text-align:center">st, nd, rd, or th</td>
+</tr>
+<tr>
+<td style="text-align:center">t</td>
+<td style="text-align:center">月份中的日期</td>
+<td style="text-align:center">28 to 31</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">服务器时区</td>
+<td style="text-align:center">GMT, CET, EST</td>
+</tr>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">Unix 时间戳</td>
+<td style="text-align:center">1056150334</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">周几的数字格式</td>
+<td style="text-align:center">0 (Sunday), 6 (Saturday)</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">ISO-8601 阴暗中的第几周</td>
+<td style="text-align:center">30 (30th week of the year)</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:center">两位数表示的年份</td>
+<td style="text-align:center">97, 02</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">四位数表示的年份</td>
+<td style="text-align:center">1997, 2002</td>
+</tr>
+<tr>
+<td style="text-align:center">z</td>
+<td style="text-align:center">一年中的第几天</td>
+<td style="text-align:center">0 to 366</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">以秒计数的时间偏移</td>
+<td style="text-align:center">-43200 to 43200</td>
 </tr>
 </tbody>
 </table>
+<p>从上表中可以看出，从时间戳转换为日期有太多选择。下面是一个使用格式化字符的例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> date(<span class="hljs-string">"H:i"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"The day yesterday was "</span> . date(<span class="hljs-string">"l"</span>, time() - <span class="hljs-number">86400</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"The year is "</span> . date(<span class="hljs-string">"Y"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> date(<span class="hljs-string">"jS of F Y"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"My birthday is on a "</span> . date(<span class="hljs-string">"l"</span>, strtotime(<span class="hljs-string">"22 Dec 2004"</span>)) . <span class="hljs-string">" this year.\n"</span>;
+    <span class="hljs-keyword">print</span> date(<span class="hljs-string">"\M\y b\i\\r\\t\h\d\a\y \i\s o\\n \a l \\t\h\i\s \ye\a\\r. "</span>, strtotime(<span class="hljs-string">"22 Dec 2004"</span>)) . <span class="hljs-string">"\n"</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
 
                     
                     </section>
