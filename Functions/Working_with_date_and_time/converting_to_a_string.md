@@ -61,3 +61,5 @@ string date ( string format [, int timestamp])
     print date("\M\y b\i\\r\\t\h\d\a\y \i\s o\\n \a l \\t\h\i\s \ye\a\\r. ", strtotime("22 Dec 2004")) . "\n";
 ?>
 ```
+
+第一行最基础，以24小时制输出当前时间。第二行稍微有点复杂，输出昨天星期几。第三行也很简单，仅仅输出了当前的年份。第四行就有点复杂了，输出的是`22nd of October 2003`格式的日期。注意其中的`of`这个单词
