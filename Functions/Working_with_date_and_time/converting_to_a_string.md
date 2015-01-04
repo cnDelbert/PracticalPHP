@@ -23,10 +23,41 @@ string date ( string format [, int timestamp])
 |d |0开头的两位的月份 |01 to 31 |
 |D |三个字母的星期字符串 |Mon, Thu, Sat |
 |F |英文月份 |January, August |
-|g |12-hour clock hour, no leading zeros |1 to 12 |
-|G |24-hour clock hour, no leading zeros |0 to 23 |
-|h |12-hour clock hour, leading zeros |01 to 12 |
-|H |24-hour clock hour, leading zeros |00 to 23 |
-|i |Minutes with leading zeros |00 to 59 |
-|I |Is daylight savings time active? |1 if yes, 0 if no |
-|j |Day of month, no leading zeros |1 to 31 |
+|g |12小时制，不补零 |1 to 12 |
+|G |24小时制，不补零 |0 to 23 |
+|h |12小时制，补零 |01 to 12 |
+|H |24小时制，补零 |00 to 23 |
+|i |补零的分钟数 |00 to 59 |
+|I |是否采用夏时制? |1 if yes, 0 if no |
+|j |不补零的日期 |1 to 31 |
+|l |星期几全拼 |Monday, Saturday |
+|L |是闰年吗? |1 if yes, 0 if no |
+|m |补零的月份 |01 to 12 |
+|M |短字符串型月份 |Jan, Aug |
+|n |不补零的月份 |1 to 12 |
+|O |与GMT的时间差 |200 |
+|r |RFC-822 格式的日期 |Sat, 22 Dec 1979 17:30 +0000 |
+|s |补零的秒数 |00 to 59 |
+|S |英文序数词后缀 |st, nd, rd, or th |
+|t |月份中的日期 |28 to 31 |
+|T |服务器时区 |GMT, CET, EST |
+|U |Unix 时间戳 |1056150334 |
+|w |周几的数字格式 |0 (Sunday), 6 (Saturday) |
+|W |ISO-8601 阴暗中的第几周 |30 (30th week of the year) |
+|y |两位数表示的年份 |97, 02 |
+|Y |四位数表示的年份 |1997, 2002 |
+|z |一年中的第几天 |0 to 366 |
+|Z |以秒计数的时间偏移 |-43200 to 43200|
+
+从上表中可以看出，从时间戳转换为日期有太多选择。下面是一个使用格式化字符的例子：
+
+```php
+<?php
+    print date("H:i") . "\n";
+    print "The day yesterday was " . date("l", time() - 86400) . "\n";
+    print "The year is " . date("Y") . "\n";
+    print date("jS of F Y") . "\n";
+    print "My birthday is on a " . date("l", strtotime("22 Dec 2004")) . " this year.\n";
+    print date("\M\y b\i\\r\\t\h\d\a\y \i\s o\\n \a l \\t\h\i\s \ye\a\\r. ", strtotime("22 Dec 2004")) . "\n";
+?>
+```

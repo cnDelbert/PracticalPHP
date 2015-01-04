@@ -6,7 +6,7 @@
 
 <hr>
 
-Practical PHP Programming 主页地址是[www.tuxradar.com/practicalphp][pro_home]，为了锻炼自己的英文，本身自己也在学习 PHP 语言，顺便可以熟悉 GitBook 的用法。
+Practical PHP Programming 主页地址是[www.tuxradar.com/practicalphp][pro_home]。翻译这本书，可以锻炼自己的英文，能够学习 PHP 语言，同时还可以顺便了解 GitBook 的用法，何乐而不为呢？
 
 GitBook 的教程参见[Gitbook使用入门][gitbook-tur]。
 
