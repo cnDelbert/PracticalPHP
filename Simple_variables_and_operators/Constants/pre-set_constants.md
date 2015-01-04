@@ -16,6 +16,6 @@
 
 PHP为函数或扩展定义了大量的常量，在本书中不同的地方队许多常量进行了概述，用常量来帮你记忆。例如，你想知道数学中π的值，只要使用`M_PI`就好了，而无需记忆3.141592654。从数组中导出的变量通常有想用的前缀，用`EXTR_PREFIX_ALL`，这比记忆一个数值3容易得多，虽然二者作用相同。
 
-有些通用的编码常量很有用，例如`PHP_EOL`表示当前系统下新行的字符，`PHP_OS`表示系统的名称，`PHP_VERSION`表示引擎的版本号，`DEFAULT_INCLUDE_PATH`可以看到PHP如果没有在当前路径下找到包含文件的情况下去什么地方寻找文件。
+有些通用的编码常量很有用，例如`PHP_EOL`表示当前系统下的换行符，`PHP_OS`表示系统的名称，`PHP_VERSION`表示引擎的版本号，`DEFAULT_INCLUDE_PATH`可以看到PHP如果没有在当前路径下找到包含文件的情况下去什么地方寻找文件。
 
 有各种各样的预设常量来帮助你编程，这里就不一一介绍了。如果想要了解，可以在这里查看更新的预设常量列表：[英文](http://php.net/manual/en/reserved.constants.php) | [中文](http://php.net/manual/zh/reserved.constants.php)。
