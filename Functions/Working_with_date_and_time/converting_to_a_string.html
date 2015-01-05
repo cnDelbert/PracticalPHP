@@ -17,6 +17,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Working_with_date_and_time/converting_from_components.html" />
+    
     
     <link rel="prev" href="../../Functions/Working_with_date_and_time/converting_from_a_string.html" />
     
@@ -34,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.5.3" data-basepath="../.." data-revision="1420382827015">
+    <div class="book" data-level="4.5.3" data-basepath="../.." data-revision="1420469526096">
     
 
 <div class="book-summary">
@@ -1588,6 +1590,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.5.4" data-path="Functions/Working_with_date_and_time/converting_from_components.html">
+            
+                
+                    <a href="../../Functions/Working_with_date_and_time/converting_from_components.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.4.</b>
+                        
+                         由成分组成日期
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1867,7 +1885,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_62">
+                    <section class="normal" id="section-gitbook_63">
                     
                         <h1 id="">转换为字符串</h1>
 <pre><code class="lang-php">string date ( string format [, int timestamp])
@@ -2058,7 +2076,15 @@
     <span class="hljs-keyword">print</span> date(<span class="hljs-string">"\M\y b\i\\r\\t\h\d\a\y \i\s o\\n \a l \\t\h\i\s \ye\a\\r. "</span>, strtotime(<span class="hljs-string">"22 Dec 2004"</span>)) . <span class="hljs-string">"\n"</span>;
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>第一行最基础，以24小时制输出当前时间。第二行稍微有点复杂，输出昨天星期几。第三行也很简单，仅仅输出了当前的年份。第四行就有点复杂了，输出的是<code>22nd of October 2003</code>格式的日期。注意其中的<code>of</code>这个单词</p>
+<ul>
+<li>第一行最基础，以24小时制输出当前时间。</li>
+<li>第二行稍微有点复杂，输出昨天星期几。</li>
+<li>第三行也很简单，仅仅输出了当前的年份。</li>
+<li>第四行就有点复杂了，输出的是<code>22nd of October 2003</code>格式的日期。注意其中的<code>of</code>这个单词，直接按照输入的样子被输出出来，没有经过任何转换。这是因为小写的<code>o</code>和小写的<code>f</code>没有对应的日期格式（将来可能出现），所以直接按照原样输出了。</li>
+<li>第五行中，我们的日期函数被夹在另外两个字符串当中，这样就形成了一种很好看的输出格式。可以在日期格式里面加入字符串，但最终也是输出像第五行这样的东西。</li>
+<li>第六行中，你可以看到原本在日期函数外面的字符串被移到了函数的日期格式字符串中。因为大部分的日期格式字符串都有对应的日期格式，因此不得不进行转义。小写的b、o、e没有对应的日期格式，因此无需转义。小写的r、t、n因为本身作为转义字符串有其各自的含义（换行，Tab，回车），因此需要被再次转义，这也就是为什么这三个前面是<code>\\</code>而不是<code>\</code>的原因了。两个<code>\</code>，一个用来阻止PHP将其替换为日期格式，另一个用来阻止PHP将其作为转义符输出。</li>
+</ul>
+<p>利用日期函数可以做很多事，所以我强烈推荐你尝试一下不同的格式，看看你能形成怎样不同的组合。</p>
 
                     
                     </section>
@@ -2069,8 +2095,10 @@
         </div>
 
         
-        <a href="../../Functions/Working_with_date_and_time/converting_from_a_string.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 从字符串转换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Working_with_date_and_time/converting_from_a_string.html" class="navigation navigation-prev " aria-label="Previous page: 从字符串转换"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Working_with_date_and_time/converting_from_components.html" class="navigation navigation-next " aria-label="Next page: 由成分组成日期"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
