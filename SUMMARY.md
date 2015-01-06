@@ -91,6 +91,8 @@
     - [从字符串转换](Functions/Working_with_date_and_time/converting_from_a_string.md)
     - [转换为字符串](Functions/Working_with_date_and_time/converting_to_a_string.md)
     - [由成分组成日期](Functions/Working_with_date_and_time/converting_from_components.md)
+  - [数学计算](Functions/Mathematics/index.md)
+    - [四舍五入](Functions/Mathematics/rounding.md)
 - [数组]
 - [对象]
 - [HTML表单]
