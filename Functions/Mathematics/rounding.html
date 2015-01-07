@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4.6.1" data-basepath="../.." data-revision="1420550896832">
+    <div class="book" data-level="4.6.1" data-basepath="../.." data-revision="1420642080776">
     
 
 <div class="book-summary">
@@ -1928,6 +1928,19 @@
 float floor ( float value)
 float round ( float value [, int precision])
 </code></pre>
+<p>通常情况下，我们所需要的精度要比PHP计算得到的精度小，这种情况下，我们就需要用到下面的函数了:<code>ceil()</code>、<code>floor()</code>、<code>round()</code>。</p>
+<p><code>ceil()</code>和<code>floor()</code>都只有要进行舍入的数字这一个参数。<code>ceil()</code>取大于传入值的最小的整数（向上取整），<code>floor()</code>取小于传入值的最大的整数（向下取整）。来看个例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$someval</span> = <span class="hljs-number">4.9</span>;
+    <span class="hljs-variable">$ceiled</span> = ceil(<span class="hljs-variable">$someval</span>);
+    <span class="hljs-variable">$floored</span> = floor(<span class="hljs-variable">$someval</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>执行上述代码，<code>$ceild</code>结果为5，<code>$floored</code>结果为4。</p>
+<blockquote>
+<p>作者说明：<code>floor()</code>函数将浮点型转换为整型的工作方式和强制类型转换差不多，而且强制类型转换更快一点。二者的区别是在负数的处理上，<code>floor()</code>将-4.5向下取整得到-5，而强制类型转换的结果是-4、</p>
+</blockquote>
+<p>另外一个函数是<code>round()</code>，它有两个参数：</p>
 
                     
                     </section>
