@@ -4,16 +4,18 @@
     <head>
         
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
         <title>早期版本的PHP | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 1.3.1">
+        <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
         <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
         
     
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="1420861258992">
+    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="1420861971736">
     
 
 <div class="book-summary">
@@ -1939,7 +1941,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_34">
+                    <section class="normal" id="section-gitbook_35">
                     
                         <h1 id="php">早期版本的PHP</h1>
 <p>PHP语言是Rasmus Lerdorf创造出来的，它的历史可以追溯到(20世纪)90年代中叶，当时主要用来使web任务处理起来简单一些，减少重复劳动。那时候，使用PHP的主要目的是以最小的逻辑代价来达到所需的结果，这就导致PHP是以HTML为中心的——PHP代码是被嵌入到HTML代码当中的。</p>
@@ -1959,7 +1961,7 @@
 <p>由于上述两个主要因素，PHP的性能有了一个巨大的跳跃。首先，PHP的执行范本同之前版本不同。PHP 3和以前版本使用一种叫做“边解释边执行”的方式，也就是说，PHP读一行代码，解释这行代码，执行这行代码，再读下一行代码，解释，执行，循环往复。这就意味着代码可能会被重复阅读和执行多次，而这时完全没有必要的。</p>
 <p>PHP采用新的“先编译后执行”的方式，先整体读入你的脚本并编译成二进制码，之后再执行，极大提高了效率——平均速度提高了大约100%，一些标准检测程序甚至表明，在PHP 4达到极限的时候，代码性能有了50倍的提升。</p>
 <blockquote>
-<p>作者说明：“二进制码”是由你的脚本转化而来的PHP能够读懂的语言——通常来说，二进制码由于要被分解成很多简单的代码片段，所以往往要比你本身的脚本要长很多。</p>
+<p>作者说明：“二进制码”(Byte Code)是由你的脚本转化而来的PHP能够读懂的语言——通常来说，二进制码由于要被分解成很多简单的代码片段，所以往往要比你本身的脚本要长很多。</p>
 </blockquote>
 <p>此外，由于PHP 4在执行之前先将整个版本进行编译，使得在执行之前优化和缓存编译后的代码称为可能。本书稍后将会阐述这是怎样工作的。</p>
 <p>其次，PHP 4引入了多线程，可以显著缩短运行时间，非核心函数独立于主脚本进程来运行，促进了流线型化执行。</p>
