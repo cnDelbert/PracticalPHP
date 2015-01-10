@@ -93,6 +93,7 @@
     - [由成分组成日期](Functions/Working_with_date_and_time/converting_from_components.md)
   - [数学计算](Functions/Mathematics/index.md)
     - [四舍五入](Functions/Mathematics/rounding.md)
+    - [随机化](Functions/Mathematics/randomisation.md)
 - [数组]
 - [对象]
 - [HTML表单]
