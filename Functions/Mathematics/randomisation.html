@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>循环嵌套 | Practical PHP Programming</title>
+        <title>随机化 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.3.1">
@@ -17,10 +17,8 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/How_PHP_is_written/mixed-mode_processing.html" />
     
-    
-    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/special_loop_keywords.html" />
+    <link rel="prev" href="../../Functions/Mathematics/rounding.html" />
     
 
         
@@ -36,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2.6.13" data-basepath="../.." data-revision="1420860755594">
+    <div class="book" data-level="4.6.2" data-basepath="../.." data-revision="1420860755594">
     
 
 <div class="book-summary">
@@ -873,7 +871,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.6.13" data-path="Introducing_PHP/How_PHP_is_written/loops_within_loops.html">
+        <li class="chapter " data-level="2.6.13" data-path="Introducing_PHP/How_PHP_is_written/loops_within_loops.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/loops_within_loops.html">
@@ -1645,7 +1643,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.6.2" data-path="Functions/Mathematics/randomisation.html">
+        <li class="chapter active" data-level="4.6.2" data-path="Functions/Mathematics/randomisation.html">
             
                 
                     <a href="../../Functions/Mathematics/randomisation.html">
@@ -1939,76 +1937,18 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_23">
+                    <section class="normal" id="section-gitbook_62">
                     
-                        <h1 id="">循环嵌套</h1>
-<p>你可以直接在一个循环体中嵌套另一个循环，就像这样：</p>
-<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">4</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
-        }
-    }
-}
+                        <h1 id="">随机化</h1>
+<pre><code class="lang-php">int rand ( [int min, int max])
+int mt_rand ( [int min, int max])
+int getrandmax ( )
+int mt_getrandmax ( )
+void srand ( [int seed])
+void mt_srand ( [int seed])
 </code></pre>
-<p>上面的代码输出：</p>
-<pre><code class="lang-text">I: 1, J: 1, K: 1
-I: 1, J: 1, K: 2
-I: 1, J: 2, K: 1
-I: 1, J: 2, K: 2
-I: 2, J: 1, K: 1
-I: 2, J: 1, K: 2
-I: 2, J: 2, K: 1
-I: 2, J: 2, K: 2
-</code></pre>
-<p>这种情况下用<code>break</code>就有点复杂了，因为它只跳出离它最近的循环：</p>
-<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
-            <span class="hljs-keyword">break</span>;
-        }
-    }
-}
-</code></pre>
-<p>这次的输出是：</p>
-<pre><code class="lang-text">I: 1, J: 1, K: 1
-I: 1, J: 2, K: 1
-I: 2, J: 1, K: 1
-I: 2, J: 2, K: 1
-</code></pre>
-<p>如上所示，<code>$k</code>只循环了一次就被打断了，而其他循环都循环了若干次。你可以尝试在<code>break</code>后加个数字，如<code>break 2</code>来跳出两次循环或<code>switch - case</code>语句。例如：</p>
-<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">4</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
-            <span class="hljs-keyword">break</span> <span class="hljs-number">2</span>;
-        }
-    }
-}
-</code></pre>
-<p>会输出</p>
-<pre><code class="lang-text">I: 1, J: 1, K: 1
-I: 2, J: 1, K: 1
-</code></pre>
-<p>这次，整个循环只执行了两次，因为<code>$k</code>内部调用了<code>break 2</code>，跳出了<code>$k</code>和<code>$j</code>的循环。如果换成<code>break 3</code>的话，将会跳出全部三个循环，继续下面的代码。</p>
-<p>需要注意的是，<code>break</code>在<code>switch - case</code>语句和循环中都起作用，例如：</p>
-<pre><code class="lang-php"> <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$i</span> = <span class="hljs-variable">$i</span> + <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">4</span>; <span class="hljs-variable">$j</span> = <span class="hljs-variable">$j</span> + <span class="hljs-number">1</span>) {
-        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$k</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$k</span> &lt; <span class="hljs-number">3</span>; <span class="hljs-variable">$k</span> = <span class="hljs-variable">$k</span> + <span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">switch</span>(<span class="hljs-variable">$k</span>) {
-                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
-                    <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
-                    <span class="hljs-keyword">break</span> <span class="hljs-number">2</span>;
-                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
-                    <span class="hljs-keyword">print</span> <span class="hljs-string">"I: $i, J: $j, K: $k\n"</span>;
-                    <span class="hljs-keyword">break</span> <span class="hljs-number">3</span>;
-            }
-        }
-    }
-}
-</code></pre>
-<p><code>break 2</code>跳出了<code>switch - case</code>和<code>$k</code>循环，而<code>break 2</code>跳出了<code>switch - case</code>和两层循环。如果想要从<code>switch - case</code>中完全跳出循环，则需要<code>break 4</code>了。</p>
+<p>有时候你需要在你的代码中添加一些随机的行为：在访问你网站的时候给出不同的欢迎语时；编写一个游戏时；或者在通过hash来保证数据安全时。任何一种情况下，随机化都是简单且有效的方式，而且仅仅需要两个函数：<code>rand()</code>和<code>mt_rang()</code>。</p>
+<p>两个函数做的事情是一样的，需要的参数也是一样的，那这两者的区别在哪？</p>
 
                     
                     </section>
@@ -2019,10 +1959,8 @@ I: 2, J: 1, K: 1
         </div>
 
         
-        <a href="../../Introducing_PHP/How_PHP_is_written/special_loop_keywords.html" class="navigation navigation-prev " aria-label="Previous page: 特殊的循环关键字"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Mathematics/rounding.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 四舍五入"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../Introducing_PHP/How_PHP_is_written/mixed-mode_processing.html" class="navigation navigation-next " aria-label="Next page: 混合处理模式"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

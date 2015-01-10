@@ -17,6 +17,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Mathematics/randomisation.html" />
+    
     
     <link rel="prev" href="../../Functions/Mathematics/index.html" />
     
@@ -34,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.6.1" data-basepath="../.." data-revision="1420687722451">
+    <div class="book" data-level="4.6.1" data-basepath="../.." data-revision="1420860755594">
     
 
 <div class="book-summary">
@@ -1642,6 +1644,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.6.2" data-path="Functions/Mathematics/randomisation.html">
+            
+                
+                    <a href="../../Functions/Mathematics/randomisation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.2.</b>
+                        
+                         随机化
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1921,7 +1939,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_62">
+                    <section class="normal" id="section-gitbook_63">
                     
                         <h1 id="">四舍五入</h1>
 <pre><code class="lang-php">float ceil ( float value)
@@ -1940,7 +1958,18 @@ float round ( float value [, int precision])
 <blockquote>
 <p>作者说明：<code>floor()</code>函数将浮点型转换为整型的工作方式和强制类型转换差不多，而且强制类型转换更快一点。二者的区别是在负数的处理上，<code>floor()</code>将-4.5向下取整得到-5，而强制类型转换的结果是-4、</p>
 </blockquote>
-<p>另外一个函数是<code>round()</code>，它有两个参数：</p>
+<p>另外一个函数是<code>round()</code>，它有两个参数：要进行舍入的数和要保留的小数位数。如果最后正好是5的话，<code>round()</code>将会自动进上一位。</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$a</span> = round(<span class="hljs-number">4.9</span>); <span class="hljs-comment">// 5</span>
+    <span class="hljs-variable">$b</span> = round(<span class="hljs-number">4.5</span>); <span class="hljs-comment">// 5</span>
+    <span class="hljs-variable">$c</span> = round(<span class="hljs-number">4.4999</span>); <span class="hljs-comment">// 4</span>
+    <span class="hljs-variable">$d</span> = round(<span class="hljs-number">4.123456</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// 4.123</span>
+    <span class="hljs-variable">$e</span> = round(<span class="hljs-number">4.12345</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 4.1235</span>
+    <span class="hljs-variable">$f</span> = round(<span class="hljs-number">1000</span> / <span class="hljs-number">160</span>); <span class="hljs-comment">// 6</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如上所示，4.5进位成了5，而4.4999则被舍去成了4。第四行中我们第一次使用两个参数，这样能将给定的数值舍入到想要的小数位数。第五行中，保留四位小数，结果是4.1235。根据四舍五入的原则，如果原给定的数值是4.12344，那么结果就是4.1234了。</p>
+<p>最后一行也是一个经常使用的例子。假设你要组织一次大的旅行，有1000人参加。你需要知道你要用多少节车厢。假设一节车厢能容纳160人，1000/160四舍五入后得到整数6.现在问题来了，1000/160实际等于6.25。因为6.25距离6更近，PHP将小时舍掉了。这样多出来的人就没法走了。怎么办呢？解决方法很简单，用<code>ceil()</code>函数就可以了。在不同情况下需要使用不同的函数。具体问题具体分析就好。</p>
 
                     
                     </section>
@@ -1951,8 +1980,10 @@ float round ( float value [, int precision])
         </div>
 
         
-        <a href="../../Functions/Mathematics/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 数学计算"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Mathematics/index.html" class="navigation navigation-prev " aria-label="Previous page: 数学计算"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Mathematics/randomisation.html" class="navigation navigation-next " aria-label="Next page: 随机化"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
