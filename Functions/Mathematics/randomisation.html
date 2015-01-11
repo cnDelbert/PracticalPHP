@@ -19,6 +19,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Mathematics/trigonometrical_conversion.html" />
+    
     
     <link rel="prev" href="../../Functions/Mathematics/rounding.html" />
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.6.2" data-basepath="../.." data-revision="1420947093405">
+    <div class="book" data-level="4.6.2" data-basepath="../.." data-revision="1420986522950">
     
 
 <div class="book-summary">
@@ -1660,6 +1662,38 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.6.3" data-path="Functions/Mathematics/trigonometrical_conversion.html">
+            
+                
+                    <a href="../../Functions/Mathematics/trigonometrical_conversion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.3.</b>
+                        
+                         三角函数转换
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.6.4" data-path="Functions/Mathematics/other_mathematical_conversion_functions.html">
+            
+                
+                    <a href="../../Functions/Mathematics/other_mathematical_conversion_functions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.4.</b>
+                        
+                         其他的数学转换函数
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -1939,7 +1973,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_62">
+                    <section class="normal" id="section-gitbook_63">
                     
                         <h1 id="">随机化</h1>
 <pre><code class="lang-php">int rand ( [int min, int max])
@@ -2012,7 +2046,17 @@ void mt_srand ( [int seed])
     <span class="hljs-keyword">print</span> <span class="hljs-string">"Long mt_rand() took $END seconds\n"</span>
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>大多数随机数产生器需要一个“种子”</p>
+<p>大多数随机数产生器需要一个“种子”：因为产生的随机数并不是真正的随机，因此需要用一个初始值来进行初始化。这叫做伪随机，意思是它们实际上并不是随机的。种子的值用来产生第一个随机数，第一个随机数用来产生第二个随机数，第二个用来产生第三个，依此类推。也就是说，如果你提供的是相同的种子的话，你得到的将是一串“相同”的随机数。</p>
+<p>这实际上也是一种优势。很多年前，在BBC Micro上有一个叫Elite的流行的游戏，其中的玩家被允许在一个由8个星系组成的大的宇宙中飞行，每个星系有数以千计的恒星系统，每个恒星系统里面有确定数目的行星和独特的经济情况等。整个宇宙需要被装到22K大小的内存中。这是怎么实现的呢？很简单：每次给系统的随机数发生器提供相同的种子，这样每次产生的宇宙就是一模一样的了。</p>
+<p>如果你想每次都产生出一串相同的随机数的话，只要将种子设定为一个固定值就可以了。例如，下面的这段代码不管你怎么运行，得到的永远是相同的“随机”数：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    mt_srand(<span class="hljs-number">123456</span>);
+    <span class="hljs-keyword">echo</span> mt_rand(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>), <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">echo</span> mt_rand(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>), <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">echo</span> mt_rand(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>), <span class="hljs-string">"\n"</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如果你没有设定随机数发生器的话，PHP将会给你设定一个。</p>
 
                     
                     </section>
@@ -2023,8 +2067,10 @@ void mt_srand ( [int seed])
         </div>
 
         
-        <a href="../../Functions/Mathematics/rounding.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 四舍五入"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Mathematics/rounding.html" class="navigation navigation-prev " aria-label="Previous page: 四舍五入"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Mathematics/trigonometrical_conversion.html" class="navigation navigation-next " aria-label="Next page: 三角函数转换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
