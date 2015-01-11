@@ -94,6 +94,7 @@
   - [数学计算](Functions/Mathematics/index.md)
     - [四舍五入](Functions/Mathematics/rounding.md)
     - [随机化](Functions/Mathematics/randomisation.md)
+    - [三角函数转换](Functions/Mathematics/trigonometrical_conversion.md)
 - [数组]
 - [对象]
 - [HTML表单]
