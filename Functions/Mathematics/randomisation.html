@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.6.2" data-basepath="../.." data-revision="1420901374447">
+    <div class="book" data-level="4.6.2" data-basepath="../.." data-revision="1420947093405">
     
 
 <div class="book-summary">
@@ -1951,7 +1951,68 @@ void mt_srand ( [int seed])
 </code></pre>
 <p>有时候你需要在你的代码中添加一些随机的行为：在访问你网站的时候给出不同的欢迎语时；编写一个游戏时；或者在通过hash来保证数据安全时。任何一种情况下，随机化都是简单且有效的方式，而且仅仅需要两个函数：<code>rand()</code>和<code>mt_rang()</code>。</p>
 <p>两个函数做的事情是一样的，需要的参数也是一样的，那这两者的区别在哪？好吧，<code>rand()</code>是一个基本的随机函数，速度很快，但并不是真正的“随机”：它产生的数字相对来说有可预见性。而<code>mt_rand()</code>则不同，，它更加复杂：“mt”部分的意思是“Mersenne Twister”，也就是它所使用的随机算法的名字。<code>mt_rand()</code>以牺牲速度为代价，产生更加“随机”的数字。</p>
-<p>正如上面所提到的，二者都有相同的参数：两个随机参数</p>
+<p>正如上面所提到的，二者都有相同的参数：两个参数都是可选的，分别是要返回随机数的下界和上界。如果不提供参数，PHP将会返回一个值在1到某个很大的数之间的随机数。下面来看个例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$random</span> = rand();
+    <span class="hljs-variable">$randrange</span> = rand(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>);
+    <span class="hljs-variable">$mtrandrange</span> = mt_rand(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>注意，传入的两个数也是被包含在返回区间内的。也就是说<code>$randrange</code>的值可能是包含1和10在内的1到10之间的任何数字。</p>
+<p>如果没有传递任何参数，直接调用<code>rand()</code>和<code>mt_rand()</code>的话，PHP将会返回1到某个很大的数之间的值。想要知道<code>rand()</code>的最大的数的话，调用<code>getrandmax()</code>就可以了。对<code>mt_rand()</code>而言，对应的就是<code>mt_getrandmax()</code>。</p>
+<p>既然已经知道随机数是怎么回事了，就来看一个例子，访客访问网站的时候产生随机的问候语：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">switch</span>(rand(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>)) {
+        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Hello!'</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Welcome!'</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Greetings!'</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Salutations!'</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Good day!'</span>; <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+            <span class="hljs-variable">$greet</span> = <span class="hljs-string">'Yo!'</span>; <span class="hljs-keyword">break</span>;
+    }
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$greet</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>上面的代码中，我们在进入<code>switch</code>之前，并没有将<code>rand()</code>的结果赋值给一个变量，当然，为了便于阅读的话，你也可以那么做。</p>
+<p>需要注意的是，随机化的速度和你传入的值的大小无关：对<code>rand()</code>函数而言，<code>rand(1, 3)</code>和<code>rand(1, 10000000)</code>的返回速度是一样的。而<code>mt_rand()</code>的效率大约比<code>rand()</code>低50%，也就是说，只有你在有特殊需求的时候才应该用它。</p>
+<p>为了说明这两个函数运行的多快，同是也为了说明传入值的大小对运行速度没有影响，来运行一下下面的代码：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$START</span> = time();
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">1000000</span>; ++<span class="hljs-variable">$i</span>) {
+        <span class="hljs-variable">$j</span> = rand(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>);
+    }
+    <span class="hljs-variable">$END</span> = time() - <span class="hljs-variable">$START</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Short rand() took $END seconds\n"</span>;
+
+    <span class="hljs-variable">$START</span> = time();
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">1000000</span>; ++<span class="hljs-variable">$i</span>) {
+        <span class="hljs-variable">$j</span> = mt_rand(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>);
+    }
+    <span class="hljs-variable">$END</span> = time() - <span class="hljs-variable">$START</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Short mt_rand() took $END seconds\n"</span>;
+
+    <span class="hljs-variable">$START</span> = time();
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">1000000</span>; ++<span class="hljs-variable">$i</span>) {
+        <span class="hljs-variable">$j</span> = rand(<span class="hljs-number">1</span>,<span class="hljs-number">10000000</span>);
+    }
+    <span class="hljs-variable">$END</span> = time() - <span class="hljs-variable">$START</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Long rand() took $END seconds\n"</span>;
+
+    <span class="hljs-variable">$START</span> = time();
+    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">1</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">1000000</span>; ++<span class="hljs-variable">$i</span>) {
+        <span class="hljs-variable">$j</span> = mt_rand(<span class="hljs-number">1</span>,<span class="hljs-number">10000000</span>);
+    }
+    <span class="hljs-variable">$END</span> = time() - <span class="hljs-variable">$START</span>;
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Long mt_rand() took $END seconds\n"</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>大多数随机数产生器需要一个“种子”</p>
 
                     
                     </section>
