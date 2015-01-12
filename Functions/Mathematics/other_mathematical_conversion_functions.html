@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.6.4" data-basepath="../.." data-revision="1420986522950">
+    <div class="book" data-level="4.6.4" data-basepath="../.." data-revision="1421074372304">
     
 
 <div class="book-summary">
@@ -1974,6 +1974,43 @@
                     <section class="normal" id="section-gitbook_62">
                     
                         <h1 id="">其他的数学转换函数</h1>
+<pre><code class="lang-php">number abs ( number value)
+float sqrt ( float value)
+number pow ( number base, number exponent)
+float hypot ( float num1, float num2)
+</code></pre>
+<p>在非三角函数方面，对数字进行操作时有几个关键的函数，其中最重要的是<code>abs()</code>、<code>sqrt()</code>和<code>pow()</code>。</p>
+<p><code>abs()</code>是最基本的函数，它返回你传入参数的绝对值。绝对值的含义，就是说如果你传入的是正数则保持不变，传入的是负数，则返回其对应的正数值。</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    abs(<span class="hljs-number">50</span>);
+    abs(-<span class="hljs-number">12</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>第一行返回50，第二行返回12。<code>abs()</code>可以将整型或浮点型作为其参数并返回相同类型的值：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    abs(<span class="hljs-number">50.1</span>);
+    abs(-<span class="hljs-number">12.5</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>第一行返回50.1，第二行返回12.5。如你所见，不管是整型还是浮点型，<code>abs()</code>函数都能处理。如果你不知道为什么要用<code>abs()</code>，想一下，如果用PHP脚本来处理类似“你想买多少件T-Shirt”这种问题的时候，你需要自己写代码来检查输入的值是否小于0，如果小于0，则需要有适当的警告。而如果直接用<code>abs()</code>处理一下就简单多了，它可以保证是正数，之后就可以将返回的结果添加购物车进行处理了。</p>
+<p>接下来说<code>sqrt()</code>，它只接受一个参数，返回这个参数的平方根。用起来也非常方便：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> sqrt(<span class="hljs-number">25</span>);
+    <span class="hljs-keyword">print</span> sqrt(<span class="hljs-number">26</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>第一行输出5，第二行输出5.0990195135928。</p>
+<p>第三个关键的函数是<code>pow()</code>，有两个参数，一个底数，一个指数。也就是说，如果第二个参数是2，则返回第一个参数的平方；第二个参数是3，返回第一个参数的立方，就像这样：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> pow(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// 100</span>
+    <span class="hljs-keyword">print</span> pow(<span class="hljs-number">10</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// 1000</span>
+    <span class="hljs-keyword">print</span> pow(<span class="hljs-number">10</span>,<span class="hljs-number">4</span>); <span class="hljs-comment">// 10000</span>
+    <span class="hljs-keyword">print</span> pow(-<span class="hljs-number">10</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 10000</span>
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>前三行的结果分别是<code>10*10</code>，<code>10*10*10</code>和<code>10*10*10*10</code>。注意第四行第一个参数是-10，别担心，<code>pow()</code>第一个参数可正可负。第四行输出的结果是正数，这是因为第二个参数为偶数，“负负得正”。</p>
+<p><code>pow()</code>的第二个参数也可以是负数，也就是得到负数次幂。例如，<code>pow(10, -1)</code>得到0.1，<code>pow(10, -2)</code>得到0.01，<code>pow(10, -3)</code>为0.001，以此类推。</p>
+<p>使用<code>pow()</code>的时候有个难点，就是当-1和0.5作为<code>pow()</code>的参数时——这不是PHP的bug，而是我们数字系统就是这么构建的。如果你尝试计算一个负数的平方根你就知道这个是不可能的了。假设Y的平方根是X，X乘以X得到Y。如果Y是负数，那么X也应该师傅的。但是我们又知道负负得正，则Y应该是正的。因此，求负数的平方根是不可能的。传递给<code>pow()</code>的参数是0.5的时候，就相当于是在计算第一个参数的平方根。而负数是没有平方根的，所有当第一个参数为负，第二个参数是0.5的时候会造成错误。</p>
 
                     
                     </section>
