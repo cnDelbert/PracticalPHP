@@ -6,3 +6,6 @@
 
 # Operand
 操作数(Operand)就像很多你在学校学过，一转身就又忘了的很多东西一样。举个例子，在`$mystring + $myinteger`这个加法运算中，`+`是操作符，`$mystring`和`$myinteger`就是操作数。
+
+#MIME
+MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。参见[多用途互聯網郵件擴展](http://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E9%80%94%E4%BA%92%E8%81%AF%E7%B6%B2%E9%83%B5%E4%BB%B6%E6%93%B4%E5%B1%95)。
