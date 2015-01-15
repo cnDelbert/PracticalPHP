@@ -99,7 +99,8 @@
     - [进制转换](Functions/Mathematics/base_conversion.md)
     - [数学常量](Functions/Mathematics/mathematical_constants.md)
   - [与字符串共舞](Functions/Playing_with_strings/index.md)
-    - [读取读取子字符串](Functions/Playing_with_strings/reading_from_part_of_a_string.md)
+    - [子字符串](Functions/Playing_with_strings/reading_from_part_of_a_string.md)
+    - [字符串替换](Functions/Playing_with_strings/replacing_parts_of_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
