@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>读取读取子字符串 | Practical PHP Programming</title>
+        <title>子字符串 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -18,6 +18,8 @@
         
         
     
+    
+    <link rel="next" href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" />
     
     
     <link rel="prev" href="../../Functions/Playing_with_strings/index.html" />
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.7.1" data-basepath="../.." data-revision="1421314841070">
+    <div class="book" data-level="4.7.1" data-basepath="../.." data-revision="1421332991811">
     
 
 <div class="book-summary">
@@ -1755,7 +1757,23 @@
                         
                             <b>4.7.1.</b>
                         
-                         读取读取子字符串
+                         子字符串
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.7.2" data-path="Functions/Playing_with_strings/replacing_parts_of_a_string.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.2.</b>
+                        
+                         字符串替换
                     </a>
                 
             
@@ -2041,9 +2059,9 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_68">
+                    <section class="normal" id="section-gitbook_69">
                     
-                        <h1 id="">读取子字符串</h1>
+                        <h1 id="">子字符串</h1>
 <pre><code class="lang-php">string substr ( string source, int start [, int length])
 </code></pre>
 <p><code>substr()</code>函数允许你读取字符串的一部分，它最少需要两个参数：要处理的字符串和要读取的起始位置。这个函数的第三个参数是可选的，用来说明你想要读取的字符串的长度。下面是这个函数基本用法的示例：</p>
@@ -2059,7 +2077,34 @@
 </code></pre>
 <p>上面的代码执行之后，<code>$a</code>的值是“oodbye, Perl!”，而不是整个<code>$string</code>，因为PHP字符串的位置是从0开始计数的，而我们将1作为第二个参数传入，<code>substr()</code>就将从第二个字符开始，一直到最后的字符串赋值给<code>$a</code>了。
 我们从<code>$string</code>0的位置开始复制，所以<code>$b</code>就得到了整个<code>$string</code>。
-<code>$c</code>我们是从5的位置(第6个字符)开始复制，所以<code>$c</code>的值是“ye, Perl!”。</p>
+<code>$c</code>我们是从5的位置(第6个字符)开始复制，所以<code>$c</code>的值是“ye, Perl!”。
+<code>$d</code>我们从50的位置(第51个字符)开始，很明显结果为空。这一行是为了说明即使子字符串为空，PHP也不会返回错误——它仅仅返回一个空字符串。
+从<code>$e</code>开始，我们开始使用第三个参数。5作为<code>substr()</code>的第二个参数，4作为第三个参数，意思是从位置为5(第六个字符)开始复制4个字符，结果是“ye, ”，注意第四个字符是空格。
+最后是变量<code>$f</code>，它的值是位置为10的一个字符，也就是“e”。</p>
+<p>目前为止，应该很容易理解，但是<code>substr()</code>的功能不仅如此。你可以传入一个负数作为第三个参数，PHP将把它作为从结尾位置开始向前忽略的字符数，而不是要复制的字符的长度，来进行复制。例如：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"Goodbye, Perl!"</span>;
+    <span class="hljs-variable">$a</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+    <span class="hljs-variable">$b</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>, -<span class="hljs-number">1</span>);
+    <span class="hljs-variable">$c</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">7</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p><code>$a</code>直接是从位置为5的位置向后复制5个字符，也就是<code>ye, P</code>。<code>$b</code>和<code>$c</code>都用了负数的长度，也就是从字符串倒着向前数对应个数个字符作为结尾。因此<code>$b</code>为“ye, Perl”，<code>$c</code>为“Goodbye”。使用负数的长度相当于说“除了倒数三个，其余的全都复制”这种形式。</p>
+<p>等等，还没结束，你也可以用一个负数作为起始位置，也就是从结尾向前数对应个字符作为开始。你也可以从负数开始复制负数长度的字符，希望下面几个例子能说明白：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"Goodbye, Perl!"</span>;
+    <span class="hljs-variable">$a</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>);
+    <span class="hljs-variable">$b</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+    <span class="hljs-variable">$c</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);
+    <span class="hljs-variable">$d</span> = substr(<span class="hljs-variable">$string</span>, -<span class="hljs-number">5</span>);
+    <span class="hljs-variable">$e</span> = substr(<span class="hljs-variable">$string</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">4</span>);
+    <span class="hljs-variable">$f</span> = substr(<span class="hljs-variable">$string</span>, -<span class="hljs-number">5</span>, -<span class="hljs-number">4</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>上面这段代码说明了<code>substr()</code>的各种使用方式。你已经知道<code>$a</code>，<code>$b</code>和<code>$c</code>的用法了，分别是：从5的位置复制到结尾；从5的位置开始复制5个字符；除了最后一个字符外，其余全都复制。
+<code>$d</code>的第二个参数是负数-5，运行代码后，<code>$d</code>将被设置为“Perl!”，因为是从字符串结尾向前数5个位置作为开始，一直复制到字符串结束。
+<code>$e</code>的开始位置为-5，长度为正数4，运行后，PHP将从倒数第5个字符“P”开始复制4个字符，也就是说<code>$e</code>的值为“Perl”。
+最后是<code>$f</code>，起始位置和长度都为负数，意思是“从倒数第5个字符开始，复制到倒数第四个字符前（忽略掉从后面开始的四个字符）为止”。实际我们只复制了一个字符“P”，运行代码看看<code>$f</code>到底包含了哪几个字符。神奇吧。</p>
 
                     
                     </section>
@@ -2070,8 +2115,10 @@
         </div>
 
         
-        <a href="../../Functions/Playing_with_strings/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 与字符串共舞"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/index.html" class="navigation navigation-prev " aria-label="Previous page: 与字符串共舞"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" class="navigation navigation-next " aria-label="Next page: 字符串替换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
