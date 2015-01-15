@@ -98,6 +98,8 @@
     - [其他的数学转换函数](Functions/Mathematics/other_mathematical_conversion_functions.md)
     - [进制转换](Functions/Mathematics/base_conversion.md)
     - [数学常量](Functions/Mathematics/mathematical_constants.md)
+  - [与字符串共舞](Functions/Playing_with_strings/index.md)
+    - [读取读取子字符串](Functions/Playing_with_strings/reading_from_part_of_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
