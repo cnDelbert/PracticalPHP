@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>转义符 | Practical PHP Programming</title>
+        <title>读取读取子字符串 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,8 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/How_PHP_is_written/heredoc.html" />
     
-    
-    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/whitespace.html" />
+    <link rel="prev" href="../../Functions/Playing_with_strings/index.html" />
     
 
         
@@ -38,7 +36,7 @@
 
 
         
-    <div class="book" data-level="2.6.2" data-basepath="../.." data-revision="1421314841070">
+    <div class="book" data-level="4.7.1" data-basepath="../.." data-revision="1421314841070">
     
 
 <div class="book-summary">
@@ -699,7 +697,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.6.2" data-path="Introducing_PHP/How_PHP_is_written/escape_sequences.html">
+        <li class="chapter " data-level="2.6.2" data-path="Introducing_PHP/How_PHP_is_written/escape_sequences.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/escape_sequences.html">
@@ -1749,7 +1747,7 @@
                 
     
         
-        <li class="chapter " data-level="4.7.1" data-path="Functions/Playing_with_strings/reading_from_part_of_a_string.html">
+        <li class="chapter active" data-level="4.7.1" data-path="Functions/Playing_with_strings/reading_from_part_of_a_string.html">
             
                 
                     <a href="../../Functions/Playing_with_strings/reading_from_part_of_a_string.html">
@@ -2043,63 +2041,25 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_16">
+                    <section class="normal" id="section-gitbook_68">
                     
-                        <h1 id="">转义符</h1>
-<p>PHP中，你可以通过<code>\</code>使得在双引号中输出对应符号。</p>
-<p>转义符，就是通过<code>\</code>加上一个字母或符号，来达到输出相应字符的目的。例如，你要输出<code>&quot;And then he said, &quot;That is amazing!&quot;, which was true&quot;</code>，由于其中有双引号，所以你需要用到转义符。下面是PHP当中的转义符列表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>\&quot;</code></td>
-<td style="text-align:center">输出双引号，不作为字符串的结束</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\&#39;</code></td>
-<td style="text-align:center">输出单引号，不作为字符串的结束</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\n</code></td>
-<td style="text-align:center">输出换行符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\t</code></td>
-<td style="text-align:center">输出制表符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\r</code></td>
-<td style="text-align:center">输出回车(很少使用)</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\$</code></td>
-<td style="text-align:center">输出美元符号，不作为变量的开头</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\\</code></td>
-<td style="text-align:center">输出斜线，不作为转义符</td>
-</tr>
-</tbody>
-</table>
-<p>下面这段代码说明了转义符的使用：</p>
-<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
-    <span class="hljs-variable">$MyString</span> = <span class="hljs-string">"This is an \"escaped\" string"</span>;
-    <span class="hljs-variable">$MySingleString</span> = <span class="hljs-string">'This \'will\' work'</span>;
-    <span class="hljs-variable">$MyNonVariable</span> = <span class="hljs-string">"I have \$zilch in my pocket"</span>;
-    <span class="hljs-variable">$MyNewline</span> = <span class="hljs-string">"This ends with a line return\n"</span>;
-    <span class="hljs-variable">$MyFile</span> = <span class="hljs-string">"c:\\windows\\system32\\myfile.txt"</span>;
+                        <h1 id="">读取子字符串</h1>
+<pre><code class="lang-php">string substr ( string source, int start [, int length])
+</code></pre>
+<p><code>substr()</code>函数允许你读取字符串的一部分，它最少需要两个参数：要处理的字符串和要读取的起始位置。这个函数的第三个参数是可选的，用来说明你想要读取的字符串的长度。下面是这个函数基本用法的示例：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"Goodbye, Perl!"</span>;
+    <span class="hljs-variable">$a</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-variable">$b</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-variable">$c</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>);
+    <span class="hljs-variable">$d</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">50</span>);
+    <span class="hljs-variable">$e</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>);
+    <span class="hljs-variable">$f</span> = substr(<span class="hljs-variable">$string</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>);
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>在使用Windows格式的路径时，特别容易忘记使用转义符。只要写代码的时候多写一个<code>\</code>就好了。你可以输出<code>$MyFile</code>看一下：</p>
-<pre><code class="lang-text">c:\windows\system32\myfile.txt
-</code></pre>
-<p>转义符只是为了使PHP能够正确读入字符串而是用的。一旦读入了字符串，数据就会被转换成应有的格式。</p>
-<p>同时，转义符只在双引号当中有用，如果你输入<code>&#39;Hello!\n\n\n&#39;</code>，PHP会原样输出<code>\n\n\n</code>而不是换行符。同时应该注意，转义符是一个字符，只是我们通过键盘输入的时候需要输入两个字符，因为有些字符键盘是无法输入的。</p>
+<p>上面的代码执行之后，<code>$a</code>的值是“oodbye, Perl!”，而不是整个<code>$string</code>，因为PHP字符串的位置是从0开始计数的，而我们将1作为第二个参数传入，<code>substr()</code>就将从第二个字符开始，一直到最后的字符串赋值给<code>$a</code>了。
+我们从<code>$string</code>0的位置开始复制，所以<code>$b</code>就得到了整个<code>$string</code>。
+<code>$c</code>我们是从5的位置(第6个字符)开始复制，所以<code>$c</code>的值是“ye, Perl!”。</p>
 
                     
                     </section>
@@ -2110,10 +2070,8 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/How_PHP_is_written/whitespace.html" class="navigation navigation-prev " aria-label="Previous page: 空白"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 与字符串共舞"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../Introducing_PHP/How_PHP_is_written/heredoc.html" class="navigation navigation-next " aria-label="Next page: 定界符"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

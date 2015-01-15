@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>转义符 | Practical PHP Programming</title>
+        <title>与字符串共舞 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/How_PHP_is_written/heredoc.html" />
+    <link rel="next" href="../../Functions/Playing_with_strings/reading_from_part_of_a_string.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/How_PHP_is_written/whitespace.html" />
+    <link rel="prev" href="../../Functions/Mathematics/mathematical_constants.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.6.2" data-basepath="../.." data-revision="1421314841070">
+    <div class="book" data-level="4.7" data-basepath="../.." data-revision="1421314841070">
     
 
 <div class="book-summary">
@@ -699,7 +699,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.6.2" data-path="Introducing_PHP/How_PHP_is_written/escape_sequences.html">
+        <li class="chapter " data-level="2.6.2" data-path="Introducing_PHP/How_PHP_is_written/escape_sequences.html">
             
                 
                     <a href="../../Introducing_PHP/How_PHP_is_written/escape_sequences.html">
@@ -1732,7 +1732,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.7" data-path="Functions/Playing_with_strings/index.html">
+        <li class="chapter active" data-level="4.7" data-path="Functions/Playing_with_strings/index.html">
             
                 
                     <a href="../../Functions/Playing_with_strings/index.html">
@@ -2043,63 +2043,14 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_16">
+                    <section class="normal" id="section-gitbook_67">
                     
-                        <h1 id="">转义符</h1>
-<p>PHP中，你可以通过<code>\</code>使得在双引号中输出对应符号。</p>
-<p>转义符，就是通过<code>\</code>加上一个字母或符号，来达到输出相应字符的目的。例如，你要输出<code>&quot;And then he said, &quot;That is amazing!&quot;, which was true&quot;</code>，由于其中有双引号，所以你需要用到转义符。下面是PHP当中的转义符列表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>\&quot;</code></td>
-<td style="text-align:center">输出双引号，不作为字符串的结束</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\&#39;</code></td>
-<td style="text-align:center">输出单引号，不作为字符串的结束</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\n</code></td>
-<td style="text-align:center">输出换行符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\t</code></td>
-<td style="text-align:center">输出制表符</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\r</code></td>
-<td style="text-align:center">输出回车(很少使用)</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\$</code></td>
-<td style="text-align:center">输出美元符号，不作为变量的开头</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>\\</code></td>
-<td style="text-align:center">输出斜线，不作为转义符</td>
-</tr>
-</tbody>
-</table>
-<p>下面这段代码说明了转义符的使用：</p>
-<pre><code class="lang-php"> <span class="hljs-preprocessor">&lt;?php</span>
-    <span class="hljs-variable">$MyString</span> = <span class="hljs-string">"This is an \"escaped\" string"</span>;
-    <span class="hljs-variable">$MySingleString</span> = <span class="hljs-string">'This \'will\' work'</span>;
-    <span class="hljs-variable">$MyNonVariable</span> = <span class="hljs-string">"I have \$zilch in my pocket"</span>;
-    <span class="hljs-variable">$MyNewline</span> = <span class="hljs-string">"This ends with a line return\n"</span>;
-    <span class="hljs-variable">$MyFile</span> = <span class="hljs-string">"c:\\windows\\system32\\myfile.txt"</span>;
-<span class="hljs-preprocessor">?&gt;</span>
-</code></pre>
-<p>在使用Windows格式的路径时，特别容易忘记使用转义符。只要写代码的时候多写一个<code>\</code>就好了。你可以输出<code>$MyFile</code>看一下：</p>
-<pre><code class="lang-text">c:\windows\system32\myfile.txt
-</code></pre>
-<p>转义符只是为了使PHP能够正确读入字符串而是用的。一旦读入了字符串，数据就会被转换成应有的格式。</p>
-<p>同时，转义符只在双引号当中有用，如果你输入<code>&#39;Hello!\n\n\n&#39;</code>，PHP会原样输出<code>\n\n\n</code>而不是换行符。同时应该注意，转义符是一个字符，只是我们通过键盘输入的时候需要输入两个字符，因为有些字符键盘是无法输入的。</p>
+                        <h1 id="">与字符串共舞</h1>
+<p>学习如何用PHP来处理字符串是非常有价值的：PHP内置了很多有用的函数，使得你可以快速方便地来处理用户的输入。</p>
+<p>在本章中，我们将从几个日常使用的关键函数开始来进行我们的学习；当然，我们也会讨论一些有用的小众的函数。我已经根据这些函数的实用性进行排序，如果出于某些原因导致你时间紧迫的话，那就按照顺序来吧。</p>
+<p>由于PHP当中的变量名都是大小写敏感的，也就意味着匹配和替换字符串将是一个棘手的问题，好在PHP为字符串函数都提供了一个不区分大小写的版本。在每次遇到对应函数的时候我们都会提及其对应的版本。</p>
+<p>一旦掌握了基本的匹配函数，我们将继续下一个棘手的话题：正则表达式。正则表达式（Regular Expressions，或RegExps）很难学，但是它却提供了一种快速且灵活的处理字符串的方式。</p>
+<p>几乎可以肯定的是，你总会遇到一些处理字符串的问题，所以我强烈建议你通读本章，并尝试书中的每个例子：实践越多，掌握越牢。</p>
 
                     
                     </section>
@@ -2110,10 +2061,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/How_PHP_is_written/whitespace.html" class="navigation navigation-prev " aria-label="Previous page: 空白"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Mathematics/mathematical_constants.html" class="navigation navigation-prev " aria-label="Previous page: 数学常量"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/How_PHP_is_written/heredoc.html" class="navigation navigation-next " aria-label="Next page: 定界符"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Functions/Playing_with_strings/reading_from_part_of_a_string.html" class="navigation navigation-next " aria-label="Next page: 读取读取子字符串"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

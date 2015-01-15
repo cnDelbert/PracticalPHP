@@ -19,6 +19,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Playing_with_strings/index.html" />
+    
     
     <link rel="prev" href="../../Functions/Mathematics/base_conversion.html" />
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.6.6" data-basepath="../.." data-revision="1421290237206">
+    <div class="book" data-level="4.6.6" data-basepath="../.." data-revision="1421314841070">
     
 
 <div class="book-summary">
@@ -1729,6 +1731,44 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.7" data-path="Functions/Playing_with_strings/index.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                         与字符串共舞
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.7.1" data-path="Functions/Playing_with_strings/reading_from_part_of_a_string.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/reading_from_part_of_a_string.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.1.</b>
+                        
+                         读取读取子字符串
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -2006,6 +2046,76 @@
                     <section class="normal" id="section-gitbook_62">
                     
                         <h1 id="">数学常量</h1>
+<p>在数学中有几个值通常在数学相关的脚本中使用，每次去计算这些值总要花去一些时间；为了节约时间，PHP将其定义为了常量。例如，你想要用π的值的话，只要用<code>M_PI</code>就可以了。</p>
+<p>例如，要计算半径为r的圆的面积a，根据公式<code>a = π * r^2</code>。用PHP的话，我们可以这么写：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$area</span> = M_PI * (<span class="hljs-variable">$radius</span> * <span class="hljs-variable">$radius</span>);
+    <span class="hljs-comment">// or...</span>
+    <span class="hljs-variable">$area</span> = M_PI * pow(<span class="hljs-variable">$radius</span>, <span class="hljs-number">2</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>使用PHP内置的数学常量可以洁身很多无用的计算，所以，如果能使用数学常量的话就尽量使用吧。下面是常用数学常量的列表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">常量</th>
+<th style="text-align:center">值</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">M_PI</td>
+<td style="text-align:center">3.14159265358979323846</td>
+<td style="text-align:center">Pi</td>
+</tr>
+<tr>
+<td style="text-align:center">M_PI_2</td>
+<td style="text-align:center">1.57079632679489661923</td>
+<td style="text-align:center">Pi/2</td>
+</tr>
+<tr>
+<td style="text-align:center">M_PI_4</td>
+<td style="text-align:center">0.78539816339744830962</td>
+<td style="text-align:center">Pi/4</td>
+</tr>
+<tr>
+<td style="text-align:center">M_1_PI</td>
+<td style="text-align:center">0.31830988618379067154</td>
+<td style="text-align:center">1/Pi</td>
+</tr>
+<tr>
+<td style="text-align:center">M_2_PI</td>
+<td style="text-align:center">0.63661977236758134308</td>
+<td style="text-align:center">2/Pi</td>
+</tr>
+<tr>
+<td style="text-align:center">M_SQRTPI</td>
+<td style="text-align:center">1.77245385090551602729</td>
+<td style="text-align:center">sqrt(M_PI)</td>
+</tr>
+<tr>
+<td style="text-align:center">M_2_SQRTPI</td>
+<td style="text-align:center">1.12837916709551257390</td>
+<td style="text-align:center">2/sqrt(M_PI)</td>
+</tr>
+<tr>
+<td style="text-align:center">M_SQRT2</td>
+<td style="text-align:center">1.41421356237309504880</td>
+<td style="text-align:center">sqrt(2)</td>
+</tr>
+<tr>
+<td style="text-align:center">M_SQRT3</td>
+<td style="text-align:center">1.73205080756887729352</td>
+<td style="text-align:center">sqrt(3)</td>
+</tr>
+<tr>
+<td style="text-align:center">M_SQRT1_2</td>
+<td style="text-align:center">0.70710678118654752440</td>
+<td style="text-align:center">1/sqrt(2)</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -2016,8 +2126,10 @@
         </div>
 
         
-        <a href="../../Functions/Mathematics/base_conversion.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 进制转换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Mathematics/base_conversion.html" class="navigation navigation-prev " aria-label="Previous page: 进制转换"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Playing_with_strings/index.html" class="navigation navigation-next " aria-label="Next page: 与字符串共舞"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
