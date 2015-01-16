@@ -19,6 +19,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Playing_with_strings/measuring_strings.html" />
+    
     
     <link rel="prev" href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" />
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.7.3" data-basepath="../.." data-revision="1421378643337">
+    <div class="book" data-level="4.7.3" data-basepath="../.." data-revision="1421401328587">
     
 
 <div class="book-summary">
@@ -1794,6 +1796,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.7.4" data-path="Functions/Playing_with_strings/measuring_strings.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/measuring_strings.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.4.</b>
+                        
+                         字符串统计
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2079,7 +2097,26 @@
 <pre><code class="lang-php">string chr ( int ascii)
 int ord ( string string)
 </code></pre>
-<p>ASCII(American Standard Code for Information Interchange，美国信息交换标准代码)用0~255的数字来表示对应的字符，通常在计算机领域使用。例如，74是<code>J</code>，106是<code>j</code>，123是<code>{</code>，32是<code> </code>(空格)。</p>
+<p>ASCII(American Standard Code for Information Interchange，美国信息交换标准代码)用0~255的数字来表示对应的字符，通常在计算机领域使用。例如，74是<code>J</code>，106是<code>j</code>，123是<code>{</code>，32是<code>`(空格)。要从正常的文本转换为ASCII码的话，可以用</code>chr()<code>函数，它只接受一个参数，就是要被转换的ASCII码值，返回对应的字符。而</code>ord()`刚好相反，输入字符，返回ASCII码值。</p>
+<p>例如：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$mystr</span> = <span class="hljs-string">"ASCII is an easy way for computers to work with strings\n"</span>;
+
+    <span class="hljs-keyword">if</span> (ord(<span class="hljs-variable">$mystr</span>{<span class="hljs-number">1</span>}) == <span class="hljs-number">83</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"The second letter in the string is S\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"The second letter is not S\n"</span>;
+    }
+
+    <span class="hljs-variable">$letter</span> = chr(<span class="hljs-number">109</span>);
+
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"ASCII number 109 is equivalent to $letter\n"</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>应该输出：</p>
+<pre><code class="lang-text">The second letter in the string is S
+ASCII number 109 is equivalent to m
+</code></pre>
 
                     
                     </section>
@@ -2090,8 +2127,10 @@ int ord ( string string)
         </div>
 
         
-        <a href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 字符串替换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" class="navigation navigation-prev " aria-label="Previous page: 字符串替换"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Playing_with_strings/measuring_strings.html" class="navigation navigation-next " aria-label="Next page: 字符串统计"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
