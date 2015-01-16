@@ -1,3 +1,6 @@
+# ASCII
+ASCII(American Standard Code for Information Interchange，美国信息交换标准代码)是一种用于信息交换的美国标准代码。7位字符集广泛用于代表标准美国键盘上的字符或符号。通过将这些字符使用的值标准化，ASCII允许计算机和计算机程序交换信息。ASCII字符集是与ANSI字符集中的前面128个(0-127)字符相同。
+
 # Parser
 语法分析器，将你的脚本转换为机器语言。
 
@@ -8,4 +11,4 @@
 操作数(Operand)就像很多你在学校学过，一转身就又忘了的很多东西一样。举个例子，在`$mystring + $myinteger`这个加法运算中，`+`是操作符，`$mystring`和`$myinteger`就是操作数。
 
 #MIME
-MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。参见[多用途互聯網郵件擴展](http://zh.wikipedia.org/wiki/%E5%A4%9A%E7%94%A8%E9%80%94%E4%BA%92%E8%81%AF%E7%B6%B2%E9%83%B5%E4%BB%B6%E6%93%B4%E5%B1%95)。
+MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。参见wikipedia:多用途互聯網郵件擴展。
