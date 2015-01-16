@@ -102,6 +102,7 @@
     - [子字符串](Functions/Playing_with_strings/reading_from_part_of_a_string.md)
     - [字符串替换](Functions/Playing_with_strings/replacing_parts_of_a_string.md)
     - [ASCII转换](Functions/Playing_with_strings/converting_to_and_from_ASCII.md)
+    - [字符串统计](Functions/Playing_with_strings/measuring_strings.md)
 - [数组]
 - [对象]
 - [HTML表单]
