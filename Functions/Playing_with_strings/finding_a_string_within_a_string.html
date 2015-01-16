@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>ASCII转换 | Practical PHP Programming</title>
+        <title>子字符串查找 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,8 @@
         
     
     
-    <link rel="next" href="../../Functions/Playing_with_strings/measuring_strings.html" />
     
-    
-    <link rel="prev" href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" />
+    <link rel="prev" href="../../Functions/Playing_with_strings/measuring_strings.html" />
     
 
         
@@ -38,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.7.3" data-basepath="../.." data-revision="1421426444809">
+    <div class="book" data-level="4.7.5" data-basepath="../.." data-revision="1421426444809">
     
 
 <div class="book-summary">
@@ -1781,7 +1779,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4.7.3" data-path="Functions/Playing_with_strings/converting_to_and_from_ASCII.html">
+        <li class="chapter " data-level="4.7.3" data-path="Functions/Playing_with_strings/converting_to_and_from_ASCII.html">
             
                 
                     <a href="../../Functions/Playing_with_strings/converting_to_and_from_ASCII.html">
@@ -1813,7 +1811,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.7.5" data-path="Functions/Playing_with_strings/finding_a_string_within_a_string.html">
+        <li class="chapter active" data-level="4.7.5" data-path="Functions/Playing_with_strings/finding_a_string_within_a_string.html">
             
                 
                     <a href="../../Functions/Playing_with_strings/finding_a_string_within_a_string.html">
@@ -2107,32 +2105,19 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_8">
+                    <section class="normal" id="section-gitbook_9">
                     
-                        <h1 id="ascii">ASCII转换</h1>
-<pre><code class="lang-php">string chr ( int ascii)
-int ord ( string string)
+                        <h1 id="">子字符串查找</h1>
+<pre><code class="lang-php">int strpos ( string haystack, string needle [, int offset])
+int stripos ( string haystack, string needle [, int offset])
 </code></pre>
-<p>ASCII(American Standard Code for Information Interchange，美国信息交换标准代码)用0~255的数字来表示对应的字符，通常在计算机领域使用。例如，74是<code>J</code>，106是<code>j</code>，123是<code>{</code>，32是<code>`(空格)。要从正常的文本转换为ASCII码的话，可以用</code>chr()<code>函数，它只接受一个参数，就是要被转换的ASCII码值，返回对应的字符。而</code>ord()`刚好相反，输入字符，返回ASCII码值。</p>
-<p>例如：</p>
+<p><code>strpos()</code>是<code>stripos()</code>的大小写敏感版本，返回的是子字符串在被查找字符串中第一次出现的索引位置。用代码来说明可能方便一点：</p>
 <pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
-    <span class="hljs-variable">$mystr</span> = <span class="hljs-string">"ASCII is an easy way for computers to work with strings\n"</span>;
-
-    <span class="hljs-keyword">if</span> (ord(<span class="hljs-variable">$mystr</span>{<span class="hljs-number">1</span>}) == <span class="hljs-number">83</span>) {
-        <span class="hljs-keyword">print</span> <span class="hljs-string">"The second letter in the string is S\n"</span>;
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">print</span> <span class="hljs-string">"The second letter is not S\n"</span>;
-    }
-
-    <span class="hljs-variable">$letter</span> = chr(<span class="hljs-number">109</span>);
-
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"ASCII number 109 is equivalent to $letter\n"</span>;
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"This is a strpos() test"</span>;
+    <span class="hljs-keyword">print</span> strpos(<span class="hljs-variable">$string</span>, <span class="hljs-string">"a"</span>) . <span class="hljs-string">"\n"</span>;
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
-<p>应该输出：</p>
-<pre><code class="lang-text">The second letter in the string is S
-ASCII number 109 is equivalent to m
-</code></pre>
+<p>因为“This is a strpos() test”中，第一个小写字母a出现在索引为8的位置，所以上面的代码返回8。由于PHP是从0开始计算索引位置的，也就是是说<code>strpos()</code>是在字符串的第九个位置首次找到小写字母a的。</p>
 
                     
                     </section>
@@ -2143,10 +2128,8 @@ ASCII number 109 is equivalent to m
         </div>
 
         
-        <a href="../../Functions/Playing_with_strings/replacing_parts_of_a_string.html" class="navigation navigation-prev " aria-label="Previous page: 字符串替换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/measuring_strings.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 字符串统计"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../Functions/Playing_with_strings/measuring_strings.html" class="navigation navigation-next " aria-label="Next page: 字符串统计"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

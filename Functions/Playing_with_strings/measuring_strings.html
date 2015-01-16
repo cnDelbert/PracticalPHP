@@ -19,6 +19,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Playing_with_strings/finding_a_string_within_a_string.html" />
+    
     
     <link rel="prev" href="../../Functions/Playing_with_strings/converting_to_and_from_ASCII.html" />
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.7.4" data-basepath="../.." data-revision="1421401328587">
+    <div class="book" data-level="4.7.4" data-basepath="../.." data-revision="1421426444809">
     
 
 <div class="book-summary">
@@ -1810,6 +1812,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.7.5" data-path="Functions/Playing_with_strings/finding_a_string_within_a_string.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/finding_a_string_within_a_string.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.5.</b>
+                        
+                         子字符串查找
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2089,7 +2107,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_10">
+                    <section class="normal" id="section-gitbook_11">
                     
                         <h1 id="">字符串统计</h1>
 <pre><code class="lang-php">int strlen ( string source)
@@ -2102,6 +2120,80 @@ mixed str_word_count ( string string [, int format])
     <span class="hljs-keyword">print</span> strlen(<span class="hljs-string">"Goodbye, Perl!"</span>) . <span class="hljs-string">"\n"</span>; <span class="hljs-comment">// 14</span>
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
+<p>关于<code>strlen()</code>没有什么别的可说的了，这个函数就是这么简单直接。再多说一句：这个函数非常有用，肯定会在你写的代码里面出现的。</p>
+<p>另外两个函数从另外两个方面对字符串进行统计：<code>count_chars()</code>返回传入字符串中每个字母及其出现的次数；<code>str_word_count()</code>返回传入字符串中每个单词奇迹出现的次数。</p>
+<p>用<code>count_chars()</code>时，它返回的实际是一个有255个元素的数组，每个元素对应一个ASCII码，这样导致处理起来相对复杂。你可以对它进行处理，如掉其中值（频率）为0的元素，或者你可以给这个函数传递第二个参数。当第二个参数为1时，只有频率大于0的字母才会被列出，如果第二个参数为2，只有频率为1的字母才被列出。</p>
+<p>和<code>count_chars()</code>相似，你可以给<code>str_word_count()</code>传递第二个参数来完成相似的事情。默认情况下，它返回的是字符串中独立单词的数目。当第二个参数为1时，返回找到单词的数组；当第二个参数为2时，除了每个单词的键被设置为单词的位置外，其余同1一样。</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$str</span> = <span class="hljs-string">"This is a test, only a test, and nothing but a test."</span>;
+    <span class="hljs-variable">$a</span> = count_chars(<span class="hljs-variable">$str</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-variable">$b</span> = str_word_count(<span class="hljs-variable">$str</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-variable">$c</span> = str_word_count(<span class="hljs-variable">$str</span>, <span class="hljs-number">2</span>);
+    <span class="hljs-variable">$d</span> = str_word_count(<span class="hljs-variable">$str</span>);
+    print_r(<span class="hljs-variable">$a</span>);
+    print_r(<span class="hljs-variable">$b</span>);
+    print_r(<span class="hljs-variable">$c</span>);
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"There are $d words in the string\n"</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="lang-text">Array
+(
+    [32] =&gt; 11
+    [44] =&gt; 2
+    [46] =&gt; 1
+    [84] =&gt; 1
+    [97] =&gt; 4
+    [98] =&gt; 1
+    [100] =&gt; 1
+    [101] =&gt; 3
+    [103] =&gt; 1
+    [104] =&gt; 2
+    [105] =&gt; 3
+    [108] =&gt; 1
+    [110] =&gt; 4
+    [111] =&gt; 2
+    [115] =&gt; 5
+    [116] =&gt; 8
+    [117] =&gt; 1
+    [121] =&gt; 1
+)
+Array
+(
+    [0] =&gt; This
+    [1] =&gt; is
+    [2] =&gt; a
+    [3] =&gt; test
+    [4] =&gt; only
+    [5] =&gt; a
+    [6] =&gt; test
+    [7] =&gt; and
+    [8] =&gt; nothing
+    [9] =&gt; but
+    [10] =&gt; a
+    [11] =&gt; test
+)
+Array
+(
+    [0] =&gt; This
+    [5] =&gt; is
+    [8] =&gt; a
+    [10] =&gt; test
+    [16] =&gt; only
+    [21] =&gt; a
+    [23] =&gt; test
+    [29] =&gt; and
+    [33] =&gt; nothing
+    [41] =&gt; but
+    [45] =&gt; a
+    [47] =&gt; test
+)
+There are 12 words in the string
+</code></pre>
+<p>在输出的第一个数组中，方括号中的数字是对应字母的ASCII码值，后面的数字是每个字母出现的频率。</p>
+<p>在输出的第二个数组中，数组元素的键没有任何意义，每个元素的值是字符串中的单词。逗号和句号不是单词，因此没有在其中出现。</p>
+<p>第三条输出中，每个元素的键是其对应单词第一个字母出现的位置，因此0就代表“This”中在字符串中开始的位置。</p>
+<p>最后是<code>str_word_count()</code>的默认输出，输出字符串中单词的个数。</p>
 
                     
                     </section>
@@ -2112,8 +2204,10 @@ mixed str_word_count ( string string [, int format])
         </div>
 
         
-        <a href="../../Functions/Playing_with_strings/converting_to_and_from_ASCII.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ASCII转换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/converting_to_and_from_ASCII.html" class="navigation navigation-prev " aria-label="Previous page: ASCII转换"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Playing_with_strings/finding_a_string_within_a_string.html" class="navigation navigation-next " aria-label="Next page: 子字符串查找"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
