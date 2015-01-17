@@ -104,6 +104,7 @@
     - [ASCII转换](Functions/Playing_with_strings/converting_to_and_from_ASCII.md)
     - [字符串统计](Functions/Playing_with_strings/measuring_strings.md)
     - [子字符串查找](Functions/Playing_with_strings/finding_a_string_within_a_string.md)
+    - [从字符串第一次出现的位置开始返回](Functions/Playing_with_strings/returning_the_first_occurrence_of_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
