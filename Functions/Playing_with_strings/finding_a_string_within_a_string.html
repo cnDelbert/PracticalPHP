@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.7.5" data-basepath="../.." data-revision="1421426444809">
+    <div class="book" data-level="4.7.5" data-basepath="../.." data-revision="1421465765349">
     
 
 <div class="book-summary">
@@ -2105,7 +2105,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_8">
                     
                         <h1 id="">子字符串查找</h1>
 <pre><code class="lang-php">int strpos ( string haystack, string needle [, int offset])
@@ -2118,6 +2118,54 @@ int stripos ( string haystack, string needle [, int offset])
 <span class="hljs-preprocessor">?&gt;</span>
 </code></pre>
 <p>因为“This is a strpos() test”中，第一个小写字母a出现在索引为8的位置，所以上面的代码返回8。由于PHP是从0开始计算索引位置的，也就是是说<code>strpos()</code>是在字符串的第九个位置首次找到小写字母a的。</p>
+<p>你也可以将一个单词传递给第二个参数，这样，<code>strpos()</code>就会返回这个单词第一个字母在字符串中的索引位置了。例如<code>strpos($string, &quot;test&quot;)</code>将返回19，也就是匹配到单词的第一个字母所在的索引位置。</p>
+<p>如果参数一中不存在参数二的字符串，<code>strpos()</code>将返回<code>false</code>。来看一下这个代码：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"This is a strpos() test"</span>;
+    <span class="hljs-variable">$pos</span> = strpos(<span class="hljs-variable">$string</span>, <span class="hljs-string">"This"</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pos</span> == <span class="hljs-keyword">false</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Not found\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Found!\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如果你运行这段代码，你会发现尽管“This”在字符串的开头就出现了，但输出的却仍然是“Not found”。是因为大小写有问题吗？不是的，问题在于“This”在字符串的开头，也就是说<code>strpos()</code>将会返回0。在PHP当中，0就相当于<code>false</code>，也就是说，“找不到子字符串”和“子字符串在索引为0”的位置是一样的——这的确是个问题。</p>
+<p>好在PHP还提供了<code>===</code>运算符，也就是一致运算。这就要求<code>$pos</code>为false，同时类型必须是boolean型才可以。如果在<code>$string</code>中找到“This”，<code>strpos()</code>将返回整型0。用<code>===</code>的话，PHP会在检查值的同时检查类型，之后会发现二者不相等：前者是整型，而后者是布尔型。</p>
+<p>更正后的版本如下：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"This is a strpos() test"</span>;
+    <span class="hljs-variable">$pos</span> = strpos(<span class="hljs-variable">$string</span>, <span class="hljs-string">"This"</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pos</span> === <span class="hljs-keyword">false</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Not found\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Found!\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>下面这段代码想要匹配“is”中的“i”：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"This is a strpos() test"</span>;
+    <span class="hljs-variable">$pos</span> = strpos(<span class="hljs-variable">$string</span>, <span class="hljs-string">"i"</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pos</span> === <span class="hljs-keyword">false</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Not found\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Found at $pos!\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>这里的问题在于<code>strpos()</code>匹配到的“i”是“This”中的。还好，<code>strpos()</code>允许第三个参数来确定起始位置。由于“This”中的“i”的索引位置是2，我们只要让<code>strpos()</code>从索引位置3开始查找就好了。例如：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">"This is a strpos() test"</span>;
+    <span class="hljs-variable">$pos</span> = strpos(<span class="hljs-variable">$string</span>, <span class="hljs-string">"i"</span>, <span class="hljs-number">3</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pos</span> === <span class="hljs-keyword">false</span>) {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Not found\n"</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">print</span> <span class="hljs-string">"Found at $pos!\n"</span>;
+    }
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>上面的代码将输出“Found at 5!”，也就是“is”中“i”的位置。</p>
 
                     
                     </section>
