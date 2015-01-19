@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>从PHP 3升级 | Practical PHP Programming</title>
+        <title>字符串换行 | Practical PHP Programming</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../Introducing_PHP/History/upgrading_from_php_4.html" />
+    <link rel="next" href="../../Functions/Playing_with_strings/changing_string_case.html" />
     
     
-    <link rel="prev" href="../../Introducing_PHP/History/current_release.html" />
+    <link rel="prev" href="../../Functions/Playing_with_strings/trimming_whitespaces.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.1.4" data-basepath="../.." data-revision="1421677219042">
+    <div class="book" data-level="4.7.8" data-basepath="../.." data-revision="1421677219042">
     
 
 <div class="book-summary">
@@ -399,7 +399,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2.1.4" data-path="Introducing_PHP/History/upgrading_from_php_3.html">
+        <li class="chapter " data-level="2.1.4" data-path="Introducing_PHP/History/upgrading_from_php_3.html">
             
                 
                     <a href="../../Introducing_PHP/History/upgrading_from_php_3.html">
@@ -1861,7 +1861,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.7.8" data-path="Functions/Playing_with_strings/wrapping_your_lines.html">
+        <li class="chapter active" data-level="4.7.8" data-path="Functions/Playing_with_strings/wrapping_your_lines.html">
             
                 
                     <a href="../../Functions/Playing_with_strings/wrapping_your_lines.html">
@@ -2171,11 +2171,43 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_65">
+                    <section class="normal" id="section-gitbook_17">
                     
-                        <h1 id="php-3">从PHP 3进行升级</h1>
-<p>本章节由于历史原因而保留。大概应该已经没有人使用PHP 3了...吧？</p>
-<p>我们确定一定以及肯定不会有人使用PHP 3了，作者写作的时候都那么确定，那我也没有必要翻译了。<a href="http://www.tuxradar.com/practicalphp/2/1/4" target="_blank">点击查看原文</a></p>
+                        <h1 id="">字符串换行</h1>
+<pre><code class="lang-php">string wordwrap ( string source [, int width [, string <span class="hljs-keyword">break</span> [, boolean cut]]])
+</code></pre>
+<p>尽管网页中的文字会自动换行，但是在下面的情况中，你也许希望能够自己换行：</p>
+<ul>
+<li>当向控制台中进行输出时，文本不会自动换行。因此，除非你想用户自己拖动滚动条，否则还是自己主动换行吧。</li>
+<li>当向一个固定文本宽度的网页输出内容时，运行浏览器自动换行会将之前的设计布局打乱。</li>
+</ul>
+<p>在遇到上述两种情况时，你需要<code>wordwrap()</code>。如果你直接向<code>wordwrap()</code>传入字符串，没有其余的参数时，PHP将每75个字符插入一个<code>\n</code>。当然，你可以在第二和第三个参数中自动逸每行的字符数和换行标记：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$text</span> = <span class="hljs-string">"Word wrap will split this text up into smaller lines, which makes for easier reading and neater layout."</span>;
+    <span class="hljs-variable">$text</span> = wordwrap(<span class="hljs-variable">$text</span>, <span class="hljs-number">20</span>, <span class="hljs-string">"&lt;br /&gt;"</span>);
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$text</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>运行代码，将输出：</p>
+<pre><code class="lang-text">Word wrap will split&lt;br /&gt;this text up into&lt;br /&gt;smaller lines, which&lt;br /&gt;makes for easier&lt;br /&gt;reading and neater&lt;br /&gt;layout.
+</code></pre>
+<p>上面的代码中，<code>wordwrap()</code>使用了HTML的换行标记<code>&lt;br /&gt;</code>，每20个字符进行一次换行。默认情况下，<code>wordwrap()</code>的换行策略是这样的：如果你第二个参数是20，<code>wrap()</code>将可能在不到20个字母的时候进行换行（保证单词不被打断），
+而不是21或22个字母的时候。如果单词本身长度超过20个字符，<code>wordwrap()</code>将直接返回整个单词而不会讲单词打断。</p>
+<p>如果你想强制在某个长度上换行，你可以将第四个参数设置为1，允许打断单词。下面是个例子：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$text</span> = <span class="hljs-string">"Micro-organism is a very long word."</span>;
+    <span class="hljs-variable">$text</span> = wordwrap(<span class="hljs-variable">$text</span>, <span class="hljs-number">6</span>, <span class="hljs-string">"\n"</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$text</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>输出如下：</p>
+<pre><code class="lang-text">Micro-
+organi
+sm is
+a very
+long
+word.
+</code></pre>
 
                     
                     </section>
@@ -2186,10 +2218,10 @@
         </div>
 
         
-        <a href="../../Introducing_PHP/History/current_release.html" class="navigation navigation-prev " aria-label="Previous page: 当前版本"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/trimming_whitespaces.html" class="navigation navigation-prev " aria-label="Previous page: 移除空白"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Introducing_PHP/History/upgrading_from_php_4.html" class="navigation navigation-next " aria-label="Next page: 从PHP 4升级"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Functions/Playing_with_strings/changing_string_case.html" class="navigation navigation-next " aria-label="Next page: 大小写转换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
