@@ -108,6 +108,7 @@
     - [移除空白](Functions/Playing_with_strings/trimming_whitespaces.md)
     - [字符串换行](Functions/Playing_with_strings/wrapping_your_lines.md)
     - [大小写转换](Functions/Playing_with_strings/changing_string_case.md)
+    - [生成安全的数据散列](Functions/Playing_with_strings/making_a_secure_data_hash.md)
 - [数组]
 - [对象]
 - [HTML表单]
