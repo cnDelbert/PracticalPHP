@@ -106,6 +106,7 @@
     - [子字符串查找](Functions/Playing_with_strings/finding_a_string_within_a_string.md)
     - [从字符串第一次出现的位置开始返回](Functions/Playing_with_strings/returning_the_first_occurrence_of_a_string.md)
     - [移除空白](Functions/Playing_with_strings/trimming_whitespaces.md)
+    - [大小写转换](Functions/Playing_with_strings/changing_string_case.md)
 - [数组]
 - [对象]
 - [HTML表单]
