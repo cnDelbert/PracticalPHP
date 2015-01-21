@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1421762122137">
+    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1421851544823">
     
 
 <div class="book-summary">
@@ -2201,6 +2201,22 @@
 <p>上面的方式当然可行，但是也就意味着只要能够阅读源码，就可以知道密码。同样地，如果你直接把用户的密码存在数据库当中，万一有人入侵了你的数据库，那估计到时候有你好看。如果你存在数据库或文件中的密码已经加密，即使被入侵，入侵者也拿不到原始密码。</p>
 <p>另一方面，即使是授权用户也无法拿到原始密码。一件事情，从不同的方面来看可能会有不同的结果，但对密码进行加密通常来说是值得的。忘记密码的用户只要重置他们的密码就可以了，而不是取回之前的密码。</p>
 <p>哈希散列通常也用来检查文件是否下载完整了：如果你得到的哈希值同网站提供的一致，那就说明你下载到的文件不存在问题。</p>
+<p>数据的哈希散列处理包括取一个值并将其转换为一个包含字母和数字的半无意义的固定长度的字符串。不管是谁，都没有办法“破解”这个哈希值来获得原始数据。破解哈希值的唯一的方法就是尝试几乎所有可能的输入，当然，这可能花掉相当长的时间来进行尝试。</p>
+<p>来看一下下面这段代码：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-keyword">print</span> sha1(<span class="hljs-string">"hello"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> sha1(<span class="hljs-string">"Hello"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> sha1(<span class="hljs-string">"hello"</span>) . <span class="hljs-string">"\n"</span>;
+    <span class="hljs-keyword">print</span> sha1(<span class="hljs-string">"This is a very, very, very, very, very, very, very long test"</span>);
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>输出为：</p>
+<pre><code class="lang-text">aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+66f52c9f1a93eac0630566c9b82b26f91d727001
+</code></pre>
+<p>在这里有三个关键的地方需要注意：第一，所有的输出都有且仅有40个字符；第二，“hello”和“Hello”虽然原始字符串只有一个字母大小写的区别，但它们的哈希值确实天章之别；第三，没办法从哈希值来区分原始字符串的长短，因为所有的哈希值都是不可逆的，且都为40个字符。</p>
 
                     
                     </section>
