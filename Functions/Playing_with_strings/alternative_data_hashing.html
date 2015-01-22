@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="4.7.11" data-basepath="../.." data-revision="1421919902974">
+    <div class="book" data-level="4.7.11" data-basepath="../.." data-revision="1421920355787">
     
 
 <div class="book-summary">
@@ -2200,6 +2200,23 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_9">
+                    
+                        <h1 id="">另一种数据散列算法</h1>
+<pre><code class="lang-php">string md5 ( string source [, bool raw_output])
+</code></pre>
+<p>尽管推荐用<code>sha1()</code>来进行数据散列算法，但另一种算法MD5也很流行。MD是消息摘要“Message Digest”的缩写。<code>md5()</code>产生数据散列的方式同<code>sha1()</code>相同，只是<code>md5()</code>返回的结果只有32个字节。因为<code>sha1()</code>的位数更长，所以相对来说不容易发生“碰撞”——一种两个不同的字符串得到同样的哈希值的情况。</p>
+<p><code>md5()</code>的用法也和<code>sha1()</code>一样：</p>
+<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
+    <span class="hljs-variable">$md5hash</span> = md5(<span class="hljs-string">"My string"</span>);
+    <span class="hljs-keyword">print</span> <span class="hljs-variable">$md5hash</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>如果你认为MD5的位数少，所以更不安全的话，你是对的——但这仅仅是理论上的结果。MD5的哈希值有32字节长，相当于128位，也就是说，一串MD5哈希值有3.4028236692093846346337460743177e+38种不同的可能，也就是2的128次方。这个数已经足够大了，所以可以放心使用。</p>
+
+                    
+                    </section>
                 
                 
                 </div>
