@@ -19,6 +19,8 @@
         
     
     
+    <link rel="next" href="../../Functions/Playing_with_strings/alternative_data_hashing.html" />
+    
     
     <link rel="prev" href="../../Functions/Playing_with_strings/changing_string_case.html" />
     
@@ -36,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1421851544823">
+    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1421919902974">
     
 
 <div class="book-summary">
@@ -1906,6 +1908,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.7.11" data-path="Functions/Playing_with_strings/alternative_data_hashing.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/alternative_data_hashing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.11.</b>
+                        
+                         另一种数据散列算法
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2185,7 +2203,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_12">
+                    <section class="normal" id="section-gitbook_13">
                     
                         <h1 id="">生成安全的数据散列</h1>
 <pre><code class="lang-php">string sha1 ( string source [, bool raw_output])
@@ -2217,6 +2235,10 @@ aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
 66f52c9f1a93eac0630566c9b82b26f91d727001
 </code></pre>
 <p>在这里有三个关键的地方需要注意：第一，所有的输出都有且仅有40个字符；第二，“hello”和“Hello”虽然原始字符串只有一个字母大小写的区别，但它们的哈希值确实天章之别；第三，没办法从哈希值来区分原始字符串的长短，因为所有的哈希值都是不可逆的，且都为40个字符。</p>
+<p>如果你将用户密码哈希之后存到数据库中，你只要将用户输入的密码进行哈希散列之后的值同你数据库中的值进行对比就可以了。因为<code>sha1()</code>对同样的输入返回的值是一样的。</p>
+<blockquote>
+<p>作者说明：如果你将第二个可选参数设为<code>true</code>，SHA1将返回长度为20位的二进制格式的原始值。</p>
+</blockquote>
 
                     
                     </section>
@@ -2227,8 +2249,10 @@ aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
         </div>
 
         
-        <a href="../../Functions/Playing_with_strings/changing_string_case.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 大小写转换"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Functions/Playing_with_strings/changing_string_case.html" class="navigation navigation-prev " aria-label="Previous page: 大小写转换"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../Functions/Playing_with_strings/alternative_data_hashing.html" class="navigation navigation-next " aria-label="Next page: 另一种数据散列算法"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
