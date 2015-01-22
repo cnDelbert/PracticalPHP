@@ -110,6 +110,7 @@
     - [大小写转换](Functions/Playing_with_strings/changing_string_case.md)
     - [生成安全的数据散列](Functions/Playing_with_strings/making_a_secure_data_hash.md)
     - [另一种数据散列算法](Functions/Playing_with_strings/alternative_data_hashing.md)
+    - [自动转义字符串](Functions/Playing_with_strings/automatically_escaping_strings.md)
 - [数组]
 - [对象]
 - [HTML表单]
