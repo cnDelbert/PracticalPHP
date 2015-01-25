@@ -112,6 +112,7 @@
     - [另一种数据散列算法](Functions/Playing_with_strings/alternative_data_hashing.md)
     - [自动转义字符串](Functions/Playing_with_strings/automatically_escaping_strings.md)
     - [格式化输出数字](Functions/Playing_with_strings/pretty-printing_numbers.md)
+    - [从字符串中移除HTML](Functions/Playing_with_strings/removing_HTML_from_a_string.md)
 - [数组]
 - [对象]
 - [HTML表单]
