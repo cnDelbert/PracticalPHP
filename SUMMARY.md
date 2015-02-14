@@ -113,6 +113,7 @@
     - [自动转义字符串](Functions/Playing_with_strings/automatically_escaping_strings.md)
     - [格式化输出数字](Functions/Playing_with_strings/pretty-printing_numbers.md)
     - [从字符串中移除HTML](Functions/Playing_with_strings/removing_HTML_from_a_string.md)
+    - [字符串比较](Functions/Playing_with_strings/comparing_strings.md)
 - [数组]
 - [对象]
 - [HTML表单]
