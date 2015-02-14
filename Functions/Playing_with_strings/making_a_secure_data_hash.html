@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1423374622398">
+    <div class="book" data-level="4.7.10" data-basepath="../.." data-revision="1423875573466">
     
 
 <div class="book-summary">
@@ -1972,6 +1972,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="4.7.15" data-path="Functions/Playing_with_strings/comparing_strings.html">
+            
+                
+                    <a href="../../Functions/Playing_with_strings/comparing_strings.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.15.</b>
+                        
+                         字符串比较
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -2251,7 +2267,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_14">
+                    <section class="normal" id="section-gitbook_15">
                     
                         <h1 id="">生成安全的数据散列</h1>
 <pre><code class="lang-php">string sha1 ( string source [, bool raw_output])
@@ -2282,7 +2298,7 @@ f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
 aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
 66f52c9f1a93eac0630566c9b82b26f91d727001
 </code></pre>
-<p>在这里有三个关键的地方需要注意：第一，所有的输出都有且仅有40个字符；第二，“hello”和“Hello”虽然原始字符串只有一个字母大小写的区别，但它们的哈希值确是天壤之别；第三，没办法从哈希值来区分原始字符串的长短，因为所有的哈希值都是不可逆的，且都为40个字符。</p>
+<p>在这里有三个关键的地方需要注意：第一，所有的输出都有且仅有40个字符；第二，“hello”和“Hello”虽然原始字符串只有一个字母大小写的区别，但它们的哈希值却是天壤之别；第三，没办法从哈希值来区分原始字符串的长短，因为所有的哈希值都是不可逆的，且都为40个字符。</p>
 <p>如果你将用户密码哈希之后存到数据库中，你只要将用户输入的密码进行哈希散列之后的值同你数据库中的值进行对比就可以了。因为<code>sha1()</code>对同样的输入返回的值是一样的。</p>
 <blockquote>
 <p>作者说明：如果你将第二个可选参数设为<code>true</code>，SHA1将返回长度为20位的二进制格式的原始值。</p>
