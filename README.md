@@ -16,7 +16,7 @@ GitBook 的教程参见[Gitbook使用入门][gitbook-tur]。
 
 ### Update 20150513
 
-在我停更准备毕业论文的时间里， Practical PHP Programming 已经更新到 PHP 5.6，同时更名为 **Hacking with PHP**，同时将网站迁移到 [hacking_with_php]，Delbert 将在 5 月 20 日左右恢复更新，同时将对之前的翻译与新版本进行校对。
+在我停更准备毕业论文的时间里， Practical PHP Programming 已经更新到 PHP 5.6，同时更名为 **Hacking with PHP**，将网站迁移到 [Hacking with PHP][hacking_with_php]，Delbert 将在 5 月 20 日左右恢复更新，同时将对之前的翻译与新版本进行校对。
 
 
 [pro_home]: http://www.tuxradar.com/practicalphp
