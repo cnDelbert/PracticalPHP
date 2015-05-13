@@ -1,5 +1,6 @@
 {
-
+    "name": "gitbook",
+    "version": "2.0.2",
     "title": "Practical PHP Programming",
     "description": "A Chinese Translation for Practical PHP Programming By @Delbert, Delbert翻译的中文版本的《PHP编程实践》",
     "plugins": "quizzes",
@@ -46,5 +47,10 @@
         "headerTemplate": null,
 
         "footerTemplate": null
+    },
+    
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cnDelbert/PracticalPHP.git"
     }
 }
