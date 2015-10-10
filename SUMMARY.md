@@ -1,5 +1,4 @@
 - [关于本书](README.md)
-- [更新记录](Notes.md)
 - [前言](Preface/index.md)
   - [这本书是为你准备的吗？](Preface/is_this_book_for_you.md)
   - [这本书不是为这些人所准备的](Preface/who_this_book_is_not_for.md)
@@ -136,4 +135,5 @@
 - [close?闭包？] TBD
 - [习题答案]
 - [PHP的未来]
-- [词汇表]
+- [词汇表](GLOSSARY.md)
+- [更新记录](Notes.md)
