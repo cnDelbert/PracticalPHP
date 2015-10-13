@@ -3,7 +3,7 @@
   - [这本书是为你准备的吗？](Preface/is_this_book_for_you.md)
   - [不适合这本书的人](Preface/who_this_book_is_not_for.md)
   - [你能从书中得到什么](Preface/what_you_will_get_out_of_this_book.md)
-  - [如何使用这本书](Preface/how_to_use_this_book.md)
+  - [如何使用本书](Preface/how_to_use_this_book.md)
   - [给Perl程序员的建议](Preface/a_note_for_programmers_comming_from_Perl.md)
   - [给C/C++/Java程序员的建议](Preface/a_note_for_programmers_coming_from_c_cpp_or_java.md)
   - [跨平台的PHP](Preface/cross-platform_php.md)
