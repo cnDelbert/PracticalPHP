@@ -1,7 +1,7 @@
 - [关于本书](README.md)
 - [前言](Preface/index.md)
   - [这本书是为你准备的吗？](Preface/is_this_book_for_you.md)
-  - [这本书不是为这些人所准备的](Preface/who_this_book_is_not_for.md)
+  - [不适合这本书的人](Preface/who_this_book_is_not_for.md)
   - [学完这本书你将得到什么](Preface/what_you_will_get_out_of_this_book.md)
   - [如何使用这本书](Preface/how_to_use_this_book.md)
   - [给Perl程序员的建议](Preface/a_note_for_programmers_comming_from_Perl.md)
