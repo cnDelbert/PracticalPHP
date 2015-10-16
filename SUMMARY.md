@@ -7,7 +7,7 @@
   - [给Perl程序员的建议](Preface/a_note_for_programmers_comming_from_Perl.md)
   - [给C/C++/Java程序员的建议](Preface/a_note_for_programmers_coming_from_c_cpp_or_java.md)
   - [跨平台的PHP](Preface/cross-platform_php.md)
-  - [成功的提示](Preface/tips_for_success.md)
+  - [走向成功的小提示](Preface/tips_for_success.md)
   - [关于出版商](Preface/about_the_publisher.md)
   - [版权和使用权](Preface/copyright_and_usage_rights.md)
   - [给点反馈](Preface/give_something_back.md)
