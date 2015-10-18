@@ -1,6 +1,6 @@
 # 关于我
 
-我是一名全职的IT记者，供职于英国巴斯的Future出版社——或许你在Linux Format, Mac Format, PC Answers, PC Plus 或 PC Format上看见过我的名字。我非常热衷于免费软件运动，我在单位和家里都用Linux系统，业余时间也编编程。我认为Mono很酷，我有时候也在一些编程社区教人们学习C#.
+我是一名英国巴芙的全职开发者，供职于未来出版社。我喜爱自由软件运动，在我的服务器上运行Linux，喜爱编程。你可以在Twitter上[Follow 我](http://twitter.com/twostraws)。
 
 <hr>
 
